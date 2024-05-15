@@ -1,0 +1,315 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribution builder</title>  
+    
+	<link rel="stylesheet" href="https://rmitlibrary.github.io/dewey-design/sass/dewey.min.css">
+    
+    <link rel="stylesheet" href="sass/main.css">
+
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+<!-- START nav -->
+<nav>
+<div class="top-nav">
+    <div class="container">
+        <div class="row">
+            <div class="col-auto">
+                <div class="top-nav-left">
+					<a href="#page-content" class="visually-hidden">Skip to main content</a>
+                    <div class="rmit-logo"></div>
+                </div> 
+            </div>
+            <div class="col">       
+                <ul>
+					<li><a href="">Library</a></li>
+                </ul> 
+            </div>   
+        </div>
+    </div>
+</div>
+</nav>
+<!-- END nav -->
+<!-- START page-content -->
+<div id="page-content">
+	<!-- START container main-content -->
+	<div class="container main-content">
+		<div class="row">
+			<!-- START col-xl-8 -->
+			<div class="col-xl-8">
+                <h1 class="margin-top-zero">Attribution builder</h1>
+				<p>Attribution builder will help you easily cite open material you find; as you fill out the form the application will automatically generate the attribution for you.</p>
+                <!-- START accordion -->
+				<div class="accordion" id="about-accordion" class="margin-top-md">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            About Attribution builder
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
+                            <div class="accordion-body">
+                                <p><strong>This application is:</strong></p>
+                                <ul>
+                                    <li>to help you easily cite open material you find; as you fill out the form the application will automatically generate the attribution for you.</li>
+                                    <li>to cite only openly distributed work, such as work licensed by Creative Commons or released in the public domain.</li>
+                                    <li>to provide a default attribution statement. You’re welcome to modify the citation to make it more suitable to your needs.</li>
+                                </ul>
+                                <strong>This application is NOT:</strong>
+                                <ul>
+                                    <li>to mark your own work with a Creative Commons license or to place your work in the public domain. To do so, please use the <a href="http://creativecommons.org/choose">license chooser</a> (for the CC licensed work) or <a href="https://creativecommons.org/choose/zero/waiver">CC0 Waiver</a> (for the public domain work) provided by Creative Commons.</li>
+                                    <li>applicable for all types of materials; this application is only for openly released work.</li>
+                                </ul>
+                                <p>This application lets you enter information for title, author, license, organization, and project. You are not required to enter all information to have a citation generated. Click the ? icons to learn more about each area.</p>
+                                <p>If you have any questions about this application, please email us at <a href="mailto:lib.ask@rmit.edu.au">lib.ask@rmit.edu.au</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END accordion --> 
+                <h2 class="visually-hidden">Enter the attribution details</h2>
+            </div>
+            <!-- END col-xl-8 --> 
+        </div>
+		<!-- START form -->
+		<form>
+            <!-- START row -->
+			<div class="row">
+				<div class="col-lg-6">
+					
+                    <fieldset>
+                        <legend class="visually-hidden">Enter the title and its url</legend>
+                        <label for="title" class="form-label h3">Title</label>
+                        <div class="input-group margin-bot-md">
+                            <input type="text" name="title" id="title" class="form-control">
+                            <button id="title-url-help-button" class="btn btn-help" type="button" data-bs-toggle="collapse" data-bs-target="#title-url-help" aria-expanded="false" aria-controls="title-url-help">?</button>
+                            <div id="title-url-help" class="collapse">
+                                <p class="small">List the title of the work you’re adopting. If you can’t locate the title please enter a more general term, such as “this work”, “this image”, etc.</p>
+                                <p class="small">Enter a URL to the original sources. If it's not available, include where you got the work. For example, in the title you might enter, “Blue Star painting from Reddit paintings”.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="title-url" class="form-label margin-bot-zero">URL</label>
+                            <input type="text" name="title-url" id="title-url" class="form-control">
+                        </div>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Enter the author and their url</legend>
+                        <label for="author">Author</label>
+                        <input type="text" name="author" id="author">
+                        <label for="author-url">URL</label>
+                        <input type="text" name="author-url" id="author-url">
+                    </fieldset>
+
+				</div>
+				<div class="col-lg-6">
+                    
+                    <fieldset>
+                        <legend>Choose a license and version</legend>
+                        <label for="license-select">License</label>
+                        <select name="license-select" id="license-select" size="9" onchange="onchangevalue(this);">
+                            <option selected="">Choose a license...</option>
+                            <option value="CC BY">Attribution (CC BY)</option>
+                            <option value="CC BY-SA">Attribution-ShareAlike (CC BY-SA)</option>
+                            <option value="CC BY-ND">Attribution-NoDerivs (CC BY-ND)</option>
+                            <option value="CC BY-NC">Attribution-NonCommercial (CC BY-NC)</option>
+                            <option value="CC BY-NC-SA">Attribution-NonCommercial-ShareAlike (CC BY-NC-SA)</option>
+                            <option value="CC BY-NC-ND">Attribution-NonCommercial-NoDerivs (CC BY-NC-ND)</option>
+                            <option value="Public Domain">Public Domain (General)</option>
+                            <option value="Public Domain, CC0">Public Domain (CC0)</option>
+                        </select>
+                       
+                        <label for="version">Version</label>
+                        <select name="version" id="version" disabled="">
+                            <option selected="">4.0</option>
+                            <option>3.0</option>
+                            <option>2.5</option>
+                            <option>2.0</option>
+                            <option>1.0</option>
+                        </select>
+                    </fieldset>
+                    
+				</div>
+			</div>
+            <!-- END row -->
+            <!-- START row -->
+            <div class="row">
+				<div class="col">
+                    
+                    <fieldset>
+                        <!--<legend>Derivative option</legend>-->
+                        <input type="checkbox" id="derivative-check" name="derivative-check">
+                        <label for="derivative-check">This work is a derivative</label>
+                        <label for="derivative-url">URL</label>
+                        <input type="text" name="derivative-url" id="derivative-url">
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Enter the organisation and its url</legend>
+                        <label for="organisation">Organisation</label>
+                        <input type="text" name="organisation" id="organisation">
+                        <label for="organisation-url">URL</label>
+                        <input type="text" name="organisation-url" id="organisation-url">
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Enter the project and its url</legend>
+                        <label for="project">Project</label>
+                        <input type="text" name="organisation" id="project">
+                        <label for="project-url">URL</label>
+                        <input type="text" name="project-url" id="project-url">
+                    </fieldset>
+                    
+                    <h2>Attribution</h2>
+                    <div></div>
+                    <div></div>
+                    
+                    <button class="btn btn-primary">Copy attribution</button>
+                    <button class="btn btn-default">Copy html</button>
+                    <button class="btn btn-default">Reset</button>
+                    
+                </div>
+            </div>
+            <!-- END row -->
+		</form>
+		<!-- END form -->
+    </div>
+    <!-- END container main-content -->
+ 	<!-- START footer-container -->
+	<div class="footer-container">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+
+					<div class="ask-container">
+
+						<div class="ask-the-library">
+							<a href="https://www.rmit.edu.au/library/about-and-contacts/ask-the-library">
+								<img src="https://rmitlibrary.github.io/cdn/image/svg/ask-the-library.svg" class="ask-logo" />
+								<div class="ask-text">
+									<p class="lead">Still can't find what you need?</p>
+									<p>The RMIT University Library provides study support, one-on-one consultations and peer mentoring to RMIT students.</p>
+								</div>
+							</a>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- START acknowledgement -->
+		<div class="acknowledgement">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="acknowledgement-container">
+							<div class="acknowledgement-image">
+								<img src="https://www.rmit.edu.au/content/dam/rmit/images/luwaytini.png" alt="" />
+							</div>
+
+							<div class="content">
+								<img alt="aboriginal flag" src="https://www.rmit.edu.au/content/dam/rmit/au/en/news/homepage/flag-red.png" />
+								<img alt="torres strait flag" src="https://www.rmit.edu.au/content/dam/rmit/au/en/news/homepage/flag-green.png">
+
+								<h2 class="h4 margin-top-zero">Acknowledgement of Country</h2>
+								<p>RMIT University acknowledges the people of the Woi wurrung and Boon wurrung language groups of the eastern Kulin Nation on whose unceded lands we conduct the business of the University. RMIT University respectfully acknowledges their Ancestors and Elders, past and present. RMIT also acknowledges the Traditional Custodians and their Ancestors of the lands and waters across Australia where we conduct our business - Artwork 'Luwaytini' by Mark Cleaver, Palawa.</p>
+								<a href="#" class="link-large">More information</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>    
+		<!-- END acknowledgement -->
+		<!-- START footer -->
+		<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<!-- START logo -->
+					<a aria-label="Royal Melbourne Institute of Technology University Logo" href="https://www.rmit.edu.au/">
+						<div aria-hidden="true" class="logo"><span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/rmit-logo.svg" style="width: 100px" alt="" /></span>
+						</div>
+					</a>
+					<!-- END logo -->
+					<!-- START footer links -->
+					<!--<ul class="footer-links">
+						<li><a href="">Link 1</a></li>
+						<li><a href="">Link 2</a></li>
+						<li><a href="">Link 3</a></li>
+						<li><a href="">Link 4</a></li>
+					</ul>-->
+					<!-- END footer links -->
+					<!-- START legal items -->
+					<div class="footerlegalShareItems">
+
+						<div class="footer-legal">
+						<ul>
+							<li>Copyright © 2024 RMIT University<span> | </span></li>
+							<li><a href="https://www.rmit.edu.au/utilities/terms"><span class="no-focus" tabindex="-1">Terms</span></a><span> | </span></li>
+							<li><a href="https://www.rmit.edu.au/utilities/privacy"><span class="no-focus" tabindex="-1">Privacy</span></a><span> | </span></li>
+							<li><a href="https://www.rmit.edu.au/utilities/accessibility"><span class="no-focus" tabindex="-1">Accessibility</span></a> <span> | </span></li>
+							<li><a data-analytics-type="footerlink" data-analytics-value="Website feedback" href="https://www.rmit.edu.au/utilities/website-feedback"><span class="no-focus" tabindex="-1">Website feedback</span></a><span> | </span></li>
+							<li><a data-analytics-type="footerlink" data-analytics-value="Complaints" href="https://www.rmit.edu.au/utilities/complaints"><span class="no-focus" tabindex="-1">Complaints</span></a><span> | </span></li>
+							<li>ABN 49 781 030 034<span> | </span></li>
+							<li>CRICOS provider number: 00122A<span> | </span></li>
+							<li>TEQSA provider number: PRV12145<span> | </span></li>
+							<li>RTO Code: 3046<span> | </span></li>
+							<li><a href="https://www.open.edu.au/online-courses/rmit-university"><span class="no-focus" tabindex="-1">Open Universities Australia</span></a> </li>
+						  </ul>
+						</div>
+
+
+						<div class="social-nav">
+						<ul> 
+
+							<li><a aria-label="For Facebook"  href="https://www.facebook.com/RMITuniversity/"> <span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/facebook.svg" alt="" /></span></a></li>
+
+
+							<li><a href="https://twitter.com/rmit"> <span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/twitter.svg" alt="" /></span></a></li>
+
+
+							<li><a aria-label="For Instagram" href="https://www.instagram.com/rmituniversity/"> <span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/instagram.svg" alt="" /></span> </a></li>
+
+
+							<li><a aria-label="For LinkedIn" data-analytics-type="socialshare" data-analytics-value="LinkedIn" href="https://www.linkedin.com/school/rmit-university/"><span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/linkedin.svg" alt="" /></span></a></li>
+
+
+							<li><a aria-label="For Youtube" href="https://www.youtube.com/user/rmitmedia"> <span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/youtube.svg" alt="" /></span></a></li>
+
+
+							<li><a aria-label="For Weibo" href="https://www.weibo.com/rmituni"> <span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/weibo.svg" alt="" /></span></a></li>
+
+						</ul>
+						</div>
+
+					</div>
+					<!-- END legal items -->
+				</div>
+			</div>
+		</div>
+		</footer>
+    	<!-- END footer -->
+	</div>
+	<!-- END footer-container -->
+</div>
+<!-- END page-content -->
+	<script>
+	
+		var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+		var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+		  return new bootstrap.Popover(popoverTriggerEl)
+		})
+        
+        
+	
+	</script>
+</body>
+</html>

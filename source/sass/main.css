@@ -1,0 +1,10 @@
+.form-label {
+  /*  font-size: 1.125rem;
+    line-height: 1.5;*/
+}
+
+.btn-help {
+  background: #f0f0f0 url("../images/tool-tip.svg");
+  background-position: 8px 8px;
+  background-repeat: no-repeat;
+}
