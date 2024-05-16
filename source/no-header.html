@@ -11,7 +11,7 @@
 </head>
 <body>
 <!-- START nav -->
-<nav>
+<nav id="nav">
 <div class="top-nav">
     <div class="container">
         <div class="row">
@@ -34,10 +34,11 @@
 <!-- START page-content -->
 <div id="page-content">
 	<!-- START container main-content -->
-	<div class="container main-content">
+	<div class="container2 main-content2">
 		<div class="row">
 			<!-- START col-xl-8 -->
-			<div class="col-xl-8">
+			<div class="col-xl-102">
+				
                 <h1 class="margin-top-zero">Attribution builder</h1>
 				<p>Attribution builder will help you easily cite open material you find; as you fill out the form the application will automatically generate the attribution for you.</p>
                 <!-- START accordion -->
@@ -68,99 +69,94 @@
                     </div>
                 </div>
                 <!-- END accordion --> 
-                <h2 class="visually-hidden">Enter the attribution details</h2>
-            </div>
-            <!-- END col-xl-8 --> 
-        </div>
-		<!-- START form -->
-		<form>
-            <!-- START row -->
-			<div class="row">
-				<div class="col-md-6">
-					
-                    <fieldset class="left-column">
-                        <legend class="visually-hidden">Enter the title and its url</legend>
-                        <label for="title" class="h3 margin-top-zero">Title</label>
-                        <div class="input-group margin-bot-md">
-                            <input type="text" name="title" id="title" class="form-control">
-                            <button id="title-help-button" class="btn btn-help" type="button" data-bs-toggle="collapse" data-bs-target="#title-help" aria-expanded="false" aria-controls="title-help"><span class="visually-hidden">Help</span></button>
-                            <div id="title-help" class="collapse">
-                                <p class="small">List the title of the work you’re adopting. If you can’t locate the title please enter a more general term, such as “this work”, “this image”, etc.</p>
-                                <p class="small margin-bot-zero">Enter a URL to the original sources. If it's not available, include where you got the work. For example, in the title you might enter, “Blue Star painting from Reddit paintings”.</p>
-                            </div>
-                        </div>
-                        <div class="input-group">
-                            <label for="title-url" class="form-label">URL</label>
-                            <input type="text" name="title-url" id="title-url" class="form-control">
-                        </div>
-                    </fieldset>
-					
-					<fieldset class="left-column">
-                        <legend class="visually-hidden">Enter the author and their url</legend>
-                        <label for="author" class="h3">Author</label>
-                        <div class="input-group margin-bot-md">
-                            <input type="text" name="author" id="author" class="form-control">
-                            <button id="author-help-button" class="btn btn-help" type="button" data-bs-toggle="collapse" data-bs-target="#author-help" aria-expanded="false" aria-controls="author-help"><span class="visually-hidden">Help</span></button>
-                            <div id="author-help" class="collapse">
-                                <p class="small">Name the author(s) of the material you are adopting. If you can’t locate the name, you can list the author’s screen or username.</p>
-								<p class="small">Sometimes an organization is the copyright holder and does not provide any author information. In such cases, use the organization name as the author. Alternately, you can leave the author field empty and fill in the organization field.</p>
-                                <p class="small margin-bot-zero">If the author notes another person or entity they’d like to give credit, please do so. Also, if available, enter the URL to the author’s webpage or user account page.</p>
-                            </div>
-                        </div>
-                        <div class="input-group">
-                            <label for="author-url" class="form-label">URL</label>
-                            <input type="text" name="author-url" id="author-url" class="form-control">
-                        </div>
-                    </fieldset>
+                
 
-				</div>
-				<div class="col-md-6">
-                    
+				<!-- START form -->
+				<form>
+					<h2 class="visually-hidden">Enter the attribution details</h2>
+					<div class="my-two-columns">
+						<div class="my-column">
+							<!-- START title -->
+							<fieldset>
+								<legend class="visually-hidden">Enter the title and its url</legend>
+								<label for="title" class="h3 margin-top-zero">Title</label>
+								<div class="input-group margin-bot-md">
+									<input type="text" name="title" id="title" class="form-control">
+									<button id="title-help-button" class="btn btn-help" type="button" data-bs-toggle="collapse" data-bs-target="#title-help" aria-expanded="false" aria-controls="title-help"><span class="visually-hidden">Help</span></button>
+									<div id="title-help" class="collapse">
+										<p class="small">List the title of the work you’re adopting. If you can’t locate the title please enter a more general term, such as “this work”, “this image”, etc.</p>
+										<p class="small margin-bot-zero">Enter a URL to the original sources. If it's not available, include where you got the work. For example, in the title you might enter, “Blue Star painting from Reddit paintings”.</p>
+									</div>
+								</div>
+								<div class="input-group">
+									<label for="title-url" class="form-label">URL</label>
+									<input type="text" name="title-url" id="title-url" class="form-control">
+								</div>
+							</fieldset>
+							<!-- END title -->
+							<!-- START author -->
+							<fieldset>
+								<legend class="visually-hidden">Enter the author and their url</legend>
+								<label for="author" class="h3">Author</label>
+								<div class="input-group margin-bot-md">
+									<input type="text" name="author" id="author" class="form-control">
+									<button id="author-help-button" class="btn btn-help" type="button" data-bs-toggle="collapse" data-bs-target="#author-help" aria-expanded="false" aria-controls="author-help"><span class="visually-hidden">Help</span></button>
+									<div id="author-help" class="collapse">
+										<p class="small">Name the author(s) of the material you are adopting. If you can’t locate the name, you can list the author’s screen or username.</p>
+										<p class="small">Sometimes an organization is the copyright holder and does not provide any author information. In such cases, use the organization name as the author. Alternately, you can leave the author field empty and fill in the organization field.</p>
+										<p class="small margin-bot-zero">If the author notes another person or entity they’d like to give credit, please do so. Also, if available, enter the URL to the author’s webpage or user account page.</p>
+									</div>
+								</div>
+								<div class="input-group">
+									<label for="author-url" class="form-label">URL</label>
+									<input type="text" name="author-url" id="author-url" class="form-control">
+								</div>
+							</fieldset>
+							<!-- END author -->
+						</div>
+
+						<div class="license-container my-column">
+							<!-- START license -->
+							<fieldset>
+							<legend class="visually-hidden">Choose a license and version</legend>
+							<div class="label-container">
+								<label for="license-select" class="h3">License</label>
+								<button id="license-help-button" class="btn btn-help" type="button" data-bs-toggle="collapse" data-bs-target="#license-help" aria-expanded="false" aria-controls="license-help"><span class="visually-hidden">Help</span></button>
+							</div>
+							<div id="license-help" class="collapse">
+									<p class="small margin-top-zero">Choose the exact Creative Commons license given to the work you’re adopting.</p>
+									<p class="small">If the work is in the public domain, you have the option of noting whether it’s in the general public domain (general) or if it’s officially released under the Creative Commons public domain (CC0).</p>
+								</div>
+							<div>
+								<select name="license-select" id="license-select" class="form-select" size="9" onchange="onchangevalue(this);">
+									<option selected="">Choose a license...</option>
+									<option value="CC BY">Attribution (CC BY)</option>
+									<option value="CC BY-SA">Attribution-ShareAlike (CC BY-SA)</option>
+									<option value="CC BY-ND">Attribution-NoDerivs (CC BY-ND)</option>
+									<option value="CC BY-NC">Attribution-NonCommercial (CC BY-NC)</option>
+									<option value="CC BY-NC-SA">Attribution-NonCommercial-ShareAlike (CC BY-NC-SA)</option>
+									<option value="CC BY-NC-ND">Attribution-NonCommercial-NoDerivs (CC BY-NC-ND)</option>
+									<option value="Public Domain">Public Domain (General)</option>
+									<option value="Public Domain, CC0">Public Domain (CC0)</option>
+								</select>
+							</div>
+
+							<div class="version-drop">
+								<label for="version">Version</label>
+								<select name="version" id="version" class="form-select-sm">
+									<option selected="">4.0</option>
+									<option>3.0</option>
+									<option>2.5</option>
+									<option>2.0</option>
+									<option>1.0</option>
+								</select>
+							</div>
+
+						</fieldset>   
+							<!-- END license -->
+						</div>
+					</div>
                     <fieldset>
-                        <legend class="visually-hidden">Choose a license and version</legend>
-						<div>
-							<label for="license-select" class="h3 margin-top-zero">License</label>
-							<button id="license-help-button" class="btn btn-help" type="button" data-bs-toggle="collapse" data-bs-target="#license-help" aria-expanded="false" aria-controls="license-help"><span class="visually-hidden">Help</span></button>
-						</div>
-						<div id="license-help" class="collapse">
-                                <p class="small margin-top-zero">Choose the exact Creative Commons license given to the work you’re adopting.</p>
-                                <p class="small">If the work is in the public domain, you have the option of noting whether it’s in the general public domain (general) or if it’s officially released under the Creative Commons public domain (CC0).</p>
-                            </div>
-						<div>
-							<select name="license-select" id="license-select" class="form-select" size="9" onchange="onchangevalue(this);">
-								<option selected="">Choose a license...</option>
-								<option value="CC BY">Attribution (CC BY)</option>
-								<option value="CC BY-SA">Attribution-ShareAlike (CC BY-SA)</option>
-								<option value="CC BY-ND">Attribution-NoDerivs (CC BY-ND)</option>
-								<option value="CC BY-NC">Attribution-NonCommercial (CC BY-NC)</option>
-								<option value="CC BY-NC-SA">Attribution-NonCommercial-ShareAlike (CC BY-NC-SA)</option>
-								<option value="CC BY-NC-ND">Attribution-NonCommercial-NoDerivs (CC BY-NC-ND)</option>
-								<option value="Public Domain">Public Domain (General)</option>
-								<option value="Public Domain, CC0">Public Domain (CC0)</option>
-                        	</select>
-						</div>
-                       
-						<div class="version-drop">
-							<label for="version">Version</label>
-							<select name="version" id="version" class="form-select-sm">
-								<option selected="">4.0</option>
-								<option>3.0</option>
-								<option>2.5</option>
-								<option>2.0</option>
-								<option>1.0</option>
-							</select>
-						</div>
-						
-                    </fieldset>
-                    
-				</div>
-			</div>
-            <!-- END row -->
-            <!-- START row -->
-            <div class="row">
-				<div class="col-md-6">
-                    
-                    <fieldset class="left-column">
                         <!--<legend>Derivative option</legend>-->
 						<div class="derivative">
 							<input type="checkbox" id="derivative-check" name="derivative-check" class="form-check-input"  data-bs-toggle="collapse" data-bs-target="#derivative-url-container" aria-expanded="false" aria-controls="derivative-url-container">
@@ -187,11 +183,11 @@
 								</button>
 							</h2>
 							<div id="extra-info" class="accordion-collapse collapse" aria-labelledby="extra-info-heading">
-								<div class="accordion-body">
+								<div class="accordion-body org-project-container">
 									
-									<fieldset class="left-column">
+									<fieldset>
 										<legend class="visually-hidden">Enter the organisation and its url</legend>
-										<label for="organisation" class="h3 margin-top-zero">Organisation</label>
+										<label for="organisation" class="h3 margin-top-sm">Organisation</label>
 										<div class="input-group margin-bot-md">
 											<input type="text" name="organisation" id="organisation" class="form-control">
 											<button id="organisation-help-button" class="btn btn-help" type="button" data-bs-toggle="collapse" data-bs-target="#organisation-help" aria-expanded="false" aria-controls="organisation-help"><span class="visually-hidden">Help</span></button>
@@ -205,7 +201,7 @@
 										</div>
 									</fieldset>
 									
-									<fieldset class="left-column">
+									<fieldset>
 										<legend class="visually-hidden">Enter the project and its url</legend>
 										<label for="project" class="h3">Project</label>
 										<div class="input-group margin-bot-md">
@@ -227,22 +223,33 @@
 					<!-- END accordion -->
                     
                     <h2>Attribution</h2>
-                    <div></div>
-                    <div></div>
+                    <div class="attribution-container">
+						<div class="attribution-built">
+							Your attribution will be built here.
+						</div>
+						
+						<div class="attribution-built-html">
+							The html of your attribution will be built here.
+						</div>
+					</div>
                     
-                    <button class="btn btn-primary">Copy attribution</button>
-                    <button class="btn btn-default">Copy html</button>
-                    <button class="btn btn-default">Reset</button>
-                    
-                </div>
-            </div>
-            <!-- END row -->
-		</form>
-		<!-- END form -->
-    </div>
+                    <div class="btn-container">
+						<div>
+							<button id="copy-attribution" class="btn btn-primary">Copy attribution</button>
+							<button id="copy-html" class="btn btn-default">Copy html</button>
+						</div>
+						<hr />
+						<button id="reset" class="btn btn-default">Reset</button>
+					</div>
+                
+				</form>
+				<!-- END form -->
+   			</div>
+		</div>
+	</div>
     <!-- END container main-content -->
  	<!-- START footer-container -->
-	<div class="footer-container">
+	<div id="footer" class="footer-container">
 		<div class="container">
 			<div class="row">
 				<div class="col">

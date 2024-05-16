@@ -1,0 +1,166 @@
+/*
+Two columns seperate from bootstrap
+*/
+.my-two-columns {
+	@include media-breakpoint-up(md) { 	
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 48px;
+	}
+}
+
+.my-column {
+	width: 100%;
+}
+
+/* Limit width on intro to get a good line length */
+.intro {
+	max-width: 47rem;
+}
+
+/* Adjust form label margins */
+.form-label {
+	margin: 7px 1rem 0 0;
+	@include media-breakpoint-up(md) { margin-top: 0.25rem; }
+}
+
+.fish {
+	border: 0;
+	background-color: $white;
+	position: absolute;
+	bottom: 1px;
+	padding: 0 0.75rem 0 0.75rem;
+}
+
+.fish:hover {
+	color: $red;
+}
+
+/* Button help - need variant that exists outside form input */
+.btn-help {
+    margin: 0;
+	padding: 0 1.25rem 0 1.25rem;
+    background: url('../images/tool-tip.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+	
+	border: 1px solid $interface-grey;
+	//border-left: 0px;
+	
+	border-top-right-radius: 0.25rem !important;
+	border-bottom-right-radius: 0.25rem !important;
+}
+
+.btn-help:hover {
+	filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+
+.license-container {
+	.h3 {
+		@include media-breakpoint-up(md) { margin-top: 0; }
+	}
+}
+
+.label-container {
+	position: relative;
+}
+
+/* Buttons that exist outside form input - do this properly  */
+#license-help-button, #derivative-help-button {
+	position: absolute;
+	bottom: 0;
+	height: 1.5rem;
+}
+
+/* Adjust margins and padding so that licence select lines up with left hand items (Title and author) */
+#license-select {
+	padding: 0.5rem;
+	padding-bottom: 9px;
+	
+	option {
+		padding-left: 0.5rem;
+		padding-top: 0.4rem;
+		padding-bottom: 0.4rem;
+	}
+}
+
+/* Adjust to align right bring select small styles in line */
+.version-drop {
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+	
+	@include media-breakpoint-up(md) { 
+		text-align: right;
+		margin-bottom: 0rem;
+	}
+	
+	.form-select-sm {
+		border: 1px solid $interface-grey;
+		
+		border-radius: 0.25rem !important;
+		margin-left: 0.5rem;
+	}
+}
+
+/* Adjust label margin next to checkbox */
+.derivative {
+	position: relative;
+	
+	#derivative-check {
+		margin-right: 0.5rem;
+	}
+}
+
+
+/* Classes to display the actual attribution */
+.attribution-container {
+	background-color: $underlay-grey;
+	padding: 1rem 0.5rem;
+	
+	@include media-breakpoint-up(md) {
+		padding: 1.5rem 1.5rem 2rem 1.5rem;
+	}
+}
+
+.attribution-built, .attribution-built-html {
+	background-color: $white;
+	padding: 1rem 0.75rem 1rem 0.75rem;
+	border: 1px solid $interface-grey;
+	border-radius: 0.25rem;
+	
+	@include media-breakpoint-up(md) {
+		padding: 1rem 1.5rem 1rem 1.5rem;
+	}
+}
+
+.attribution-built {
+	margin-bottom: 1.5rem;
+}
+
+/* Bottom buttons */
+.btn-container {
+	
+	@include media-breakpoint-up(md) { 
+		margin-top: 1.5rem;
+		display: flex;
+		justify-content: space-between;
+		
+		hr { display: none; }
+	}
+	
+	.btn-primary, .btn-default {
+		width: 100%;
+		margin: 1.5rem 0 0 0;
+		
+		@include media-breakpoint-up(md) { 
+			width: auto;
+			margin: 0 1.5rem 0 0;
+		}
+	}
+	
+	#reset {
+		margin: 0;
+	}
+}

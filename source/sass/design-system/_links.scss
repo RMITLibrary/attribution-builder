@@ -1,0 +1,135 @@
+@mixin link-feature {
+	text-decoration: none;
+	color: $rmit-blue;
+}
+
+@mixin link-feature-hover {
+	text-decoration: underline;
+	color: $blue-hover;
+}
+
+@mixin link-normal {
+	text-decoration: underline;
+	color: $rmit-blue;
+}
+
+@mixin link-normal-hover {
+	text-decoration: none;
+	color: $blue-hover;
+}
+
+a {
+	 @include link-normal;
+}
+		
+a:hover {
+	 @include link-normal-hover;
+}
+
+/* Visited links - restrict on certian elements? */
+a:visited {
+	color: $blue-70;
+}
+
+p a:visited {
+	color: $blue-70;
+}
+
+p a:visited:hover {
+	color: $blue-hover;
+}
+
+.link-large {
+    display: block;
+    @include type-lead;
+    @include link-feature;
+    margin-top: 1.25rem;
+    
+    padding: 0;
+    border: 0;
+	width: fit-content;
+}
+
+.link-large:hover {
+    background: none; 
+	 @include link-feature-hover;
+}
+
+
+.link-large::after {
+    @include carat;
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    margin-left: 0.75rem;
+    transform: rotate(-90deg);
+}
+
+
+.list-of-links {
+	border-top: 1px solid $interface-grey;
+	
+	@include do-space(margin-top, lg);
+	@include do-space(margin-bottom, lg);
+	
+	h3 {
+		@include do-space(margin-top, sm);	
+	}
+	
+	ul {
+		padding: 0;
+        list-style-type: none;
+		
+		li {
+			@include type-lead;
+            padding: 0;
+            margin-bottom: 0.63rem;
+		}
+		
+		li::before {
+			@include carat;
+			position: absolute;
+			margin-right: 3rem;
+			width: 2rem;
+			height: 2rem;
+			transform: rotate(-90deg);	
+		}
+		
+		a {
+			@include link-feature;
+            padding-left: 2.5rem;
+		}
+        
+        a:hover {
+            @include link-feature-hover;
+        }
+	}
+}
+
+.keywords {
+	@include do-space(margin-top, lg);
+	
+	h5 {
+		margin-top: 0;
+	}
+	
+	ul {
+		margin: 0;
+		padding: 0;
+
+		li:first-child { padding: 0; }
+
+		li {
+			display: inline;
+			padding-left: 3rem;
+		}
+
+		a {
+			 @include link-feature;
+		}
+		
+		a:hover {
+			 @include link-feature-hover;
+		}
+	}
+}
