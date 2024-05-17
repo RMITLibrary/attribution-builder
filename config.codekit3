@@ -7,7 +7,7 @@
       "uuidString" : "18346520-92B4-42E9-9799-57BB48690394"
     }
   ],
-  "creatorBuild" : "34564",
+  "creatorBuild" : "34484",
   "files" : {
     "\/.gitignore" : {
       "cB" : 0,
@@ -45,13 +45,49 @@
       "oAP" : "\/source\/index.html",
       "oF" : 0
     },
-    "\/source\/no-bs-columns.html" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
+    "\/source\/js\/new-script-min.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
       "oA" : 0,
-      "oAP" : "\/source\/no-bs-columns.html",
-      "oF" : 0
+      "oAP" : "\/source\/js\/new-script-min-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/source\/js\/new-script.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/source\/js\/new-script-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/source\/js\/script-min.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/source\/js\/script-min-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/source\/js\/script.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/source\/js\/script-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
     },
     "\/source\/no-header.html" : {
       "cB" : 0,
@@ -59,6 +95,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/source\/no-header.html",
+      "oF" : 0
+    },
+    "\/source\/old-index.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/source\/old-index.html",
       "oF" : 0
     },
     "\/source\/sass\/app-specific\/_attribution-builder.scss" : {
@@ -71,6 +115,21 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/source\/sass\/app-specific\/_attribution-builder.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/source\/sass\/app-specific\/_help-buttons.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/source\/sass\/app-specific\/_help-buttons.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
@@ -1557,7 +1616,7 @@
   },
   "projectAttributes" : {
     "creationDate" : 737509758.27113605,
-    "displayValue" : "attribution",
+    "displayValue" : "attribution-builder",
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets-verd",
     "iconImageWasSetByUser" : 0
@@ -2386,6 +2445,9 @@
       "no-new-native-nonconstructor" : {
         "active" : 0
       },
+      "no-new-object" : {
+        "active" : 0
+      },
       "no-new-symbol" : {
         "active" : 1
       },
@@ -2397,9 +2459,6 @@
       },
       "no-obj-calls" : {
         "active" : 1
-      },
-      "no-object-constructor" : {
-        "active" : 0
       },
       "no-octal" : {
         "active" : 1
@@ -2454,6 +2513,9 @@
       "no-return-assign" : {
         "active" : 0,
         "optionString" : "'except-parens'"
+      },
+      "no-return-await" : {
+        "active" : 0
       },
       "no-script-url" : {
         "active" : 0

@@ -1,0 +1,53 @@
+.btn-help {
+    margin: 0;
+	padding: 0 10px 0 10px;
+	
+	border: 1px solid $interface-grey;
+	//border-left: 0px;
+	
+	border-top-right-radius: 0.25rem !important;
+	border-bottom-right-radius: 0.25rem !important;
+}
+
+.btn-help-deriv, .btn-help-license {
+    border: 0;
+	background-color: $white;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+}
+
+.btn-help, .btn-help-deriv, .btn-help-license  {
+
+    svg {
+        width: 18px;
+        height: 18px;
+        fill: $rmit-blue;
+    }
+    
+	&:hover {
+        border-color: $blue-hover;
+        svg { fill: $blue-hover; }
+    }   
+}
+
+.btn-help svg { margin-bottom: 2px; }
+.btn-help-deriv svg { 
+    margin-bottom: 2px;
+}
+.btn-help-license svg { margin-bottom: 0.75rem; }
+
+
+/*.btn-help2 {
+    margin: 0;
+	padding: 0 1.25rem 0 1.25rem;
+    background: url('../images/tool-tip.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+	
+	border: 1px solid $interface-grey;
+	//border-left: 0px;
+	
+	border-top-right-radius: 0.25rem !important;
+	border-bottom-right-radius: 0.25rem !important;
+}*/

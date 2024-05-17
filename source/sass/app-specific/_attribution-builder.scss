@@ -1,3 +1,5 @@
+@import "help-buttons";
+
 /*
 Two columns seperate from bootstrap
 */
@@ -25,54 +27,12 @@ Two columns seperate from bootstrap
 	@include media-breakpoint-up(md) { margin-top: 0.25rem; }
 }
 
-.fish {
-	border: 0;
-	background-color: $white;
-	position: absolute;
-	bottom: 1px;
-	padding: 0 0.75rem 0 0.75rem;
-}
-
-.fish:hover {
-	color: $red;
-}
-
-/* Button help - need variant that exists outside form input */
-.btn-help {
-    margin: 0;
-	padding: 0 1.25rem 0 1.25rem;
-    background: url('../images/tool-tip.svg');
-    background-position: center center;
-    background-repeat: no-repeat;
-	
-	border: 1px solid $interface-grey;
-	//border-left: 0px;
-	
-	border-top-right-radius: 0.25rem !important;
-	border-bottom-right-radius: 0.25rem !important;
-}
-
-.btn-help:hover {
-	filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
-}
-
-
 .license-container {
 	.h3 {
 		@include media-breakpoint-up(md) { margin-top: 0; }
 	}
 }
 
-.label-container {
-	position: relative;
-}
-
-/* Buttons that exist outside form input - do this properly  */
-#license-help-button, #derivative-help-button {
-	position: absolute;
-	bottom: 0;
-	height: 1.5rem;
-}
 
 /* Adjust margins and padding so that licence select lines up with left hand items (Title and author) */
 #license-select {
@@ -105,12 +65,9 @@ Two columns seperate from bootstrap
 }
 
 /* Adjust label margin next to checkbox */
-.derivative {
-	position: relative;
-	
-	#derivative-check {
-		margin-right: 0.5rem;
-	}
+#derivative-check {
+    margin-top: 7px;
+    margin-right: 0.5rem;
 }
 
 
@@ -163,4 +120,33 @@ Two columns seperate from bootstrap
 	#reset {
 		margin: 0;
 	}
+}
+
+.cc-statement {
+    margin-top: 8rem;
+    
+    img {
+        width: 7rem;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+    
+    p {
+        margin: 0;
+    }
+    
+    @include media-breakpoint-up(md) {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        
+        
+        img {
+            margin-bottom: 0;
+        }
+    }  
+}
+
+pre {
+    margin: 0;
 }

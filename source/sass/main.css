@@ -10892,7 +10892,7 @@ table td > *, .table td > * {
 }
 
 .footer-container {
-  margin-top: 6rem;
+  margin-top: 2rem;
 }
 
 footer {
@@ -11829,6 +11829,59 @@ $img-width-sm: 18.5rem;     //296px*/
   width: 7.5rem;
 }
 
+.btn-help {
+  margin: 0;
+  padding: 0 10px 0 10px;
+  border: 1px solid #BFBFBF;
+  border-top-right-radius: 0.25rem !important;
+  border-bottom-right-radius: 0.25rem !important;
+}
+
+.btn-help-deriv, .btn-help-license {
+  border: 0;
+  background-color: #fff;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+}
+
+.btn-help svg, .btn-help-deriv svg, .btn-help-license svg {
+  width: 18px;
+  height: 18px;
+  fill: #000054;
+}
+.btn-help:hover, .btn-help-deriv:hover, .btn-help-license:hover {
+  border-color: #0051A8;
+}
+.btn-help:hover svg, .btn-help-deriv:hover svg, .btn-help-license:hover svg {
+  fill: #0051A8;
+}
+
+.btn-help svg {
+  margin-bottom: 2px;
+}
+
+.btn-help-deriv svg {
+  margin-bottom: 2px;
+}
+
+.btn-help-license svg {
+  margin-bottom: 0.75rem;
+}
+
+/*.btn-help2 {
+    margin: 0;
+	padding: 0 1.25rem 0 1.25rem;
+    background: url('../images/tool-tip.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+
+	border: 1px solid $interface-grey;
+	//border-left: 0px;
+
+	border-top-right-radius: 0.25rem !important;
+	border-bottom-right-radius: 0.25rem !important;
+}*/
 /*
 Two columns seperate from bootstrap
 */
@@ -11860,49 +11913,10 @@ Two columns seperate from bootstrap
   }
 }
 
-.fish {
-  border: 0;
-  background-color: #fff;
-  position: absolute;
-  bottom: 1px;
-  padding: 0 0.75rem 0 0.75rem;
-}
-
-.fish:hover {
-  color: #E61E2A;
-}
-
-/* Button help - need variant that exists outside form input */
-.btn-help {
-  margin: 0;
-  padding: 0 1.25rem 0 1.25rem;
-  background: url("../images/tool-tip.svg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  border: 1px solid #BFBFBF;
-  border-top-right-radius: 0.25rem !important;
-  border-bottom-right-radius: 0.25rem !important;
-}
-
-.btn-help:hover {
-  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
-}
-
 @media (min-width: 768px) {
   .license-container .h3 {
     margin-top: 0;
   }
-}
-
-.label-container {
-  position: relative;
-}
-
-/* Buttons that exist outside form input - do this properly  */
-#license-help-button, #derivative-help-button {
-  position: absolute;
-  bottom: 0;
-  height: 1.5rem;
 }
 
 /* Adjust margins and padding so that licence select lines up with left hand items (Title and author) */
@@ -11934,10 +11948,8 @@ Two columns seperate from bootstrap
 }
 
 /* Adjust label margin next to checkbox */
-.derivative {
-  position: relative;
-}
-.derivative #derivative-check {
+#derivative-check {
+  margin-top: 7px;
   margin-right: 0.5rem;
 }
 
@@ -11990,5 +12002,31 @@ Two columns seperate from bootstrap
   }
 }
 .btn-container #reset {
+  margin: 0;
+}
+
+.cc-statement {
+  margin-top: 8rem;
+}
+.cc-statement img {
+  width: 7rem;
+  height: auto;
+  margin-bottom: 1rem;
+}
+.cc-statement p {
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .cc-statement {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .cc-statement img {
+    margin-bottom: 0;
+  }
+}
+
+pre {
   margin: 0;
 }
