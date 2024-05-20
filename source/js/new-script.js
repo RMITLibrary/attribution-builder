@@ -4,30 +4,91 @@ var outputHTML = document.getElementById("attribution-html");
 
 var titleInput = document.getElementById("title");
 var titleURLInput = document.getElementById("title-url");
-var titleStr = "";
+var titleStr = '"This work"';
 
 var authorInput = document.getElementById("author");
 var authorURLInput = document.getElementById("author-url");
-var authorStr = "";
+var authorStr = '';
 
 var orgInput = document.getElementById("organisation");
 var orgURLInput = document.getElementById("organisation-url");
-var orgStr = "";
+var orgStr = '';
 
 var projectInput = document.getElementById("project");
 var projectURLInput = document.getElementById("project-url");
-var projectStr = "";
-
-
-var licenseInput = document.getElementById("license-select");
-var licenseVersion = document.getElementById("version");
-var licenseStr = "";
+var projectStr = '';
 
 var derivativeURLInput = document.getElementById("derivative-url");
-var derivativeStr = "";
+var derivativeStr = '';
+
+var licenseSelect = document.getElementById("license-select");
+var licenseVersion = document.getElementById("version");
+var licenseStr = '';
+var licenseVersionStr = '';
+
+var reset = document.getElementById("reset");
+var copyAttrButton = document.getElementById("copy-attribution");
+var copyHtmlButton = document.getElementById("copy-html");
+
+
+var licenseArray = [
+    {   value: 'CC BY', 
+        link: 'https://creativecommons.org/licenses/by/',
+        prefix: 'is licensed under',
+        text: 'Attribution (CC BY)' },
+    
+    {   value: 'CC BY-SA', 
+        link: 'https://creativecommons.org/licenses/by-sa/',
+        prefix: 'is licensed under',
+        text: 'Attribution-ShareAlike (CC BY-SA)' },
+    
+    {   value: 'CC BY-ND', 
+        link: 'https://creativecommons.org/licenses/by-nd/',
+        prefix: 'is licensed under',
+        text: 'Attribution-NoDerivs (CC BY-ND)' },
+    
+    {   value: 'CC BY-NC', 
+        link: 'https://creativecommons.org/licenses/by-nc/',
+        prefix: 'is licensed under',
+        text: 'Attribution-NonCommercial (CC BY-NC)' },
+    
+    {   value: 'CC BY-NC-SA', 
+        link: 'https://creativecommons.org/licenses/by-nc-sa/',
+        prefix: 'is licensed under',
+        text: 'Attribution-NonCommercial-ShareAlike (CC BY-NC-SA)' },
+    
+    {   value: 'CC BY-NC-ND', 
+        link: 'https://creativecommons.org/licenses/by-nc-nd/4.0',
+        prefix: 'is licensed under',
+        text: 'Attribution-NonCommercial-NoDerivs (CC BY-NC-ND)' },
+    
+    {   value: 'Public Domain', 
+        link: 'https://wiki.creativecommons.org/Public_domain',
+        prefix: 'is in the',
+        text: 'Public Domain (General)',
+        noVersion: true },
+    
+    {   value: 'Public Domain (CC0)', 
+        link: 'https://creativecommons.org/publicdomain/zero/1.0/',
+        prefix: 'is in the',
+        text: 'Public Domain (CC0)',
+        noVersion: true }
+];
+
+function buildLicenseSelect()
+{
+    for(var i=0; i < licenseArray.length; i++) {
+        var option = document.createElement("option");
+        option.text = licenseArray[i].text;
+        option.value = licenseArray[i].value;
+        licenseSelect.add(option, licenseSelect[i+1]);
+    }
+}
+
 
 function changeTitle() {
-    titleStr = createLink(titleInput.value, titleURLInput.value);
+    var quotes = '"' +titleInput.value +'"';
+    titleStr = createLink(quotes, titleURLInput.value);
     buildAttribution();
 }
 
@@ -52,8 +113,36 @@ function changeDerivative() {
     buildAttribution();
 }
 
+/* 
+When a user selects a licence from the select box or changes a version, 
+update license string and build the attribution.
+*/
 function changeLicense() {
-    console.log("Change License");
+    //grab the selected index (-1 due to the default "Choose..." at the top)
+    var index = (licenseSelect.selectedIndex)-1;
+    
+    if(index != -1)
+    {
+        var link = licenseArray[index].link;
+        var label  = licenseArray[index].value;
+        var prefix = licenseArray[index].prefix;
+
+        //If there's no version, disabled dropdown, clear string.
+        //Otherwise add the versino number to link and label
+        if(licenseArray[index].noVersion == true) {
+            licenseVersionStr = '';
+            licenseVersion.disabled = true;
+        }
+        else {
+            licenseVersionStr = ' ' +licenseVersion.value;
+            link += licenseVersion.value;
+            licenseVersion.disabled = false;
+        }
+
+        // Create the license string and then build the attribution
+        licenseStr = ' ' +prefix +' ' +createLink(label+licenseVersionStr, link);
+        buildAttribution();
+    }
 }
 
 
@@ -63,10 +152,10 @@ function createLink(label, url) {
         return "";          //Edge case?? 
     }
     else if(url == "") {
-       return '<a>"' +label + '"</a>';    
+       return '<a>' +label + '</a>';    
     }
     else {
-        return '<a href="' +url +'">"' +label + '"</a>'; 
+        return '<a href="' +url +'">' +label + '</a>'; 
     }
 }
 
@@ -80,14 +169,12 @@ function buildAttribution() {
 
 
 function checkURL(e) {
-    
     //Check valid url
     if(e.target.value == "") {
        //No URL, do nothing
     }
     else if(!isValidUrl(e.target.value)) {
-        console.log("Show URL error");      //How to handle this error accessiblity wise??
-        e.target.focus();
+        //console.log("Show URL error");      //How to handle this error 
     }
     else {       
         var pattern = /^((http|https|ftp):\/\/)/;
@@ -115,7 +202,7 @@ function checkURL(e) {
     }
 }
 
-const isValidUrl = urlString=> {
+function isValidUrl(urlString) {
     var urlPattern = new RegExp('^(https?:\\/\\/)?'+ // validate protocol
     '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // validate domain name
     '((\\d{1,3}\\.){3}\\d{1,3}))'+ // validate OR ip (v4) address
@@ -125,12 +212,55 @@ const isValidUrl = urlString=> {
     return !!urlPattern.test(urlString);
 }
 
-function addProtocol(url) {
-    var pattern = /^((http|https|ftp):\/\/)/;
-    if(!pattern.test(url)) {
-        url = "https://" + url;
+function resetForm(e) {
+    titleInput.value = '';
+    titleURLInput.value = '';
+    titleStr = '"This work"';
+
+    authorInput.value = '';
+    authorURLInput.value = '';
+    authorStr = '';
+
+    orgInput.value = '';
+    orgURLInput.value = '';
+    orgStr = '';
+
+    projectInput.value = '';
+    projectURLInput.value = '';
+    projectStr = '';
+
+    derivativeURLInput.value = '';
+    derivativeStr = '';
+
+    //uncheck box, hide url
+    var checkbox = document.getElementById("derivative-check");
+    
+    if(checkbox.checked == true) {
+        checkbox.checked = false;
+        var derivUrl = document.getElementById("derivative-url-container"); 
+        var myCollapse = new bootstrap.Collapse(derivUrl);
     }
+   
+    licenseSelect.selectedIndex = 0;
+    licenseVersion.selectedIndex = 0;
+    licenseStr = '';
+    licenseVersionStr = '';
+    
+    output.innerHTML = '&nbsp;';
+    outputHTML.innerHTML = '&nbsp;';
 }
+
+function copyOutput(e) {
+    const blobInput = new Blob([output.innerHTML], { type: 'text/html' })
+    navigator.clipboard.write([new ClipboardItem({ 'text/html': blobInput })])
+}
+
+function copyHtml(e) {
+    navigator.clipboard.writeText(output.innerHTML);
+}
+
+
+buildLicenseSelect();
 
 titleInput.addEventListener("input", changeTitle);
 titleURLInput.addEventListener("input", changeTitle);
@@ -151,5 +281,10 @@ orgURLInput.addEventListener("focusout", checkURL);
 derivativeURLInput.addEventListener("input", changeDerivative);
 derivativeURLInput.addEventListener("focusout", checkURL);
 
-licenseInput.addEventListener("change", changeLicense);
+licenseSelect.addEventListener("change", changeLicense);
 licenseVersion.addEventListener("change", changeLicense);
+
+reset.addEventListener("click", resetForm);
+copyAttrButton.addEventListener("click", copyOutput);
+copyHtmlButton.addEventListener("click", copyHtml);
+

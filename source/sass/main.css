@@ -11882,6 +11882,17 @@ $img-width-sm: 18.5rem;     //296px*/
 	border-top-right-radius: 0.25rem !important;
 	border-bottom-right-radius: 0.25rem !important;
 }*/
+/*.form-control:focus {
+    box-shadow: none;
+}
+
+.form-control:focus-visible {
+    color: #333;
+    background-color: #fff;
+    border-color: #8080aa;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(0, 84, 84, 0.25);
+}*/
 /*
 Two columns seperate from bootstrap
 */
@@ -11980,6 +11991,11 @@ Two columns seperate from bootstrap
   margin-bottom: 1.5rem;
 }
 
+.attribution-built-html {
+  font-family: var(--bs-font-monospace);
+  font-size: 1rem;
+}
+
 /* Bottom buttons */
 @media (min-width: 768px) {
   .btn-container {
@@ -12025,8 +12041,4 @@ Two columns seperate from bootstrap
   .cc-statement img {
     margin-bottom: 0;
   }
-}
-
-pre {
-  margin: 0;
 }

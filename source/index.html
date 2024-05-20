@@ -71,7 +71,7 @@
 
 
 			<!-- START form -->
-			<form>
+			<form onsubmit="event.preventDefault();">
 				<h2 class="visually-hidden">Enter the attribution details</h2>
 				<div class="my-two-columns">
 					<div class="my-column">
@@ -132,11 +132,11 @@
                         </button>
 						
 						<div id="license-help" class="collapse">
-								<p class="small margin-top-zero">Choose the exact Creative Commons license given to the work you’re adopting.</p>
-								<p class="small">If the work is in the public domain, you have the option of noting whether it’s in the general public domain (general) or if it’s officially released under the Creative Commons public domain (CC0).</p>
-							</div>
-						<div>
-							<select name="license-select" id="license-select" class="form-select" size="9">
+                            <p class="small margin-top-zero">Choose the exact Creative Commons license given to the work you’re adopting.</p>
+                            <p class="small">If the work is in the public domain, you have the option of noting whether it’s in the general public domain (general) or if it’s officially released under the Creative Commons public domain (CC0).</p>
+                        </div>
+						<!--<div>
+							<select name="license-select2" id="license-select2" class="form-select" size="9">
 								<option selected="">Choose a license...</option>
 								<option value="CC BY">Attribution (CC BY)</option>
 								<option value="CC BY-SA">Attribution-ShareAlike (CC BY-SA)</option>
@@ -146,6 +146,13 @@
 								<option value="CC BY-NC-ND">Attribution-NonCommercial-NoDerivs (CC BY-NC-ND)</option>
 								<option value="Public Domain">Public Domain (General)</option>
 								<option value="Public Domain, CC0">Public Domain (CC0)</option>
+							</select>
+						</div>-->
+                            
+                        <div>
+							<select name="license-select" id="license-select" class="form-select" size="9">
+								<option selected="">Choose a license...</option>
+								<!-- other options generated via javaScript -->
 							</select>
 						</div>
 
@@ -251,12 +258,10 @@
 
 				<h2>Attribution</h2>
 				<div class="attribution-container">
-					<div id="attribution-text" class="attribution-built">
-						Your attribution will be built here.
-					</div>
+					<div id="attribution-text" class="attribution-built">Your attribution will be built here.</div>
 
 					<div class="attribution-built-html">
-						<pre id="attribution-html">The html of your attribution will be built here.</pre>
+						<div id="attribution-html">The html of your attribution will be built here.</div>
 					</div>
 				</div>
 
@@ -266,7 +271,7 @@
 						<button id="copy-html" class="btn btn-default">Copy html</button>
 					</div>
 					<hr />
-					<button id="reset" class="btn btn-default" onclick="embedThisPage(); return false;">Reset</button>
+					<button id="reset" class="btn btn-default">Reset</button>
 				</div>
 
 			</form>
