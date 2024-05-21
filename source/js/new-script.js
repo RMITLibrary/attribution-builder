@@ -32,8 +32,7 @@ var copyHtmlButton = document.getElementById("copy-html");
 
 
 var licenseArray = [
-    {   value: 'CC BY', 
-        link: 'https://creativecommons.org/licenses/by/',
+    {   value: 'CC BY', link: 'https://creativecommons.org/licenses/by/',
         prefix: 'is licensed under',
         text: 'Attribution (CC BY)' },
     
@@ -42,8 +41,7 @@ var licenseArray = [
         prefix: 'is licensed under',
         text: 'Attribution-ShareAlike (CC BY-SA)' },
     
-    {   value: 'CC BY-ND', 
-        link: 'https://creativecommons.org/licenses/by-nd/',
+    {   value: 'CC BY-ND', link: 'https://creativecommons.org/licenses/by-nd/',
         prefix: 'is licensed under',
         text: 'Attribution-NoDerivs (CC BY-ND)' },
     
@@ -251,7 +249,7 @@ function resetForm(e) {
 }
 
 function copyOutput(e) {
-    const blobInput = new Blob([output.innerHTML], { type: 'text/html' })
+    var blobInput = new Blob([output.innerHTML], { type: 'text/html' })
     navigator.clipboard.write([new ClipboardItem({ 'text/html': blobInput })])
 }
 

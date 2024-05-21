@@ -7,7 +7,7 @@
       "uuidString" : "18346520-92B4-42E9-9799-57BB48690394"
     }
   ],
-  "creatorBuild" : "34484",
+  "creatorBuild" : "34564",
   "files" : {
     "\/.gitignore" : {
       "cB" : 0,
@@ -60,10 +60,10 @@
       "bF" : 0,
       "ft" : 64,
       "ma" : 0,
-      "mi" : 1,
+      "mi" : 0,
       "oA" : 0,
-      "oAP" : "\/source\/js\/new-script-min.js",
-      "oF" : 0,
+      "oAP" : "\/source\/js\/new-script.js",
+      "oF" : 3,
       "sC" : 3,
       "tS" : 0
     },
@@ -72,9 +72,9 @@
       "ft" : 64,
       "ma" : 0,
       "mi" : 1,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/source\/js\/script-min-min.js",
-      "oF" : 0,
+      "oF" : 1,
       "sC" : 3,
       "tS" : 0
     },
@@ -82,10 +82,10 @@
       "bF" : 0,
       "ft" : 64,
       "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/source\/js\/script-min.js",
-      "oF" : 0,
+      "mi" : 0,
+      "oA" : 1,
+      "oAP" : "\/source\/js\/script.js",
+      "oF" : 3,
       "sC" : 3,
       "tS" : 0
     },
@@ -660,6 +660,18 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/source\/sass\/bootstrap\/bootstrap-grid.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/source\/sass\/bootstrap\/bootstrap-grid-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
     "\/source\/sass\/bootstrap\/bootstrap-grid.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -675,6 +687,18 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/source\/sass\/bootstrap\/bootstrap-reboot.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/source\/sass\/bootstrap\/bootstrap-reboot-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
     "\/source\/sass\/bootstrap\/bootstrap-reboot.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -689,6 +713,18 @@
       "oS" : 0,
       "pg" : 0,
       "sct" : 0
+    },
+    "\/source\/sass\/bootstrap\/bootstrap-utilities.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/source\/sass\/bootstrap\/bootstrap-utilities-min.css",
+      "oF" : 0,
+      "pg" : 0
     },
     "\/source\/sass\/bootstrap\/bootstrap-utilities.scss" : {
       "aP" : 0,
@@ -1616,7 +1652,7 @@
   },
   "projectAttributes" : {
     "creationDate" : 737509758.27113605,
-    "displayValue" : "attribution-builder",
+    "displayValue" : "attribution",
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets-verd",
     "iconImageWasSetByUser" : 0
@@ -2445,9 +2481,6 @@
       "no-new-native-nonconstructor" : {
         "active" : 0
       },
-      "no-new-object" : {
-        "active" : 0
-      },
       "no-new-symbol" : {
         "active" : 1
       },
@@ -2459,6 +2492,9 @@
       },
       "no-obj-calls" : {
         "active" : 1
+      },
+      "no-object-constructor" : {
+        "active" : 0
       },
       "no-octal" : {
         "active" : 1
@@ -2513,9 +2549,6 @@
       "no-return-assign" : {
         "active" : 0,
         "optionString" : "'except-parens'"
-      },
-      "no-return-await" : {
-        "active" : 0
       },
       "no-script-url" : {
         "active" : 0
