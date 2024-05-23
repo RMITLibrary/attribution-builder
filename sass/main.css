@@ -11902,6 +11902,7 @@ Two columns seperate from bootstrap
     justify-content: space-between;
     align-items: flex-start;
     gap: 48px;
+    height: 356px;
   }
 }
 
