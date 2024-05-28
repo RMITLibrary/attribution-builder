@@ -11960,6 +11960,12 @@ Two columns seperate from bootstrap
   }
 }
 
+@media (min-width: 768px) {
+  #author-url {
+    margin-bottom: 2rem;
+  }
+}
+
 /* Adjust margins and padding so that licence select lines up with left hand items (Title and author) */
 #license-select {
   padding: 0.5rem;

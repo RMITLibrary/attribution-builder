@@ -34,6 +34,9 @@ Two columns seperate from bootstrap
 	}
 }
 
+#author-url {
+	@include media-breakpoint-up(md) { margin-bottom: 2rem; }
+}
 
 /* Adjust margins and padding so that licence select lines up with left hand items (Title and author) */
 #license-select {
