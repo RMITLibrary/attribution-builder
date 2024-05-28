@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attribution builder</title>  
@@ -162,12 +162,13 @@
 				<div class="my-two-columns derivative-container">
 					<div class="my-column">
 						<fieldset>
-							<!--<legend>Derivative option</legend>-->
+							<legend class="visually-hidden">Is the work derivative?</legend>
 							
                             <input type="checkbox" id="derivative-check" name="derivative-check" class="form-check-input"  data-bs-toggle="collapse" data-bs-target="#derivative-url-container" aria-expanded="false" aria-controls="derivative-url-container">
                             <label for="derivative-check">This work is a derivative</label>
 
                             <button class="btn btn-help-isolated" type="button" data-bs-toggle="collapse" data-bs-target="#derivative-help" aria-expanded="false" aria-controls="derivative-help">
+								<span class="visually-hidden">Help</span>
                                 <svg><use xlink:href="#help-icon" /></svg>
                             </button> 
                             
@@ -267,7 +268,7 @@
 			</form>
 			<!-- END form -->
             <div class="cc-statement">
-                <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png"></a>
+                <img alt="Creative Commons License" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png">
                 <p class="small"> 
                     <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Open Attribution Builder</span>
                     Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
@@ -291,7 +292,7 @@
 
 					<div class="ask-the-library">
 						<a href="https://www.rmit.edu.au/library/about-and-contacts/ask-the-library">
-							<img src="https://rmitlibrary.github.io/cdn/image/svg/ask-the-library.svg" class="ask-logo" />
+							<img src="https://rmitlibrary.github.io/cdn/image/svg/ask-the-library.svg" class="ask-logo" alt="Ask the library" />
 							<div class="ask-text">
 								<p class="lead">Still can't find what you need?</p>
 								<p>The RMIT University Library provides study support, one-on-one consultations and peer mentoring to RMIT students.</p>
@@ -374,7 +375,7 @@
 						<li><a aria-label="For Facebook"  href="https://www.facebook.com/RMITuniversity/"> <span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/facebook.svg" alt="" /></span></a></li>
 
 
-						<li><a href="https://twitter.com/rmit"> <span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/twitter.svg" alt="" /></span></a></li>
+						<li><a aria-label="For Twitter" href="https://twitter.com/rmit"> <span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/twitter.svg" alt="" /></span></a></li>
 
 
 						<li><a aria-label="For Instagram" href="https://www.instagram.com/rmituniversity/"> <span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/instagram.svg" alt="" /></span> </a></li>
