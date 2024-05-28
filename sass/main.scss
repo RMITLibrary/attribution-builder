@@ -40,7 +40,7 @@ $red: $rmit-red;
 $link-hover-color: $blue-hover;
 $link-hover-decoration: none;
 
-$focus-color: rgba(13, 110, 253, 0.5);
+$input-btn-focus-color: rgba(13, 110, 253, 0.5);
 
 
 /* tables */
@@ -76,6 +76,7 @@ $enable-rfs: false;             //turn off responsive font scaling
 @import "design-system/links";
 
 //Simple components
+@import 'design-system/forms';
 @import 'design-system/button';
 @import "design-system/accordion";
 @import "design-system/blockquote";

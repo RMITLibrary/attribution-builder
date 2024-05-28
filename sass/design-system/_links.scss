@@ -26,8 +26,8 @@ a:hover {
 	 @include link-normal-hover;
 }
 
-/* Visited links - restrict on certian elements? */
-a:visited {
+/* Visited links - NOT IN USE AT THIS TIME */
+/*a:visited {
 	color: $blue-70;
 }
 
@@ -37,7 +37,7 @@ p a:visited {
 
 p a:visited:hover {
 	color: $blue-hover;
-}
+}*/
 
 .link-large {
     display: block;

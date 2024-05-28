@@ -1,17 +1,5 @@
 @import "help-buttons";
 
-/*.form-control:focus {
-    box-shadow: none;
-}
-    
-.form-control:focus-visible {
-    color: #333;
-    background-color: #fff;
-    border-color: #8080aa;
-    outline: 0;
-    box-shadow: 0 0 0 0.25rem rgba(0, 84, 84, 0.25);
-}*/
-
 
 /*
 Two columns seperate from bootstrap
@@ -22,8 +10,6 @@ Two columns seperate from bootstrap
 		justify-content: space-between;
 		align-items: flex-start;
 		gap: 48px;
-		
-		height: 356px;
 	}
 }
 
@@ -58,28 +44,45 @@ Two columns seperate from bootstrap
 		padding-left: 0.5rem;
 		padding-top: 0.4rem;
 		padding-bottom: 0.4rem;
-		
-		//-webkit-appearance: initial;
-		//line-height: 40px;
 	}
 }
 
 /* Adjust to align right bring select small styles in line */
 .version-drop {
+	display: flex; 
 	margin-top: 1rem;
-	margin-bottom: 2rem;
 	
-	@include media-breakpoint-up(md) { 
-		text-align: right;
-		margin-bottom: 0rem;
+	label {
+		margin-top: 0.25rem;
+		margin-right: 0.75rem;
 	}
 	
 	.form-select-sm {
 		border: 1px solid $interface-grey;
 		
 		border-radius: 0.25rem !important;
-		margin-left: 0.5rem;
+		width: 4.5rem;
 	}
+	
+	@include media-breakpoint-up(md) { 
+		align-items: flex-end;
+		
+		label {
+			margin-left: auto;
+		}
+	}
+}
+
+.derivative-container {
+	margin-top: 1.5rem; 
+	@include media-breakpoint-up(md) { margin-top: 0; }
+}
+
+/*STYLES for safari only as license select box takes up a lot less height */
+_::-webkit-full-page-media, _:future, :root .derivative-container {
+
+  @include media-breakpoint-up(md) { margin-top: 2rem; }
+
 }
 
 /* Adjust label margin next to checkbox */
@@ -127,8 +130,16 @@ Two columns seperate from bootstrap
 		margin-top: 1.5rem;
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 		
 		hr { display: none; }
+	}
+	
+	.btn-left {
+		@include media-breakpoint-up(md) { 
+			display: flex;
+			align-items: center;
+		}
 	}
 	
 	.btn-primary, .btn-default {
@@ -139,6 +150,11 @@ Two columns seperate from bootstrap
 			width: auto;
 			margin: 0 1.5rem 0 0;
 		}
+	}
+	
+	#feedback {
+		text-align: center;
+		@include media-breakpoint-up(md) { text-align: left; }
 	}
 	
 	#reset {
@@ -169,4 +185,9 @@ Two columns seperate from bootstrap
             margin-bottom: 0;
         }
     }  
+}
+
+.footer-container {
+	//Overwrite design system
+	margin-top: 2rem;
 }
