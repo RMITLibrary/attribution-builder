@@ -30,6 +30,9 @@ blockquote {
 			}
             
             h3 {
+                display: flex;
+                align-items: center;
+                
                 /* h4 fontsize */
                 font-size: 1.25rem;
                 @include media-breakpoint-up(md) { font-size: 1.5rem; }
@@ -37,17 +40,11 @@ blockquote {
 
 			//display arrow after title
 			h3::after {
-				@include carat(background-image);
-				content: '';
-				position: absolute;
+				@include carat;
 				width: 2rem;
 				height: 2rem;
 				margin-left: 0.25rem;
 				transform: rotate(-90deg);
-
-				//position pesky arrow
-				background-position: 4px 0;
-				@include media-breakpoint-up(md) { background-position: 2px 0; }
 			}
 
 			p, small {

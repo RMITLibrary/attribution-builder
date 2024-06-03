@@ -7,7 +7,7 @@
       "uuidString" : "18346520-92B4-42E9-9799-57BB48690394"
     }
   ],
-  "creatorBuild" : "34564",
+  "creatorBuild" : "34576",
   "files" : {
     "\/.gitignore" : {
       "cB" : 0,
@@ -24,26 +24,6 @@
       "oA" : 0,
       "oAP" : "\/docs\/index.html",
       "oF" : 0
-    },
-    "\/images\/tool-tip.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/images\/tool-tip.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
-    "\/images\/tool-tip2.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/images\/tool-tip2.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
     },
     "\/index.html" : {
       "cB" : 0,

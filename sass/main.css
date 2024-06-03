@@ -10218,7 +10218,8 @@ p a:visited:hover {
 	color: $blue-hover;
 }*/
 .link-large {
-  display: block;
+  display: flex;
+  align-items: center;
   font-size: 1.125rem;
   font-weight: 500;
   text-decoration: none;
@@ -10242,67 +10243,112 @@ p a:visited:hover {
 
 .link-large::after {
   content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%23E61E2A'%3e%3cpath fill-rule='evenodd' d='M9.33329 11C9.7065 11 10.0765 11.1557 10.3399 11.4585L16.0063 17.9844L21.661 11.4713C22.144 10.9158 22.9864 10.8561 23.5409 11.3391C24.0965 11.8221 24.1562 12.6635 23.6742 13.219L17.0129 20.8912C16.5075 21.4745 15.5062 21.4755 14.9997 20.8912L8.32668 13.2073C7.84364 12.6517 7.90335 11.8093 8.45891 11.3274C8.71162 11.1077 9.02299 11 9.33329 11Z'/%3e%3c/svg%3e");
-  position: absolute;
+  flex-shrink: 0;
   width: 2rem;
   height: 2rem;
-  margin-left: 0.75rem;
+  margin-left: 0.25rem;
   transform: rotate(-90deg);
 }
 
-.list-of-links {
-  border-top: 1px solid #BFBFBF;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-@media (min-width: 768px) {
-  .list-of-links {
-    margin-top: 2.5rem;
-  }
-}
-@media (min-width: 768px) {
-  .list-of-links {
-    margin-bottom: 2.5rem;
-  }
-}
-.list-of-links h3, .list-of-links .h3 {
+.link-list {
   margin-top: 1rem;
-}
-@media (min-width: 768px) {
-  .list-of-links h3, .list-of-links .h3 {
-    margin-top: 1.5rem;
-  }
-}
-.list-of-links ul {
+  margin-bottom: 1rem;
   padding: 0;
   list-style-type: none;
 }
-.list-of-links ul li {
+@media (min-width: 768px) {
+  .link-list {
+    margin-top: 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .link-list {
+    margin-bottom: 1rem;
+  }
+}
+.link-list li {
+  display: flex;
+  align-items: center;
   font-size: 1.125rem;
   font-weight: 500;
   padding: 0;
-  margin-bottom: 0.63rem;
+  margin-bottom: 0.5rem;
 }
 @media (min-width: 768px) {
-  .list-of-links ul li {
+  .link-list li {
     font-size: 1.25rem;
   }
 }
-.list-of-links ul li::before {
-  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%23E61E2A'%3e%3cpath fill-rule='evenodd' d='M9.33329 11C9.7065 11 10.0765 11.1557 10.3399 11.4585L16.0063 17.9844L21.661 11.4713C22.144 10.9158 22.9864 10.8561 23.5409 11.3391C24.0965 11.8221 24.1562 12.6635 23.6742 13.219L17.0129 20.8912C16.5075 21.4745 15.5062 21.4755 14.9997 20.8912L8.32668 13.2073C7.84364 12.6517 7.90335 11.8093 8.45891 11.3274C8.71162 11.1077 9.02299 11 9.33329 11Z'/%3e%3c/svg%3e");
-  position: absolute;
-  margin-right: 3rem;
+.link-list li::before {
+  flex-shrink: 0;
   width: 2rem;
   height: 2rem;
+  margin-right: 0.5rem;
   transform: rotate(-90deg);
 }
-.list-of-links ul a {
+.link-list a {
   text-decoration: none;
   color: #000054;
-  padding-left: 2.5rem;
 }
-.list-of-links ul a:hover {
+.link-list a:hover {
   text-decoration: underline;
   color: #0051A8;
+  text-decoration: underline;
+}
+.link-list li:before {
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%23E61E2A'%3e%3cpath fill-rule='evenodd' d='M9.33329 11C9.7065 11 10.0765 11.1557 10.3399 11.4585L16.0063 17.9844L21.661 11.4713C22.144 10.9158 22.9864 10.8561 23.5409 11.3391C24.0965 11.8221 24.1562 12.6635 23.6742 13.219L17.0129 20.8912C16.5075 21.4745 15.5062 21.4755 14.9997 20.8912L8.32668 13.2073C7.84364 12.6517 7.90335 11.8093 8.45891 11.3274C8.71162 11.1077 9.02299 11 9.33329 11Z'/%3e%3c/svg%3e");
+}
+
+.link-list-white {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 0;
+  list-style-type: none;
+}
+@media (min-width: 768px) {
+  .link-list-white {
+    margin-top: 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .link-list-white {
+    margin-bottom: 1rem;
+  }
+}
+.link-list-white li {
+  display: flex;
+  align-items: center;
+  font-size: 1.125rem;
+  font-weight: 500;
+  padding: 0;
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 768px) {
+  .link-list-white li {
+    font-size: 1.25rem;
+  }
+}
+.link-list-white li::before {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+  transform: rotate(-90deg);
+}
+.link-list-white a {
+  text-decoration: none;
+  color: #000054;
+}
+.link-list-white a:hover {
+  text-decoration: underline;
+  color: #0051A8;
+  text-decoration: underline;
+}
+.link-list-white li:before {
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M9.33329 11C9.7065 11 10.0765 11.1557 10.3399 11.4585L16.0063 17.9844L21.661 11.4713C22.144 10.9158 22.9864 10.8561 23.5409 11.3391C24.0965 11.8221 24.1562 12.6635 23.6742 13.219L17.0129 20.8912C16.5075 21.4745 15.5062 21.4755 14.9997 20.8912L8.32668 13.2073C7.84364 12.6517 7.90335 11.8093 8.45891 11.3274C8.71162 11.1077 9.02299 11 9.33329 11Z'/%3e%3c/svg%3e");
+}
+.link-list-white li, .link-list-white a, .link-list-white a:hover {
+  color: #fff;
 }
 
 .keywords {
@@ -10435,10 +10481,11 @@ p a:visited:hover {
   font-size: 1.125rem;
   font-weight: 500;
   display: flex;
+  gap: 1rem;
   align-items: center;
   border-radius: 0.5rem;
   margin: 0;
-  padding: 1rem 3rem 1rem 1.5rem;
+  padding: 1rem 0.5rem 1rem 1.5rem;
   width: 100%;
   text-align: left;
 }
@@ -10453,8 +10500,12 @@ p a:visited:hover {
   }
 }
 
+.btn-nav-next {
+  justify-content: space-between;
+}
+
 .btn-nav-prev {
-  padding: 1rem 1.5rem 1rem 3rem;
+  padding: 1rem 1.5rem 1rem 0.5rem;
   display: none;
 }
 @media (min-width: 768px) {
@@ -10465,19 +10516,13 @@ p a:visited:hover {
 
 .btn-nav-prev::before, .btn-nav-next::after {
   content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%23E61E2A'%3e%3cpath fill-rule='evenodd' d='M9.33329 11C9.7065 11 10.0765 11.1557 10.3399 11.4585L16.0063 17.9844L21.661 11.4713C22.144 10.9158 22.9864 10.8561 23.5409 11.3391C24.0965 11.8221 24.1562 12.6635 23.6742 13.219L17.0129 20.8912C16.5075 21.4745 15.5062 21.4755 14.9997 20.8912L8.32668 13.2073C7.84364 12.6517 7.90335 11.8093 8.45891 11.3274C8.71162 11.1077 9.02299 11 9.33329 11Z'/%3e%3c/svg%3e");
-  position: absolute;
+  flex-shrink: 0;
   width: 2rem;
   height: 2rem;
-  top: 0;
-  right: 0.5rem;
-  bottom: 0;
-  margin: auto 0;
   transform: rotate(-90deg);
 }
 
 .btn-nav-prev::before {
-  right: auto;
-  left: 0.5rem;
   transform: rotate(90deg);
 }
 
@@ -10716,6 +10761,8 @@ blockquote .content h3, blockquote .content .h3, blockquote .content p, blockquo
   text-decoration: none;
 }
 blockquote .content h3, blockquote .content .h3 {
+  display: flex;
+  align-items: center;
   /* h4 fontsize */
   font-size: 1.25rem;
 }
@@ -10725,19 +10772,11 @@ blockquote .content h3, blockquote .content .h3 {
   }
 }
 blockquote .content h3::after, blockquote .content .h3::after {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%23E61E2A'%3e%3cpath fill-rule='evenodd' d='M9.33329 11C9.7065 11 10.0765 11.1557 10.3399 11.4585L16.0063 17.9844L21.661 11.4713C22.144 10.9158 22.9864 10.8561 23.5409 11.3391C24.0965 11.8221 24.1562 12.6635 23.6742 13.219L17.0129 20.8912C16.5075 21.4745 15.5062 21.4755 14.9997 20.8912L8.32668 13.2073C7.84364 12.6517 7.90335 11.8093 8.45891 11.3274C8.71162 11.1077 9.02299 11 9.33329 11Z'/%3e%3c/svg%3e");
-  content: "";
-  position: absolute;
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%23E61E2A'%3e%3cpath fill-rule='evenodd' d='M9.33329 11C9.7065 11 10.0765 11.1557 10.3399 11.4585L16.0063 17.9844L21.661 11.4713C22.144 10.9158 22.9864 10.8561 23.5409 11.3391C24.0965 11.8221 24.1562 12.6635 23.6742 13.219L17.0129 20.8912C16.5075 21.4745 15.5062 21.4755 14.9997 20.8912L8.32668 13.2073C7.84364 12.6517 7.90335 11.8093 8.45891 11.3274C8.71162 11.1077 9.02299 11 9.33329 11Z'/%3e%3c/svg%3e");
   width: 2rem;
   height: 2rem;
   margin-left: 0.25rem;
   transform: rotate(-90deg);
-  background-position: 4px 0;
-}
-@media (min-width: 768px) {
-  blockquote .content h3::after, blockquote .content .h3::after {
-    background-position: 2px 0;
-  }
 }
 blockquote .content p, blockquote .content small, blockquote .content .small {
   color: #333;
@@ -11379,137 +11418,114 @@ html.nav-fixed .main-content {
     padding-top: 5.5rem;
   }
 }
-html.nav-fixed .top-nav {
+html.nav-fixed .top-navigation {
   position: fixed;
   z-index: 5;
 }
-html.nav-fixed #nav-menu .nav-container {
+html.nav-fixed #sub-menu {
+  position: fixed;
+  padding-top: 2.5rem;
+  z-index: 4;
+}
+@media (min-width: 768px) {
+  html.nav-fixed #sub-menu {
+    padding-top: 3.5rem;
+  }
+}
+html.nav-fixed #context-menu .nav-container {
   padding-top: 5rem;
 }
 @media (min-width: 768px) {
-  html.nav-fixed #nav-menu .nav-container {
+  html.nav-fixed #context-menu .nav-container {
     padding-top: 7rem;
   }
 }
 
 /* START top-nav */
-.top-nav {
+.top-navigation, #sub-menu {
+  /* START generic styles for header */
+  font-size: 1rem;
+  font-weight: 500;
+  /* END generic styles for header */
+}
+.top-navigation ul, #sub-menu ul {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  list-style-type: none;
+  margin: 0 !important;
+  padding: 0;
+  gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  .top-navigation ul, #sub-menu ul {
+    gap: 2.5rem;
+  }
+}
+.top-navigation li, #sub-menu li {
+  margin: 0;
+  padding: 0;
+}
+.top-navigation a, #sub-menu a {
+  text-decoration: none;
+}
+.top-navigation a:hover, #sub-menu a:hover {
+  text-decoration: underline;
+}
+
+.top-navigation {
   color: #fff;
   background-color: #000054;
   height: 3rem;
   width: 100%;
-  /* START logo */
-  /* END logo */
-  /* START ul */
-  /* END ul */
-}
-.top-nav .rmit-logo {
-  background-color: #E61E2A;
-  background-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8"%3F><svg viewBox="0 0 84 31" xmlns="http://www.w3.org/2000/svg"><path fill="white" d="m10 0.6h-2.6v2.1h-4.2v4.4h-3.2v6.5h3.2v4.5h4.2v2.1h2.2c5.2 0 9.9-4.4 9.9-9.8s-4.3-9.8-9.5-9.8zm56.5 1.9h2.2v-0.8h-7.7v0.8h2.2v15.9h-2.2v0.8h7.7v-0.8h-2.2v-15.9zm14 16.8v-0.8h-2.4v-16.2c3.6-0.2 4.2 0.6 4.7 4h0.8l-0.3-4.6h-13.7l-0.3 4.6h0.8c0.5-3.4 1.1-4.2 4.7-4v16.1h-2.4v0.8h8.1zm-51.5-10.1v-6.7h2.2c2.3 0 3.1 0.6 3.1 3.6 0 2.4-0.9 3.2-3.2 3.2h-2.1zm30.6-6.7v-0.8h-6.3l-3.7 12-3.6-12h-6.3v0.8h2.3v15.9h-2.4c-2.2 0.1-2.2-1.9-2.2-2.3 0-4.3-0.9-5.9-4.9-6.5 2.4-0.3 5.4-1 5.4-3.9 0-3.7-3.3-4-6.1-4h-8.2v0.8h2.2v15.9h-2.2v0.8h7.7v-0.8h-2.3v-8.4c1.4-0.1 3 0.3 3.7 1 0.7 0.6 1 2.4 1 4.6 0 2.7 1.3 3.7 3.9 3.7h7.4v-0.8h-2.2v-15.7h0.2l5.1 16.5h0.9l5-16.5h0.1v15.7h-2.2v0.8h7.7v-0.8h-2.2v-16h2.2zm-33.9 22.1c0-0.1-0.1-0.2-0.2-0.2h-0.4v-0.8h1c0.4 0 0.6 0.2 0.6 0.6v3.8c0 1 0.6 1.7 1.6 1.7s1.6-0.6 1.6-1.7v-3.8c0-0.4 0.2-0.6 0.6-0.6h0.9v0.8h-0.4c-0.1 0-0.2 0.1-0.2 0.2v3.4c0 1.5-1 2.5-2.5 2.5s-2.6-1-2.6-2.5v-3.4zm6.4 5h0.4c0.1 0 0.2-0.1 0.2-0.2v-5.8h0.9l3 4.4c0.2 0.4 0.6 0.9 0.6 0.9s-0.1-0.5-0.1-0.9v-3.7c0-0.4 0.2-0.6 0.6-0.6h1v0.8h-0.4c-0.1 0-0.2 0.1-0.2 0.2v5.8h-0.9l-3-4.4c-0.2-0.4-0.5-0.9-0.5-0.9s0.1 0.6 0.1 0.9v3.7c0 0.4-0.2 0.6-0.6 0.6h-1v-0.8h-0.1zm7.5 0h0.6v-5.2h-0.6v-0.8h2.2v0.8h-0.7v5.2h0.7v0.8h-2.2v-0.8zm3.3-5c-0.1-0.2-0.2-0.2-0.3-0.2h-0.1v-0.8h0.5c0.5 0 0.6 0.1 0.8 0.6l1.5 4.3c0.1 0.4 0.3 1 0.3 1s0.1-0.6 0.3-1l1.5-4.3c0.2-0.5 0.3-0.6 0.8-0.6h0.5v0.8h-0.1c-0.2 0-0.3 0-0.3 0.2l-2.3 5.8h-1l-2.1-5.8zm6.8-0.2h-0.6v-0.8h3.9c0.4 0 0.6 0.2 0.6 0.6v0.8h-0.9v-0.4c0-0.1-0.1-0.2-0.2-0.2h-1.9v2.2h2.4v0.8h-2.3v2c0 0.1 0.1 0.2 0.2 0.2h1.9c0.1 0 0.2-0.1 0.2-0.2v-0.4h0.9v0.9c0 0.4-0.2 0.6-0.6 0.6h-3c-0.4 0-0.6-0.2-0.6-0.6v-5.5zm5.5 0h-0.6v-0.8h2.9c1.2 0 2 0.8 2 2s-0.7 1.7-1.2 1.8c0 0 0.2 0.1 0.3 0.3l0.8 1.7c0.1 0.2 0.2 0.2 0.5 0.2h0.1v0.8h-0.5c-0.5 0-0.7-0.1-0.9-0.5l-0.9-1.9c-0.2-0.3-0.3-0.4-0.7-0.4h-0.9v2.7h-1l0.1-5.9zm2.2 2.4c0.7 0 1.1-0.5 1.1-1.3s-0.4-1.2-1.1-1.2h-1.3v2.5h1.3zm3.8 2s0.7 0.8 1.7 0.8c0.6 0 1.1-0.4 1.1-1 0-1.4-3.2-1.2-3.2-3.4 0-1 0.9-1.8 2.1-1.8 0.7 0 1.9 0.3 1.9 1.3v0.6h-0.8v-0.3c0-0.4-0.5-0.6-1-0.6-0.7 0-1.2 0.4-1.2 0.9 0 1.4 3.2 1.1 3.2 3.3 0 1.1-0.8 2-2.1 2-1.4 0-2.2-1-2.2-1l0.5-0.8zm4.8 0.8h0.6v-5.2h-0.6v-0.8h2.2v0.8h-0.6v5.2h0.6v0.8h-2.2v-0.8zm5.2-5.2h-1.3c-0.1 0-0.2 0.1-0.2 0.2v0.4h-0.8v-0.9c0-0.4 0.1-0.6 0.6-0.6h4.5c0.4 0 0.6 0.1 0.6 0.6v0.9h-0.8v-0.4c0-0.1-0.1-0.2-0.2-0.2h-1.3v6.1h-1l-0.1-6.1zm6 3-1.7-2.8c-0.1-0.2-0.2-0.2-0.4-0.2h-0.1v-0.8h0.4c0.5 0 0.6 0.1 0.9 0.5l1 1.7 0.4 0.8 0.4-0.8 1-1.7c0.3-0.5 0.5-0.5 0.9-0.5h0.4v0.8h-0.2c-0.2 0-0.3 0-0.4 0.2l-1.7 2.8v3h-1v-3z"/></svg>');
-  background-repeat: no-repeat;
-  background-size: 65px 24px;
-  background-position: center center;
-  width: 91px;
-  height: 3rem;
-  margin-right: 0.75rem;
-}
-.top-nav .top-nav-left {
-  display: flex;
-  align-items: center;
-  margin-left: -0.75rem;
-}
-.top-nav h2, .top-nav .h2 {
-  color: #fff;
-  font-size: 4.5vw;
-  margin: 0;
-}
-.top-nav h2 a:hover, .top-nav .h2 a:hover {
-  text-decoration: underline;
-}
-@media (min-width: 576px) {
-  .top-nav h2, .top-nav .h2 {
-    font-size: 1.25rem;
-  }
-}
-.top-nav a {
-  display: inline-block;
-  width: 100%;
-  text-decoration: none;
-  color: #fff;
+  /* START left-nav */
+  /* END left-nav */
 }
 @media (min-width: 768px) {
-  .top-nav {
-    overflow: visible;
+  .top-navigation {
     height: 3.5rem;
   }
-  .top-nav .top-nav-left {
-    margin-left: 0;
-  }
-  .top-nav .rmit-logo {
-    background-size: 84px 31px;
-    background-position: center 19px;
-    width: 117px;
-    height: 4rem;
-    margin-right: 1.5rem;
-  }
-  .top-nav h2, .top-nav .h2 {
-    margin-top: -6px;
-    font-size: 1.5rem;
-  }
 }
-.top-nav ul {
-  display: flex;
+.top-navigation ul {
   justify-content: flex-end;
-  align-items: center;
   height: 3rem;
-  margin: 0 !important;
-  padding: 0;
-  font-size: 1rem;
-  font-weight: 500;
-  text-align: right;
   /* Use flex to position search label and mag glass side by side */
 }
 @media (min-width: 768px) {
-  .top-nav ul {
+  .top-navigation ul {
     height: 3.5rem;
   }
 }
-.top-nav ul li {
-  display: block;
-  margin: 0;
-  padding-left: 0;
-  padding-right: 1.5rem;
-}
-@media (min-width: 768px) {
-  .top-nav ul li {
-    padding-right: 2.5rem;
-  }
-}
-.top-nav ul li:last-child {
-  padding-right: 0;
-}
-.top-nav ul a {
+.top-navigation ul a {
   color: #fff;
-  text-decoration: none;
 }
-.top-nav ul a:hover {
-  text-decoration: underline;
-}
-.top-nav ul .search a {
+.top-navigation ul .search a {
   display: flex;
   align-items: center;
+  gap: 0.75rem;
 }
-.top-nav ul .mag-glass {
+.top-navigation ul .mag-glass {
   content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26' fill='%23fff'%3e%3cpath d='M26 24.7152L18.2522 17.0455C21.8 12.7856 21.3825 6.47376 17.3048 2.72326C13.2271 -1.02725 6.93433 -0.887297 3.02572 3.04082C-0.88289 6.96895 -1.02215 13.2932 2.70973 17.3912C6.44161 21.4893 12.7221 21.9088 16.9609 18.3433L24.7087 26L26 24.7152ZM10.5044 18.9403C5.84741 18.9403 2.07218 15.1462 2.07218 10.466C2.07218 5.78575 5.84741 1.99168 10.5044 1.99168C15.1614 1.99168 18.9366 5.78575 18.9366 10.466C18.9332 12.7282 18.0313 14.8955 16.4312 16.4867C14.831 18.0778 12.6649 18.961 10.414 18.9403H10.5044Z'/%3e%3c/svg%3e");
   width: 26px;
   height: 26px;
+  /*@include media-breakpoint-up(md) { 
+     margin-left: 0.75rem;
+  }*/
 }
-@media (min-width: 768px) {
-  .top-nav ul .mag-glass {
-    margin-left: 0.75rem;
+@media (max-width: 575.98px) {
+  .top-navigation ul .search-label {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
   }
 }
-.top-nav ul button {
+.top-navigation ul button {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%23fff'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M18.9289 16.4142L27.3137 24.799L24.4853 27.6274L16.1005 19.2426L7.51471 27.8284L4.68628 25L13.2721 16.4142L4.68628 7.82843L7.51471 5L16.1005 13.5858L24.4853 5.20101L27.3137 8.02944L18.9289 16.4142Z'/%3e%3c/svg%3e");
   width: 2rem;
   height: 2rem;
@@ -11520,50 +11536,125 @@ html.nav-fixed #nav-menu .nav-container {
   text-indent: -10000px;
   background-color: #000054;
 }
-.top-nav ul button:hover {
+.top-navigation ul button:hover {
   background-color: #000054;
 }
-.top-nav ul button:focus {
+.top-navigation ul button:focus {
   box-shadow: 0 0 !important;
   border: 1px solid #fff;
 }
-.top-nav ul button.collapsed {
+.top-navigation ul button.collapsed {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%23fff'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M2 5H30V9H2V5ZM30 14H2V18H30V14ZM30 23H2V27H30V23Z'/%3e%3c/svg%3e");
 }
+.top-navigation .left-nav {
+  display: flex;
+  align-items: center;
+}
+.top-navigation .left-nav a {
+  color: #fff;
+  font-size: 4.5vw;
+  text-decoration: none;
+  margin: 0;
+}
+.top-navigation .left-nav a:hover {
+  text-decoration: underline;
+}
+@media (min-width: 576px) {
+  .top-navigation .left-nav a {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 768px) {
+  .top-navigation .left-nav a {
+    margin-top: -0.25rem;
+    font-size: 1.5rem;
+  }
+}
 
-/* END top-nav */
-#nav-menu {
+/* START sub-menu */
+#sub-menu {
+  width: 100%;
+  border-bottom: 1px solid #BFBFBF;
+  background-color: #fff;
+  /* handle  subnav horizontal scroll */
+}
+#sub-menu nav {
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
+#sub-menu ul {
+  padding-top: 1rem;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+@media (min-width: 768px) {
+  #sub-menu ul {
+    padding-top: 1.5rem;
+  }
+}
+#sub-menu li {
+  padding-bottom: 0.75rem;
+  border-bottom: 0.25rem solid #fff;
+}
+#sub-menu li.selected {
+  color: #000054;
+  border-bottom-color: #E61E2A;
+}
+#sub-menu a {
+  color: #000054;
+}
+
+/* END sub-menu */
+#context-menu {
   color: #fff;
   background-color: #000054;
+  position: absolute;
+  width: 100%;
 }
-#nav-menu .nav-container {
+#context-menu .nav-container {
   min-height: 100vh;
   padding-bottom: 4rem;
 }
 @media (min-width: 768px) {
-  #nav-menu .nav-container {
+  #context-menu .nav-container {
     padding-bottom: 6rem;
   }
 }
-#nav-menu .not-wordpress a {
+#context-menu a {
   color: #fff;
-  text-decoration: none;
 }
-#nav-menu .not-wordpress a:hover {
-  text-decoration: underline;
+
+/* START logo */
+.top-navigation .rmit-logo {
+  background-color: #E61E2A;
+  background-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8"%3F><svg viewBox="0 0 84 31" xmlns="http://www.w3.org/2000/svg"><path fill="white" d="m10 0.6h-2.6v2.1h-4.2v4.4h-3.2v6.5h3.2v4.5h4.2v2.1h2.2c5.2 0 9.9-4.4 9.9-9.8s-4.3-9.8-9.5-9.8zm56.5 1.9h2.2v-0.8h-7.7v0.8h2.2v15.9h-2.2v0.8h7.7v-0.8h-2.2v-15.9zm14 16.8v-0.8h-2.4v-16.2c3.6-0.2 4.2 0.6 4.7 4h0.8l-0.3-4.6h-13.7l-0.3 4.6h0.8c0.5-3.4 1.1-4.2 4.7-4v16.1h-2.4v0.8h8.1zm-51.5-10.1v-6.7h2.2c2.3 0 3.1 0.6 3.1 3.6 0 2.4-0.9 3.2-3.2 3.2h-2.1zm30.6-6.7v-0.8h-6.3l-3.7 12-3.6-12h-6.3v0.8h2.3v15.9h-2.4c-2.2 0.1-2.2-1.9-2.2-2.3 0-4.3-0.9-5.9-4.9-6.5 2.4-0.3 5.4-1 5.4-3.9 0-3.7-3.3-4-6.1-4h-8.2v0.8h2.2v15.9h-2.2v0.8h7.7v-0.8h-2.3v-8.4c1.4-0.1 3 0.3 3.7 1 0.7 0.6 1 2.4 1 4.6 0 2.7 1.3 3.7 3.9 3.7h7.4v-0.8h-2.2v-15.7h0.2l5.1 16.5h0.9l5-16.5h0.1v15.7h-2.2v0.8h7.7v-0.8h-2.2v-16h2.2zm-33.9 22.1c0-0.1-0.1-0.2-0.2-0.2h-0.4v-0.8h1c0.4 0 0.6 0.2 0.6 0.6v3.8c0 1 0.6 1.7 1.6 1.7s1.6-0.6 1.6-1.7v-3.8c0-0.4 0.2-0.6 0.6-0.6h0.9v0.8h-0.4c-0.1 0-0.2 0.1-0.2 0.2v3.4c0 1.5-1 2.5-2.5 2.5s-2.6-1-2.6-2.5v-3.4zm6.4 5h0.4c0.1 0 0.2-0.1 0.2-0.2v-5.8h0.9l3 4.4c0.2 0.4 0.6 0.9 0.6 0.9s-0.1-0.5-0.1-0.9v-3.7c0-0.4 0.2-0.6 0.6-0.6h1v0.8h-0.4c-0.1 0-0.2 0.1-0.2 0.2v5.8h-0.9l-3-4.4c-0.2-0.4-0.5-0.9-0.5-0.9s0.1 0.6 0.1 0.9v3.7c0 0.4-0.2 0.6-0.6 0.6h-1v-0.8h-0.1zm7.5 0h0.6v-5.2h-0.6v-0.8h2.2v0.8h-0.7v5.2h0.7v0.8h-2.2v-0.8zm3.3-5c-0.1-0.2-0.2-0.2-0.3-0.2h-0.1v-0.8h0.5c0.5 0 0.6 0.1 0.8 0.6l1.5 4.3c0.1 0.4 0.3 1 0.3 1s0.1-0.6 0.3-1l1.5-4.3c0.2-0.5 0.3-0.6 0.8-0.6h0.5v0.8h-0.1c-0.2 0-0.3 0-0.3 0.2l-2.3 5.8h-1l-2.1-5.8zm6.8-0.2h-0.6v-0.8h3.9c0.4 0 0.6 0.2 0.6 0.6v0.8h-0.9v-0.4c0-0.1-0.1-0.2-0.2-0.2h-1.9v2.2h2.4v0.8h-2.3v2c0 0.1 0.1 0.2 0.2 0.2h1.9c0.1 0 0.2-0.1 0.2-0.2v-0.4h0.9v0.9c0 0.4-0.2 0.6-0.6 0.6h-3c-0.4 0-0.6-0.2-0.6-0.6v-5.5zm5.5 0h-0.6v-0.8h2.9c1.2 0 2 0.8 2 2s-0.7 1.7-1.2 1.8c0 0 0.2 0.1 0.3 0.3l0.8 1.7c0.1 0.2 0.2 0.2 0.5 0.2h0.1v0.8h-0.5c-0.5 0-0.7-0.1-0.9-0.5l-0.9-1.9c-0.2-0.3-0.3-0.4-0.7-0.4h-0.9v2.7h-1l0.1-5.9zm2.2 2.4c0.7 0 1.1-0.5 1.1-1.3s-0.4-1.2-1.1-1.2h-1.3v2.5h1.3zm3.8 2s0.7 0.8 1.7 0.8c0.6 0 1.1-0.4 1.1-1 0-1.4-3.2-1.2-3.2-3.4 0-1 0.9-1.8 2.1-1.8 0.7 0 1.9 0.3 1.9 1.3v0.6h-0.8v-0.3c0-0.4-0.5-0.6-1-0.6-0.7 0-1.2 0.4-1.2 0.9 0 1.4 3.2 1.1 3.2 3.3 0 1.1-0.8 2-2.1 2-1.4 0-2.2-1-2.2-1l0.5-0.8zm4.8 0.8h0.6v-5.2h-0.6v-0.8h2.2v0.8h-0.6v5.2h0.6v0.8h-2.2v-0.8zm5.2-5.2h-1.3c-0.1 0-0.2 0.1-0.2 0.2v0.4h-0.8v-0.9c0-0.4 0.1-0.6 0.6-0.6h4.5c0.4 0 0.6 0.1 0.6 0.6v0.9h-0.8v-0.4c0-0.1-0.1-0.2-0.2-0.2h-1.3v6.1h-1l-0.1-6.1zm6 3-1.7-2.8c-0.1-0.2-0.2-0.2-0.4-0.2h-0.1v-0.8h0.4c0.5 0 0.6 0.1 0.9 0.5l1 1.7 0.4 0.8 0.4-0.8 1-1.7c0.3-0.5 0.5-0.5 0.9-0.5h0.4v0.8h-0.2c-0.2 0-0.3 0-0.4 0.2l-1.7 2.8v3h-1v-3z"/></svg>');
+  background-repeat: no-repeat;
+  background-size: 65px 24px;
+  background-position: center center;
+  width: 91px;
+  height: 3rem;
+  margin-left: -0.75rem;
+  margin-right: 0.75rem;
 }
-#nav-menu .not-wordpress ul {
-  padding-left: 2.5rem;
-  margin-bottom: 0 !important;
-}
-#nav-menu .not-wordpress li {
-  list-style-type: none;
-  margin-bottom: 1rem;
+@media (min-width: 576px) {
+  .top-navigation .rmit-logo {
+    margin-left: 0rem;
+  }
 }
 @media (min-width: 768px) {
-  #nav-menu .not-wordpress ul {
-    column-count: 2;
+  .top-navigation .rmit-logo {
+    background-size: 84px 31px;
+    background-position: center 19px;
+    width: 117px;
+    height: 4rem;
+    margin-right: 1.5rem;
   }
+}
+
+/* END logo */
+#page-content .top-navigation {
+  position: relative;
+  z-index: 1;
 }
 
 /* Figures are centred, limit to 40rem width by default*/

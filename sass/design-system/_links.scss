@@ -40,7 +40,9 @@ p a:visited:hover {
 }*/
 
 .link-large {
-    display: block;
+    display: flex;
+    align-items: center;
+    
     @include type-lead;
     @include link-feature;
     margin-top: 1.25rem;
@@ -58,52 +60,59 @@ p a:visited:hover {
 
 .link-large::after {
     @include carat;
-    position: absolute;
+    flex-shrink: 0;
     width: 2rem;
     height: 2rem;
-    margin-left: 0.75rem;
+    margin-left: 0.25rem;
     transform: rotate(-90deg);
 }
 
-
-.list-of-links {
-	border-top: 1px solid $interface-grey;
-	
-	@include do-space(margin-top, lg);
-	@include do-space(margin-bottom, lg);
-	
-	h3 {
-		@include do-space(margin-top, sm);	
-	}
-	
-	ul {
-		padding: 0;
+@mixin link-list-base {
+    
+    @include do-space(margin-top, xs);
+	@include do-space(margin-bottom, xs);
+    
+    //ul {
+        padding: 0;
         list-style-type: none;
-		
-		li {
-			@include type-lead;
-            padding: 0;
-            margin-bottom: 0.63rem;
-		}
-		
-		li::before {
-			@include carat;
-			position: absolute;
-			margin-right: 3rem;
-			width: 2rem;
-			height: 2rem;
-			transform: rotate(-90deg);	
-		}
-		
-		a {
-			@include link-feature;
-            padding-left: 2.5rem;
-		}
-        
-        a:hover {
-            @include link-feature-hover;
-        }
-	}
+    //}
+    
+    li {
+        display: flex;
+        align-items: center;
+        @include type-lead;
+        padding: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    li::before {
+        flex-shrink: 0;
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0.5rem;
+        transform: rotate(-90deg);	
+    }
+    
+    a {
+        @include link-feature;
+    }
+
+    a:hover {
+        @include link-feature-hover;
+        text-decoration: underline;
+    }
+}
+
+.link-list {
+    @include link-list-base;
+    li:before { @include carat; }
+}
+
+.link-list-white {
+    @include link-list-base;
+    
+    li:before { @include carat-white; }
+    li, a, a:hover { color: $white; }
 }
 
 .keywords {
