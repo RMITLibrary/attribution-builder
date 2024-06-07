@@ -31,8 +31,8 @@
 		@include link-feature-hover;
     }
 	
-	h2 {
-        /* h4 fontsize */
+	/*h2 {
+        //h4 fontsize
         font-size: 1.25rem;
         margin: 0;
         
@@ -43,28 +43,7 @@
             width: 100%;   
             padding: 0.25rem 1.5rem 0.75rem 1.5rem;
         }
-    }
-    
-    h2.selected {
-        border-left: 0.25rem solid $red;
-        padding: 0.5rem 1.5rem 0.75rem 1.25rem;	//less 0.25rem to account for border left, increase padding at top for select state
-        background-color: $underlay-selected;
-    }
-    
-    h3 {
-        /* h5 fontsize */
-        font-size: 1.125rem;
-        margin: 0;
-        
-        @include media-breakpoint-up(md) { font-size: 1.25rem; }
-        
-        a {
-            display: inline-block;
-            width: 100%;   
-            padding: 1rem 1.5rem 0.75rem 1.5rem;
-        }
-        
-    }
+    }*/
     
     ul {
         margin: 0 !important;
@@ -79,7 +58,7 @@
         a {
             display: inline-block;
             width: 100%;
-            padding: 0.75rem 1.5rem 0.75rem 3rem;
+            padding: 0.75rem 1.5rem 0.75rem 3rem;   //here
         }
     }
 
@@ -88,6 +67,10 @@
         border-left: 0.25rem solid $red;
         padding: 0.75rem 1.5rem 0.75rem 2.75rem;	//less 0.25rem to account for border
         background-color: $underlay-selected;
+        
+        a {
+            padding: 0;
+        }
     }
     
     /* nested lists - extend padding */
@@ -100,6 +83,79 @@
             padding-left: 5rem;   //less 0.25rem to account for border
         }
     }
+}
+
+.right-nav, .right-nav-simple {
+	h2 {
+        //h4 fontsize
+        font-size: 1.25rem;
+        padding: 0.25rem 1.5rem 0.75rem 1.5rem;
+        margin: 0;
+        
+        @include media-breakpoint-up(md) { font-size: 1.5rem; }
+        
+        a {
+			display: block;
+        }
+    }
+	
+	h2.selected {
+        border-left: 0.25rem solid $red;
+        padding: 0.5rem 1.5rem 0.75rem 1.25rem;	//less 0.25rem to account for border left, increase padding at top for select state
+        background-color: $underlay-selected;
+    }
+    
+    h3 {
+        /* h5 fontsize */
+        font-size: 1.125rem;
+		padding: 1rem 1.5rem 0.75rem 1.5rem;
+        margin: 0;
+        
+        @include media-breakpoint-up(md) { font-size: 1.25rem; }
+        
+        a {
+            display: block;
+        }
+        
+    }
+}
+
+
+/*Add border bottom to non accordion right nav only */
+.right-nav, .right-nav-simple {
+    h2 {
+        border-bottom: 1px solid $interface-grey;
+    }
+}
+
+.right-nav-simple {
+    
+	h2 {
+		padding: 0.25rem 2rem 0.75rem 2rem;	
+	}
+	
+    li {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        
+        a {
+            display: inline-block;
+            width: 100%;
+            padding: 0.75rem 2rem 0.75rem 2rem; //here
+        }
+    }
+
+    
+    li.selected {
+        border-left: 0.25rem solid $red;
+        padding: 0.75rem 1.5rem 0.75rem 1.75rem;	//less 0.25rem to account for border
+        background-color: $underlay-selected;
+        
+        a {
+            padding: 0;
+        }
+    }  
 }
 
 .right-nav-accordion {
@@ -122,33 +178,4 @@
 		border-top-left-radius: 0.5rem !important;
 		border-top-right-radius: 0.5rem !important;
 	}
-}
-
-/*Add border bottom to non accordion right nav only */
-.right-nav, .right-nav-simple {
-    h2 {
-        border-bottom: 1px solid $interface-grey;
-    }
-}
-
-.right-nav-simple {
-    
-    li {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        
-        a {
-            display: inline-block;
-            width: 100%;
-            padding: 0.75rem 1.5rem 0.75rem 2rem;
-        }
-    }
-
-    
-    li.selected {
-        border-left: 0.25rem solid $red;
-        padding: 0.75rem 1.5rem 0.75rem 1.75rem;	//less 0.25rem to account for border
-        background-color: $underlay-selected;
-    }  
 }

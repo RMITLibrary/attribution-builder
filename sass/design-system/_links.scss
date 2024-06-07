@@ -19,12 +19,22 @@
 }
 
 a {
-	 @include link-normal;
+	@include link-normal;
 }
 		
 a:hover {
 	 @include link-normal-hover;
 }
+
+a:not([href]):not([class]), a:not([href]):not([class]):hover {
+  color: $rmit-blue;
+  text-decoration: none;
+}
+
+a:not([href]):not([class]):hover {
+  text-decoration: underline;
+}
+
 
 /* Visited links - NOT IN USE AT THIS TIME */
 /*a:visited {

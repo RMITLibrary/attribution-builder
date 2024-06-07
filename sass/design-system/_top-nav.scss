@@ -198,18 +198,24 @@ html.nav-fixed {
 		white-space: nowrap;
 	}
 	
-	li {
-		padding-bottom: 0.75rem;
-		border-bottom: 0.25rem solid $white;
-	}
-	
 	li.selected {
+        padding-bottom: 0.75rem;
+		border-bottom: 0.25rem solid $white;
+        
 		color: $rmit-blue;
 		border-bottom-color: $red;
 	}
 	
 	a {
+        display: block;
 		color: $rmit-blue;
+        
+        padding-bottom: 0.75rem;
+		border-bottom: 0.25rem solid $white;
+	}
+    
+    a.selected {
+        border-bottom-color: $red;
 	}
 	
 }

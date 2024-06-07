@@ -3,6 +3,14 @@
 	@include media-breakpoint-down(md) {  display: none !important; }
 }
 
+.hide-md {
+	@include media-breakpoint-down(lg) {  display: none !important; }
+}
+
+.hide-lg {
+	@include media-breakpoint-down(xl) {  display: none !important; }
+}
+
 .no-border-top {
 	border-top: 0 !important;
 }

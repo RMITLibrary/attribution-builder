@@ -9690,6 +9690,18 @@ textarea.form-control-lg {
   }
 }
 
+@media (max-width: 991.98px) {
+  .hide-md {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .hide-lg {
+    display: none !important;
+  }
+}
+
 .no-border-top {
   border-top: 0 !important;
 }
@@ -10203,6 +10215,15 @@ a {
 a:hover {
   text-decoration: none;
   color: #0051A8;
+}
+
+a:not([href]):not([class]), a:not([href]):not([class]):hover {
+  color: #000054;
+  text-decoration: none;
+}
+
+a:not([href]):not([class]):hover {
+  text-decoration: underline;
 }
 
 /* Visited links - NOT IN USE AT THIS TIME */
@@ -11252,6 +11273,19 @@ ul.breadcrumbs a {
   border-radius: 0.5rem;
   background-color: #f5f5f5;
   margin-top: 2rem;
+  /*h2 {
+         //h4 fontsize
+         font-size: 1.25rem;
+         margin: 0;
+
+         @include media-breakpoint-up(md) { font-size: 1.5rem; }
+
+         a {
+             display: inline-block;
+             width: 100%;   
+             padding: 0.25rem 1.5rem 0.75rem 1.5rem;
+         }
+     }*/
   /* nested lists - extend padding */
 }
 @media (min-width: 768px) {
@@ -11278,41 +11312,6 @@ ul.breadcrumbs a {
   text-decoration: underline;
   color: #0051A8;
 }
-.right-nav h2, .right-nav .h2, .right-nav-accordion h2, .right-nav-accordion .h2, .right-nav-simple h2, .right-nav-simple .h2 {
-  /* h4 fontsize */
-  font-size: 1.25rem;
-  margin: 0;
-}
-@media (min-width: 768px) {
-  .right-nav h2, .right-nav .h2, .right-nav-accordion h2, .right-nav-accordion .h2, .right-nav-simple h2, .right-nav-simple .h2 {
-    font-size: 1.5rem;
-  }
-}
-.right-nav h2 a, .right-nav .h2 a, .right-nav-accordion h2 a, .right-nav-accordion .h2 a, .right-nav-simple h2 a, .right-nav-simple .h2 a {
-  display: inline-block;
-  width: 100%;
-  padding: 0.25rem 1.5rem 0.75rem 1.5rem;
-}
-.right-nav h2.selected, .right-nav .selected.h2, .right-nav-accordion h2.selected, .right-nav-accordion .selected.h2, .right-nav-simple h2.selected, .right-nav-simple .selected.h2 {
-  border-left: 0.25rem solid #E61E2A;
-  padding: 0.5rem 1.5rem 0.75rem 1.25rem;
-  background-color: #E6E6E6;
-}
-.right-nav h3, .right-nav .h3, .right-nav-accordion h3, .right-nav-accordion .h3, .right-nav-simple h3, .right-nav-simple .h3 {
-  /* h5 fontsize */
-  font-size: 1.125rem;
-  margin: 0;
-}
-@media (min-width: 768px) {
-  .right-nav h3, .right-nav .h3, .right-nav-accordion h3, .right-nav-accordion .h3, .right-nav-simple h3, .right-nav-simple .h3 {
-    font-size: 1.25rem;
-  }
-}
-.right-nav h3 a, .right-nav .h3 a, .right-nav-accordion h3 a, .right-nav-accordion .h3 a, .right-nav-simple h3 a, .right-nav-simple .h3 a {
-  display: inline-block;
-  width: 100%;
-  padding: 1rem 1.5rem 0.75rem 1.5rem;
-}
 .right-nav ul, .right-nav-accordion ul, .right-nav-simple ul {
   margin: 0 !important;
   padding: 0 !important;
@@ -11332,11 +11331,74 @@ ul.breadcrumbs a {
   padding: 0.75rem 1.5rem 0.75rem 2.75rem;
   background-color: #E6E6E6;
 }
+.right-nav li.selected a, .right-nav-accordion li.selected a, .right-nav-simple li.selected a {
+  padding: 0;
+}
 .right-nav ul > li > ul li a, .right-nav-accordion ul > li > ul li a, .right-nav-simple ul > li > ul li a {
   padding-left: 5.25rem;
 }
 .right-nav ul > li > ul li.selected, .right-nav-accordion ul > li > ul li.selected, .right-nav-simple ul > li > ul li.selected {
   padding-left: 5rem;
+}
+
+.right-nav h2, .right-nav .h2, .right-nav-simple h2, .right-nav-simple .h2 {
+  font-size: 1.25rem;
+  padding: 0.25rem 1.5rem 0.75rem 1.5rem;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .right-nav h2, .right-nav .h2, .right-nav-simple h2, .right-nav-simple .h2 {
+    font-size: 1.5rem;
+  }
+}
+.right-nav h2 a, .right-nav .h2 a, .right-nav-simple h2 a, .right-nav-simple .h2 a {
+  display: block;
+}
+.right-nav h2.selected, .right-nav .selected.h2, .right-nav-simple h2.selected, .right-nav-simple .selected.h2 {
+  border-left: 0.25rem solid #E61E2A;
+  padding: 0.5rem 1.5rem 0.75rem 1.25rem;
+  background-color: #E6E6E6;
+}
+.right-nav h3, .right-nav .h3, .right-nav-simple h3, .right-nav-simple .h3 {
+  /* h5 fontsize */
+  font-size: 1.125rem;
+  padding: 1rem 1.5rem 0.75rem 1.5rem;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .right-nav h3, .right-nav .h3, .right-nav-simple h3, .right-nav-simple .h3 {
+    font-size: 1.25rem;
+  }
+}
+.right-nav h3 a, .right-nav .h3 a, .right-nav-simple h3 a, .right-nav-simple .h3 a {
+  display: block;
+}
+
+/*Add border bottom to non accordion right nav only */
+.right-nav h2, .right-nav .h2, .right-nav-simple h2, .right-nav-simple .h2 {
+  border-bottom: 1px solid #BFBFBF;
+}
+
+.right-nav-simple h2, .right-nav-simple .h2 {
+  padding: 0.25rem 2rem 0.75rem 2rem;
+}
+.right-nav-simple li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.right-nav-simple li a {
+  display: inline-block;
+  width: 100%;
+  padding: 0.75rem 2rem 0.75rem 2rem;
+}
+.right-nav-simple li.selected {
+  border-left: 0.25rem solid #E61E2A;
+  padding: 0.75rem 1.5rem 0.75rem 1.75rem;
+  background-color: #E6E6E6;
+}
+.right-nav-simple li.selected a {
+  padding: 0;
 }
 
 .right-nav-accordion {
@@ -11355,27 +11417,6 @@ ul.breadcrumbs a {
 .right-nav-accordion > *:first-child h2 .accordion-button, .right-nav-accordion > *:first-child .h2 .accordion-button {
   border-top-left-radius: 0.5rem !important;
   border-top-right-radius: 0.5rem !important;
-}
-
-/*Add border bottom to non accordion right nav only */
-.right-nav h2, .right-nav .h2, .right-nav-simple h2, .right-nav-simple .h2 {
-  border-bottom: 1px solid #BFBFBF;
-}
-
-.right-nav-simple li {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-.right-nav-simple li a {
-  display: inline-block;
-  width: 100%;
-  padding: 0.75rem 1.5rem 0.75rem 2rem;
-}
-.right-nav-simple li.selected {
-  border-left: 0.25rem solid #E61E2A;
-  padding: 0.75rem 1.5rem 0.75rem 1.75rem;
-  background-color: #E6E6E6;
 }
 
 body {
@@ -11592,16 +11633,20 @@ html.nav-fixed #context-menu .nav-container {
     padding-top: 1.5rem;
   }
 }
-#sub-menu li {
+#sub-menu li.selected {
   padding-bottom: 0.75rem;
   border-bottom: 0.25rem solid #fff;
-}
-#sub-menu li.selected {
   color: #000054;
   border-bottom-color: #E61E2A;
 }
 #sub-menu a {
+  display: block;
   color: #000054;
+  padding-bottom: 0.75rem;
+  border-bottom: 0.25rem solid #fff;
+}
+#sub-menu a.selected {
+  border-bottom-color: #E61E2A;
 }
 
 /* END sub-menu */
@@ -12209,4 +12254,8 @@ Two columns seperate from bootstrap
 
 .footer-container {
   margin-top: 2rem;
+}
+
+.giy {
+  margin: 0;
 }

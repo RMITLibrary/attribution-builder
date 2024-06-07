@@ -7,7 +7,7 @@
       "uuidString" : "18346520-92B4-42E9-9799-57BB48690394"
     }
   ],
-  "creatorBuild" : "34576",
+  "creatorBuild" : "34484",
   "files" : {
     "\/.gitignore" : {
       "cB" : 0,
@@ -1599,18 +1599,6 @@
       "pg" : 0,
       "sct" : 0
     },
-    "\/sass\/design-system\/fonts\/_museo.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/sass\/design-system\/fonts\/_museo-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
     "\/sass\/main.css" : {
       "aP" : 1,
       "bl" : 0,
@@ -1666,7 +1654,7 @@
   },
   "projectAttributes" : {
     "creationDate" : 737509758.27113605,
-    "displayValue" : "attribution",
+    "displayValue" : "attribution-builder",
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets-verd",
     "iconImageWasSetByUser" : 0
@@ -2495,6 +2483,9 @@
       "no-new-native-nonconstructor" : {
         "active" : 0
       },
+      "no-new-object" : {
+        "active" : 0
+      },
       "no-new-symbol" : {
         "active" : 1
       },
@@ -2506,9 +2497,6 @@
       },
       "no-obj-calls" : {
         "active" : 1
-      },
-      "no-object-constructor" : {
-        "active" : 0
       },
       "no-octal" : {
         "active" : 1
@@ -2563,6 +2551,9 @@
       "no-return-assign" : {
         "active" : 0,
         "optionString" : "'except-parens'"
+      },
+      "no-return-await" : {
+        "active" : 0
       },
       "no-script-url" : {
         "active" : 0
