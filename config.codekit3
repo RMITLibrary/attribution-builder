@@ -7,7 +7,7 @@
       "uuidString" : "18346520-92B4-42E9-9799-57BB48690394"
     }
   ],
-  "creatorBuild" : "34576",
+  "creatorBuild" : "34484",
   "files" : {
     "\/.gitignore" : {
       "cB" : 0,
@@ -15,6 +15,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/.gitignore",
+      "oF" : 0
+    },
+    "\/iframe.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/iframe.html",
       "oF" : 0
     },
     "\/index.html" : {
@@ -1568,6 +1576,17 @@
       "oS" : 0,
       "pg" : 0,
       "sct" : 0
+    },
+    "\/source\/js\/new-script.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/source\/js\/new-script-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
     }
   },
   "hooks" : [
@@ -1578,7 +1597,7 @@
   },
   "projectAttributes" : {
     "creationDate" : 737509758.27113605,
-    "displayValue" : "attribution",
+    "displayValue" : "attribution-builder",
     "displayValueWasSetByUser" : 0,
     "iconImageName" : "brackets-verd",
     "iconImageWasSetByUser" : 0
@@ -2407,6 +2426,9 @@
       "no-new-native-nonconstructor" : {
         "active" : 0
       },
+      "no-new-object" : {
+        "active" : 0
+      },
       "no-new-symbol" : {
         "active" : 1
       },
@@ -2418,9 +2440,6 @@
       },
       "no-obj-calls" : {
         "active" : 1
-      },
-      "no-object-constructor" : {
-        "active" : 0
       },
       "no-octal" : {
         "active" : 1
@@ -2475,6 +2494,9 @@
       "no-return-assign" : {
         "active" : 0,
         "optionString" : "'except-parens'"
+      },
+      "no-return-await" : {
+        "active" : 0
       },
       "no-script-url" : {
         "active" : 0

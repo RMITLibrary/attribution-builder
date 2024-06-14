@@ -12059,6 +12059,10 @@ $img-width-sm: 18.5rem;     //296px*/
   gap: 0.25rem;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 /*
 Two columns seperate from bootstrap
 */
@@ -12191,7 +12195,7 @@ Two columns seperate from bootstrap
 }
 
 /* Bottom buttons */
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .btn-container {
     margin-top: 1.5rem;
     display: flex;
@@ -12202,7 +12206,7 @@ Two columns seperate from bootstrap
     display: none;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .btn-container .btn-left {
     display: flex;
     align-items: center;
@@ -12212,7 +12216,7 @@ Two columns seperate from bootstrap
   width: 100%;
   margin: 1.5rem 0 0 0;
 }
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .btn-container .btn-primary, .btn-container .btn-default {
     width: auto;
     margin: 0 1.5rem 0 0;
@@ -12220,10 +12224,12 @@ Two columns seperate from bootstrap
 }
 .btn-container #feedback {
   text-align: center;
+  margin-top: 1.5rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .btn-container #feedback {
     text-align: left;
+    margin-top: 0;
   }
 }
 .btn-container #reset {
@@ -12254,8 +12260,4 @@ Two columns seperate from bootstrap
 
 .footer-container {
   margin-top: 2rem;
-}
-
-.giy {
-  margin: 0;
 }
