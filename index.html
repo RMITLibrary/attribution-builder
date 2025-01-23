@@ -20,7 +20,44 @@
     </script>
     <!-- End Google Tag Manager -->
 
-    <!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>-->
+    <!-- 
+    DARK MODE
+    This script is placed in the <head> to ensure the theme is set as early as possible,
+    reducing the flash of unstyled content (FOUC). It determines the user's preferred
+    theme (either from local storage or system settings) and applies it immediately.
+    -->
+    <script>
+      (function() {
+        'use strict';
+
+        // Function to get the stored theme from local storage
+        const getStoredTheme = () => localStorage.getItem('theme');
+
+        // Function to determine the preferred theme
+        const getPreferredTheme = () => {
+          const storedTheme = getStoredTheme(); // Retrieve the stored theme
+          if (storedTheme) {
+            return storedTheme; // If a theme is stored, return it
+          }
+          // If no theme is stored, check the system preference for dark mode
+          return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        };
+
+        // Function to apply the specified theme
+        const setTheme = theme => {
+          if (theme === 'auto') {
+            // If theme is 'auto', set it based on system preference
+            document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+          } else {
+            // Otherwise, set the theme explicitly
+            document.documentElement.setAttribute('data-bs-theme', theme);
+          }
+        };
+
+        // Set the theme based on the preferred theme
+        setTheme(getPreferredTheme());
+      })();
+    </script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -292,6 +329,70 @@
             </div>
           </form>
           <!-- END form -->
+          <!-- Start theme switcher -->
+          <div id="theme-switcher" class="theme-switch-blergh">
+            <!-- <h2 class="h5">Theme</h2>
+            <div class="theme-bg"> -->
+              <form>
+                <h2 class="small">Theme</h2 >
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" data-bs-theme-value="auto" value="option1">
+                  <label class="form-check-label small" for="inlineRadio1">System</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" data-bs-theme-value="light" value="option2">
+                  <label class="form-check-label small" for="inlineRadio2">Light</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" data-bs-theme-value="dark" value="option3">
+                  <label class="form-check-labe small" for="inlineRadio3">Dark</label>
+                </div>
+              </form>
+              
+            <!-- </div> -->
+          </div>
+          <!-- END theme switcher -->
+
+          <!-- START BLERGH -->
+
+          <form class="theme-switch compact">
+            <h2>Theme</h2>
+            <div class="bg">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" data-bs-theme-value="auto" value="option1">
+                <label class="form-check-label" for="inlineRadio1">System</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" data-bs-theme-value="light" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Light</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" data-bs-theme-value="dark" value="option3">
+                <label class="form-check-label" for="inlineRadio3">Dark</label>
+              </div>
+            </div>
+          </form>
+
+          <form class="theme-switch hamburger-menu">
+            <h2>Theme</h2>
+            <div class="bg">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" data-bs-theme-value="auto" value="option1">
+                <label class="form-check-label" for="inlineRadio1">System</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" data-bs-theme-value="light" value="option2">
+                <label class="form-check-label" for="inlineRadio2">Light</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" data-bs-theme-value="dark" value="option3">
+                <label class="form-check-labe" for="inlineRadio3">Dark</label>
+              </div>
+            </div>
+          </form>
+          
+          <!-- END BLERGH -->
+
           <div class="cc-statement">
             <img alt="Creative Commons License" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png" />
             <p class="small">
@@ -306,154 +407,122 @@
       <!-- END row -->
     </div>
     <!-- END container main-content -->
-    <!-- START footer-container -->
-    <div id="footer" class="footer-container">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <div class="ask-container">
-              <div class="ask-the-library">
-                <a href="https://www.rmit.edu.au/library/about-and-contacts/ask-the-library">
-                  <img src="https://rmitlibrary.github.io/cdn/image/svg/ask-the-library.svg" class="ask-logo" alt="Ask the library" />
-                  <div class="ask-text">
-                    <p class="lead">Still can't find what you need?</p>
-                    <p>The RMIT University Library provides study support, one-on-one consultations and peer mentoring to RMIT students.</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- START acknowledgement -->
-      <div class="acknowledgement">
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <div class="acknowledgement-container">
-                <div class="acknowledgement-image">
-                  <img src="https://www.rmit.edu.au/content/dam/rmit/images/luwaytini.png" alt="" />
-                </div>
-
-                <div class="content">
-                  <img alt="aboriginal flag" src="https://www.rmit.edu.au/content/dam/rmit/au/en/news/homepage/flag-red.png" />
-                  <img alt="torres strait flag" src="https://www.rmit.edu.au/content/dam/rmit/au/en/news/homepage/flag-green.png" />
-
-                  <h2 class="h4 margin-top-zero">Acknowledgement of Country</h2>
-                  <p>
-                    RMIT University acknowledges the people of the Woi wurrung and Boon wurrung language groups of the eastern Kulin Nation on whose unceded lands we conduct the business of the University. RMIT University respectfully acknowledges their Ancestors and Elders, past and present. RMIT
-                    also acknowledges the Traditional Custodians and their Ancestors of the lands and waters across Australia where we conduct our business - Artwork 'Luwaytini' by Mark Cleaver, Palawa.
-                  </p>
-                  <a href="#" class="link-large">More information</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- END acknowledgement -->
       <!-- START footer -->
-      <footer>
+      <div class="footer-container">
         <div class="container">
-          <div class="row">
-            <div class="col">
-              <!-- START logo -->
-              <a aria-label="Royal Melbourne Institute of Technology University Logo" href="https://www.rmit.edu.au/">
-                <div aria-hidden="true" class="logo">
-                  <span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/rmit-logo.svg" style="width: 100px" alt="" /></span>
+              <div class="row">
+                  <div class="col">
+              <!-- START ask the library -->
+              <div class="ask-container">
+                
+                <section class="ask-the-library">
+                  <a href="https://www.rmit.edu.au/library/about-and-contacts/ask-the-library">
+                    <img src="https://rmitlibrary.github.io/cdn/footer/ask-library-icon-round.svg" class="ask-logo" alt="" />
+                    <div class="ask-text">
+                      <h2 class="h3 margin-top-zero">Ask the library</h2>
+                      <p>Study support, one-on-one consultations and peer mentoring at your fingertips!</p>
+                    </div>
+                  </a>
+                </section>
+            
+              </div>
+              <!-- END ask the library -->
+            </div>
+           </div>
+        </div>
+         <!-- START acknowledgement -->
+         <div class="acknowledgement">
+          <div class="container">
+              <div class="row">
+                  <div class="col">
+                      <section class="acknowledgement-container">
+                          <div class="content">
+                              <img alt="aboriginal flag" src="https://www.rmit.edu.au/content/dam/rmit/au/en/news/homepage/flag-red.png" />
+                              <img alt="torres strait flag" src="https://www.rmit.edu.au/content/dam/rmit/au/en/news/homepage/flag-green.png">
+                              
+                              <h2 class="h4 margin-top-zero">Acknowledgement of Country</h2>
+                              <p>RMIT University acknowledges the people of the Woi wurrung and Boon wurrung language groups of the eastern Kulin Nation on whose unceded lands we conduct the business of the University. RMIT University respectfully acknowledges their Ancestors and Elders, past and present. RMIT also acknowledges the Traditional Custodians and their Ancestors of the lands and waters across Australia where we conduct our business<span class="img-credit"> - Artwork 'Sentient' by Hollie Johnson, Gunaikurnai and Monero Ngarigo</span>.</p>
+                              <a href="#" class="link-large">More information</a>
+                          </div>
+                          <div class="acknowledgement-image">
+                              <img src="https://www.rmit.edu.au/content/dam/rmit/images/sentient-hollie-johnson.jpg" alt="" />
+                          </div>
+                      </section>
+                  </div>
+              </div>
+          </div>
+      </div>    
+      <!-- END acknowledgement -->
+          <!-- START footer -->
+          <footer>
+          <div class="container">
+              <div class="row">
+                  <div class="col">
+                      <!-- START logo -->    
+                      <a aria-label="Royal Melbourne Institute of Technology University Logo" href="https://www.rmit.edu.au/">
+                <div aria-hidden="true" class="logo"><span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/rmit-logo.svg" style="width: 100px" alt="" /></span>
                 </div>
               </a>
-              <!-- END logo -->
-              <!-- START footer links -->
-              <!--<ul class="footer-links">
-					<li><a href="">Link 1</a></li>
-					<li><a href="">Link 2</a></li>
-					<li><a href="">Link 3</a></li>
-					<li><a href="">Link 4</a></li>
-				</ul>-->
-              <!-- END footer links -->
-              <!-- START legal items -->
-              <div class="footerlegalShareItems">
-                <div class="footer-legal">
-                  <ul>
-                    <li>Copyright © 2024 RMIT University<span> | </span></li>
-                    <li>
-                      <a href="https://www.rmit.edu.au/utilities/terms"><span class="no-focus" tabindex="-1">Terms</span></a
-                      ><span> | </span>
-                    </li>
-                    <li>
-                      <a href="https://www.rmit.edu.au/utilities/privacy"><span class="no-focus" tabindex="-1">Privacy</span></a
-                      ><span> | </span>
-                    </li>
-                    <li>
-                      <a href="https://www.rmit.edu.au/utilities/accessibility"><span class="no-focus" tabindex="-1">Accessibility</span></a> <span> | </span>
-                    </li>
-                    <li>
-                      <a data-analytics-type="footerlink" data-analytics-value="Website feedback" href="https://www.rmit.edu.au/utilities/website-feedback"><span class="no-focus" tabindex="-1">Website feedback</span></a
-                      ><span> | </span>
-                    </li>
-                    <li>
-                      <a data-analytics-type="footerlink" data-analytics-value="Complaints" href="https://www.rmit.edu.au/utilities/complaints"><span class="no-focus" tabindex="-1">Complaints</span></a
-                      ><span> | </span>
-                    </li>
-                    <li>ABN 49 781 030 034<span> | </span></li>
-                    <li>CRICOS provider number: 00122A<span> | </span></li>
-                    <li>TEQSA provider number: PRV12145<span> | </span></li>
-                    <li>RTO Code: 3046<span> | </span></li>
-                    <li>
-                      <a href="https://www.open.edu.au/online-courses/rmit-university"><span class="no-focus" tabindex="-1">Open Universities Australia</span></a>
-                    </li>
-                  </ul>
+                      <!-- END logo -->
+                      <!-- START optional links -->
+                      <!-- <ul class="footer-links">
+                        <li><a href="">Link 1</a></li>
+                        <li><a href="">Link 2</a></li>
+                        <li><a href="">Link 3</a></li>
+                        <li><a href="">Link 4</a></li>
+                      </ul> -->
+                      <!-- END optional links -->
+                      <!-- START legal-social -->
+                      <div class="footerlegalShareItems">
+                          <!-- START legal -->
+                          <div class="footer-legal">
+                          <ul>
+                              <li>Copyright © 2024 RMIT University</li>
+                              <li><a href="https://www.rmit.edu.au/utilities/terms"><span class="no-focus" tabindex="-1">Terms</span></a></li>
+                              <li><a href="https://www.rmit.edu.au/utilities/privacy"><span class="no-focus" tabindex="-1">Privacy</span></a></li>
+                              <li><a href="https://www.rmit.edu.au/utilities/accessibility"><span class="no-focus" tabindex="-1">Accessibility</span></a></li>
+                              <li><a data-analytics-type="footerlink" data-analytics-value="Website feedback" href="https://www.rmit.edu.au/utilities/website-feedback"><span class="no-focus" tabindex="-1">Website feedback</span></a></li>
+                              <li><a data-analytics-type="footerlink" data-analytics-value="Complaints" href="https://www.rmit.edu.au/utilities/complaints"><span class="no-focus" tabindex="-1">Complaints</span></a></li>
+                              <li>ABN 49 781 030 034</li>
+                              <li>CRICOS provider number: 00122A</li>
+                              <li>TEQSA provider number: PRV12145</li>
+                              <li>RTO Code: 3046</li>
+                              <li><a href="https://www.open.edu.au/online-courses/rmit-university"><span class="no-focus" tabindex="-1">Open Universities Australia</span></a> </li>
+                            </ul>
+                          </div>
+                          <!-- END legal -->
+                          <!-- START social -->
+                          <div class="social-nav">
+                          <ul> 
+                              <!-- START facebook -->
+                              <li><a aria-label="For Facebook"  href="https://www.facebook.com/RMITuniversity/"> <span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/facebook.svg" alt="" /></span></a></li>
+                              <!-- END facebook -->
+                              <!-- START twitter/x -->
+                              <li><a aria-label="For Twitter" href="https://twitter.com/rmit"> <span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/twitter.svg" alt="" /></span></a></li>
+                              <!-- END twitter/x -->
+                              <!-- START insta -->
+                              <li><a aria-label="For Instagram" href="https://www.instagram.com/rmituniversity/"> <span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/instagram.svg" alt="" /></span> </a></li>
+                              <!-- END insta -->              
+                              <!-- START LinkedIn -->
+                              <li><a aria-label="For LinkedIn" data-analytics-type="socialshare" data-analytics-value="LinkedIn" href="https://www.linkedin.com/school/rmit-university/"><span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/linkedin.svg" alt="" /></span></a></li>
+                              <!-- END LinkedIn -->
+                              <!-- START YouTube -->
+                              <li><a aria-label="For Youtube" href="https://www.youtube.com/user/rmitmedia"> <span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/youtube.svg" alt="" /></span></a></li>
+                              <!-- END YouTube -->     
+                              <!-- START Weibo -->          
+                              <li><a aria-label="For Weibo" href="https://www.weibo.com/rmituni"> <span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/weibo.svg" alt="" /></span></a></li>
+                              <!-- END Weibo -->                
+                </ul>
                 </div>
-
-                <div class="social-nav">
-                  <ul>
-                    <li>
-                      <a aria-label="For Facebook" href="https://www.facebook.com/RMITuniversity/">
-                        <span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/facebook.svg" alt="" /></span
-                      ></a>
-                    </li>
-
-                    <li>
-                      <a aria-label="For Twitter" href="https://twitter.com/rmit">
-                        <span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/twitter.svg" alt="" /></span
-                      ></a>
-                    </li>
-
-                    <li>
-                      <a aria-label="For Instagram" href="https://www.instagram.com/rmituniversity/">
-                        <span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/instagram.svg" alt="" /></span>
-                      </a>
-                    </li>
-
-                    <li>
-                      <a aria-label="For LinkedIn" data-analytics-type="socialshare" data-analytics-value="LinkedIn" href="https://www.linkedin.com/school/rmit-university/"
-                        ><span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/linkedin.svg" alt="" /></span
-                      ></a>
-                    </li>
-
-                    <li>
-                      <a aria-label="For Youtube" href="https://www.youtube.com/user/rmitmedia">
-                        <span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/youtube.svg" alt="" /></span
-                      ></a>
-                    </li>
-
-                    <li>
-                      <a aria-label="For Weibo" href="https://www.weibo.com/rmituni">
-                        <span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/weibo.svg" alt="" /></span
-                      ></a>
-                    </li>
-                  </ul>
-                </div>
+                          <!-- END social -->
+                      </div>
+                      <!-- END legal-social -->
+                  </div>
               </div>
-              <!-- END legal items -->
-            </div>
           </div>
-        </div>
-      </footer>
-      <!-- END footer -->
-    </div>
+        </footer>
+          <!-- END footer -->
+      </div>
     <!-- END footer-container -->
     <!-- svg code to display tool tip icon and allow rollover colour -->
     <svg display="none">

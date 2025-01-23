@@ -13,6 +13,15 @@ table, .table {
 	th {
 		vertical-align: bottom;
 	}
+
+	th {
+		vertical-align: top;
+	}
+
+	/* Apply vertical alignment to th elements in the first row only */
+	thead th {
+		vertical-align: bottom;
+	}
 	
 	td {
 		vertical-align: top;
@@ -37,15 +46,19 @@ table, .table {
 /* Styles for striped tables */
 .table-striped {
 	width: 100%;
-	border: 0 !important;
+	border: 0;
 	
 	tr, td {
-		border: 0 !important;
+		border: 0;
+	}
+
+	th {
+		border: 0;
 	}
 	
-	th {
-		border-width: 0 0 1px 0px !important;
-		border-bottom-color: $interface-grey;
+	//add a bottom border to thead th (first row)
+	thead th {
+		border-bottom: 1px solid $interface-grey;
 	}
 	
 }
@@ -58,5 +71,5 @@ table, .table {
 }
 
 .table-striped>tbody>tr:nth-of-type(odd) {
-    background-color: $underlay-grey;
+    background-color: var(--bs-primary-bg-subtle);
 }

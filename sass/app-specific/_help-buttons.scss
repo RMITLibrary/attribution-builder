@@ -9,6 +9,7 @@
 	svg { margin-bottom: 2px; }
 }
 
+
 .btn-help-isolated {
     border: 0;
     width: 2rem;
@@ -23,20 +24,37 @@
 }
 
 .btn-help, .btn-help-isolated  {
-
     svg {
         width: 18px;
         height: 18px;
-        fill: $rmit-blue;
+        fill: $link-color;
     }
     
 	&:hover {
-        border-color: $blue-hover;
-        svg { fill: $blue-hover; }
+        border-color: $link-hover-color;
+        svg { fill:$link-hover-color; }
     }   
 }
 
 .license-title-container {
 	display: flex;
 	gap: 0.25rem;
+}
+
+//dark mode
+@include color-mode(dark) {
+	
+    .btn-help, .btn-help-isolated  {
+
+        svg {
+            width: 18px;
+            height: 18px;
+            fill: $link-color-dark;
+        }
+        
+        &:hover {
+            border-color: $link-color-hover-dark;
+            svg { fill: $link-color-hover-dark; }
+        }   
+    }
 }

@@ -12,8 +12,9 @@ blockquote {
     @include do-space(padding-right, md); 
     
     border-radius: 0 0.5rem 0.5rem 0;
-    border-left: 0.25rem solid $rmit-red;
-    background: $underlay-grey;
+    border-left: 0.25rem solid $accent-color;
+
+    background-color: var(--bs-primary-bg-subtle);
 	
 	/* add margin for smaller screens */
     .img-wrap {
@@ -32,6 +33,7 @@ blockquote {
             h3 {
                 display: flex;
                 align-items: center;
+				text-wrap-style: auto;
                 
                 /* h4 fontsize */
                 font-size: 1.25rem;
@@ -45,10 +47,12 @@ blockquote {
 				height: 2rem;
 				margin-left: 0.25rem;
 				transform: rotate(-90deg);
+				flex-shrink: 0; /* Prevents shrinking */
+				flex-basis: 2rem; /* Ensures a fixed size */
 			}
 
 			p, small {
-				 color: $dark-grey;
+                color: var(--bs-body-color);
 			}
 
 			p.category {
@@ -120,6 +124,7 @@ blockquote.complex {
 			.icon-wrap {
 				width: 6rem;
 				display: block;
+				flex-shrink: 0;
 			}
 		}
 		
@@ -142,4 +147,20 @@ blockquote.complex {
         }
     }
 	
+}
+
+// Dark mode
+@include color-mode(dark) {
+	
+    //Make side bar yellow???
+	blockquote {
+		border-left: 0.25rem solid $accent-color-dark;
+        
+        .content {
+			//display arrow after title
+			h3::after {
+				@include carat-dark;
+			}
+        }
+	}
 }

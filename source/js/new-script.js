@@ -363,3 +363,81 @@ const embedBool = urlParams.get('embed');
 if(embedBool == 'true') {
 	embedThisPage();
 }
+
+
+
+/*
+    THEME SWITCHER
+    This script handles the theme switching functionality for the website. It retrieves the user's  preferred theme from local storage or system settings and applies it to the document. It also provides the ability to switch themes through a theme switcher UI component, updates the UI to reflect the active theme, and listens for changes to the system's dark mode preference.
+
+    Note: There is a companion script in the <head> section that sets the initial theme as early as possible to reduce the flash of unstyled content (FOUC). It determines the user's preferred theme (either from local storage or system settings) and applies it immediately.
+*/
+(function() {
+    'use strict';
+
+    // Function to get the stored theme from local storage
+    const getStoredTheme = () => localStorage.getItem('theme');
+
+    // Function to set the theme in local storage
+    const setStoredTheme = theme => localStorage.setItem('theme', theme);
+
+    // Function to determine the preferred theme
+    const getPreferredTheme = () => {
+      const storedTheme = getStoredTheme(); // Retrieve the stored theme
+      if (storedTheme) {
+        return storedTheme; // If a theme is stored, return it
+      }
+      // If no theme is stored, check the system preference for dark mode
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+
+    // Function to apply the specified theme
+    const setTheme = theme => {
+      if (theme === 'auto') {
+        // If theme is 'auto', set it based on system preference
+        document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+      } else {
+        // Otherwise, set the theme explicitly
+        document.documentElement.setAttribute('data-bs-theme', theme);
+      }
+    };
+
+    // Function to update the UI to reflect the active theme
+    const showActiveTheme = theme => {
+      const themeSwitcher = document.querySelector('#theme-switcher');
+      if (!themeSwitcher) {
+        return; // If no theme switcher element is found, exit
+      }
+      // Remove 'checked' attribute from all radio buttons
+      document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+        element.checked = false;
+      });
+      // Add 'checked' attribute to the selected theme radio button
+      const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`);
+      if (btnToActive) {
+        btnToActive.checked = true;
+      }
+    };
+
+    // Listen for changes to the system's dark mode preference
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      const storedTheme = getStoredTheme();
+      if (storedTheme !== 'light' && storedTheme !== 'dark') {
+        setTheme(getPreferredTheme()); // Update the theme if it's set to 'auto'
+      }
+    });
+
+    // When the DOM content is loaded, initialise the theme switcher
+    window.addEventListener('DOMContentLoaded', () => {
+      showActiveTheme(getPreferredTheme()); // Show the active theme
+      // Add click event listeners to all theme toggle radio buttons
+      document.querySelectorAll('[data-bs-theme-value]').forEach(toggle => {
+        toggle.addEventListener('change', () => {
+          const theme = toggle.getAttribute('data-bs-theme-value');
+          setStoredTheme(theme); // Store the selected theme
+          setTheme(theme); // Apply the selected theme
+          showActiveTheme(theme); // Update the UI
+        });
+      });
+    });
+  })();

@@ -3,9 +3,10 @@ body {
 }
 
 /* Space between top nav and content if top nav is NOT fixed */
-.main-content {
+#page-content {
 	padding-top: 4rem;
 	@include media-breakpoint-down(md) { padding-top: 2.5rem; }
+	//background-color: pink;
 }
 
 #nav-menu {
@@ -20,7 +21,7 @@ html.nav-fixed {
 	scroll-padding-top: 6rem;
 	@include media-breakpoint-down(md) { scroll-padding-top: 4rem; }
 	
-	.main-content {
+	#page-content {
 		padding-top: 7.5rem;
 		@include media-breakpoint-down(md) { padding-top: 5.5rem; }
 	}
@@ -99,6 +100,11 @@ html.nav-fixed {
 			color: $white;
 		}
 		
+		a:not([href]):not([class]), a:not([href]):not([class]):hover {
+		  color: $white;
+		  text-decoration: none;
+		}
+		
 		/* Use flex to position search label and mag glass side by side */
 		.search a {
 			display: flex;
@@ -107,15 +113,7 @@ html.nav-fixed {
 		}
 			
 		.mag-glass {
-			content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26' fill='%23fff'%3e%3cpath d='M26 24.7152L18.2522 17.0455C21.8 12.7856 21.3825 6.47376 17.3048 2.72326C13.2271 -1.02725 6.93433 -0.887297 3.02572 3.04082C-0.88289 6.96895 -1.02215 13.2932 2.70973 17.3912C6.44161 21.4893 12.7221 21.9088 16.9609 18.3433L24.7087 26L26 24.7152ZM10.5044 18.9403C5.84741 18.9403 2.07218 15.1462 2.07218 10.466C2.07218 5.78575 5.84741 1.99168 10.5044 1.99168C15.1614 1.99168 18.9366 5.78575 18.9366 10.466C18.9332 12.7282 18.0313 14.8955 16.4312 16.4867C14.831 18.0778 12.6649 18.961 10.414 18.9403H10.5044Z'/%3e%3c/svg%3e");
-
-			width: 26px;
-			height: 26px;
-			
-			//text "search" is now being displayed, add margin to give some space
-			/*@include media-breakpoint-up(md) { 
-			   margin-left: 0.75rem;
-			}*/
+			@include mag-glass;
 		}
 		
 		.search-label {
@@ -134,11 +132,11 @@ html.nav-fixed {
       
             text-indent: -10000px;
             
-            background-color: $rmit-blue;
+            background-color: $rmit-blue !important;
         }
         
         button:hover {
-           background-color: $rmit-blue; 
+           background-color: $rmit-blue !important; 
         }
         
         button:focus {
@@ -156,15 +154,17 @@ html.nav-fixed {
         display: flex;
         align-items: center;
 		
-		a {
+        a {
+			color: $white;
+			text-decoration: none;			
+			&:hover { text-decoration: underline; }
+		}
+        
+        h2 {
 			color: $white;
 			font-size: 4.5vw;			//scale title depending on small screen width
-			text-decoration: none;
-			
 			margin: 0;
-			
-			&:hover { text-decoration: underline; }
-			
+           
 			@include media-breakpoint-up(sm) {
 				font-size: 1.25rem;		//Once we have enough space, fix the title
 			} 
@@ -182,7 +182,7 @@ html.nav-fixed {
 #sub-menu {	
 	width: 100%;
 	border-bottom: 1px solid $interface-grey;
-	background-color: $white;
+	background-color: $body-bg;
 	
 	/* handle  subnav horizontal scroll */
 	nav {
@@ -200,25 +200,49 @@ html.nav-fixed {
 	
 	li.selected {
         padding-bottom: 0.75rem;
-		border-bottom: 0.25rem solid $white;
+		border-bottom: 0.25rem solid $body-bg;
         
-		color: $rmit-blue;
-		border-bottom-color: $red;
+		color: $link-color;
+		border-bottom-color: $accent-color;
 	}
 	
 	a {
         display: block;
-		color: $rmit-blue;
+		color: $link-color;
         
         padding-bottom: 0.75rem;
-		border-bottom: 0.25rem solid $white;
+		border-bottom: 0.25rem solid $body-bg;
 	}
     
     a.selected {
-        border-bottom-color: $red;
+        border-bottom-color: $accent-color;
 	}
 	
 }
+
+// Dark mode
+@include color-mode(dark) {
+	#sub-menu {	
+		background-color: $underlay-grey-dark;
+		border-bottom: 1px solid $underlay-selected-dark;
+
+		li.selected {
+			color: $link-color-dark;
+			border-bottom-color: $accent-color-dark;
+		}
+		
+		a {
+			color: $link-color-dark;
+			border-bottom: 0.25rem solid $underlay-grey-dark;
+		}
+		
+		a.selected {
+			border-bottom-color: $accent-color-dark;
+		}
+		
+	}
+}
+
 /* END sub-menu */
 
 

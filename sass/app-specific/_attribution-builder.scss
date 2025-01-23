@@ -100,7 +100,7 @@ _::-webkit-full-page-media, _:future, :root .derivative-container {
 
 /* Classes to display the actual attribution */
 .attribution-container {
-	background-color: $underlay-grey;
+	background-color: var(--bs-primary-bg-subtle);
 	padding: 1rem 0.5rem;
 	
 	@include media-breakpoint-up(md) {
@@ -109,7 +109,7 @@ _::-webkit-full-page-media, _:future, :root .derivative-container {
 }
 
 .attribution-built, .attribution-built-html {
-	background-color: $white;
+	background-color: $body-bg;
 	padding: 1rem 0.75rem 1rem 0.75rem;
 	border: 1px solid $interface-grey;
 	border-radius: 0.25rem;
@@ -117,6 +117,13 @@ _::-webkit-full-page-media, _:future, :root .derivative-container {
 	
 	@include media-breakpoint-up(md) {
 		padding: 1rem 1.5rem 1rem 1.5rem;
+	}
+}
+
+//dar mode
+@include color-mode(dark) {
+	.attribution-built, .attribution-built-html {
+		background-color: $body-bg-dark;
 	}
 }
 

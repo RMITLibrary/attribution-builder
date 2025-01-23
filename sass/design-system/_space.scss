@@ -119,7 +119,11 @@ offered. Append a bootstrap size unit on the end to get the desired spacing.
 }
 
 .margin-bot {
-    @include set-prop(".margin-bot", margin-bottom);
+    @include set-prop(".margin-bottom", margin-bottom);
+}
+
+.margin-bottom {
+    @include set-prop(".margin-bottom", margin-bottom);
 }
 
 .margin-left {
@@ -135,7 +139,11 @@ offered. Append a bootstrap size unit on the end to get the desired spacing.
 }
 
 .padding-bot {
-    @include set-prop(".padding-bot", padding-bottom);
+    @include set-prop(".padding-bottom", padding-bottom);
+}
+
+.padding-bottom {
+    @include set-prop(".padding-bottom", padding-bottom);
 }
 
 /*
@@ -150,4 +158,30 @@ hr {
 hr.xl {
     @include do-space(margin-top, xl); 
     @include do-space(margin-bottom, xl);
+}
+
+$width-xl: 100%;
+$width-lg: 40rem;       //640px
+$width-md: 25rem;       //400px
+$width-sm: 18.5rem;     //296px
+$width-xs: 10rem;		//128px;
+
+.width-100-perc {
+    width: $width-xl;
+}
+
+.min-width-lg {
+    min-width: $width-lg;
+}
+
+.min-width-md {
+    width: $width-md;
+}
+
+.min-width-sm {
+    width: $width-sm;
+}
+
+.min-width-xs {
+    width: $width-xs;
 }
