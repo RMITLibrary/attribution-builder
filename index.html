@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Attribution builder</title>
-    <link rel="stylesheet" href="sass/main.css" />
+    <link rel="stylesheet" href="css/main.css" />
 
     <!-- Google Tag Manager -->
     <script>
@@ -26,38 +26,31 @@
     reducing the flash of unstyled content (FOUC). It determines the user's preferred
     theme (either from local storage or system settings) and applies it immediately.
     -->
-    <script>
-      (function() {
-        'use strict';
+   <!-- 
+    DARK MODE
+    This script is placed in the <head> to ensure the theme is set as early as possible,
+    reducing the flash of unstyled content (FOUC). It determines the user's preferred
+    theme (either from local storage or system settings) and applies it immediately.
+  -->
+  <script>
+    (function() {
+      'use strict';
 
-        // Function to get the stored theme from local storage
-        const getStoredTheme = () => localStorage.getItem('theme');
+      const getStoredTheme = () => localStorage.getItem('theme');
 
-        // Function to determine the preferred theme
-        const getPreferredTheme = () => {
-          const storedTheme = getStoredTheme(); // Retrieve the stored theme
-          if (storedTheme) {
-            return storedTheme; // If a theme is stored, return it
-          }
-          // If no theme is stored, check the system preference for dark mode
-          return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        };
+      const getPreferredTheme = () => {
+        const storedTheme = getStoredTheme();
+        return storedTheme ? storedTheme : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      };
 
-        // Function to apply the specified theme
-        const setTheme = theme => {
-          if (theme === 'auto') {
-            // If theme is 'auto', set it based on system preference
-            document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
-          } else {
-            // Otherwise, set the theme explicitly
-            document.documentElement.setAttribute('data-bs-theme', theme);
-          }
-        };
+      const setTheme = theme => {
+        const themeToSet = theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme;
+        document.documentElement.setAttribute('data-bs-theme', themeToSet);
+      };
 
-        // Set the theme based on the preferred theme
-        setTheme(getPreferredTheme());
-      })();
-    </script>
+      setTheme(getPreferredTheme());
+    })();
+  </script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -329,69 +322,26 @@
             </div>
           </form>
           <!-- END form -->
+
           <!-- Start theme switcher -->
-          <div id="theme-switcher" class="theme-switch-blergh">
-            <!-- <h2 class="h5">Theme</h2>
-            <div class="theme-bg"> -->
-              <form>
-                <h2 class="small">Theme</h2 >
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" data-bs-theme-value="auto" value="option1">
-                  <label class="form-check-label small" for="inlineRadio1">System</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" data-bs-theme-value="light" value="option2">
-                  <label class="form-check-label small" for="inlineRadio2">Light</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" data-bs-theme-value="dark" value="option3">
-                  <label class="form-check-labe small" for="inlineRadio3">Dark</label>
-                </div>
-              </form>
-              
-            <!-- </div> -->
-          </div>
-          <!-- END theme switcher -->
-
-          <!-- START BLERGH -->
-
-          <form class="theme-switch compact">
+          <form class="theme-switch theme-compact">
             <h2>Theme</h2>
             <div class="bg">
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" data-bs-theme-value="auto" value="option1">
-                <label class="form-check-label" for="inlineRadio1">System</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" data-bs-theme-value="light" value="option2">
-                <label class="form-check-label" for="inlineRadio2">Light</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" data-bs-theme-value="dark" value="option3">
-                <label class="form-check-label" for="inlineRadio3">Dark</label>
-              </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="themeOptions" data-bs-theme-value="auto">
+                    <label class="form-check-label">System</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="themeOptions" data-bs-theme-value="light">
+                    <label class="form-check-label">Light</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="themeOptions" data-bs-theme-value="dark">
+                    <label class="form-check-label">Dark</label>
+                </div>
             </div>
           </form>
-
-          <form class="theme-switch hamburger-menu">
-            <h2>Theme</h2>
-            <div class="bg">
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" data-bs-theme-value="auto" value="option1">
-                <label class="form-check-label" for="inlineRadio1">System</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" data-bs-theme-value="light" value="option2">
-                <label class="form-check-label" for="inlineRadio2">Light</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" data-bs-theme-value="dark" value="option3">
-                <label class="form-check-labe" for="inlineRadio3">Dark</label>
-              </div>
-            </div>
-          </form>
-          
-          <!-- END BLERGH -->
+          <!-- End theme switcher -->   
 
           <div class="cc-statement">
             <img alt="Creative Commons License" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png" />
@@ -534,6 +484,6 @@
       </symbol>
     </svg>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"></script>
-    <script src="js/new-script.js"></script>
+    <script src="js/attribution-builder-script.js"></script>
   </body>
 </html>
