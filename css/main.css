@@ -14407,31 +14407,38 @@ $img-width-sm: 18.5rem;     //296px*/
   padding-top: 0.75rem;
   border-top: 1px solid #BFBFBF;
 }
-.theme-switch.theme-compact h2, .theme-switch.theme-compact .h2 {
+.theme-switch.theme-compact h2, .theme-switch.theme-compact .h2, .theme-switch.theme-compact legend {
   font-size: 0.8125rem;
   text-wrap: pretty;
   letter-spacing: 0.02rem;
   font-family: "Helvetica Neue", Arial, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: var(--bs-body-color);
   display: inline-block;
+  width: auto;
   margin-right: 1rem;
   margin-bottom: 0;
+  font-weight: bold;
+  border: 1px solid red;
 }
 @media (min-width: 768px) {
-  .theme-switch.theme-compact h2, .theme-switch.theme-compact .h2 {
+  .theme-switch.theme-compact h2, .theme-switch.theme-compact .h2, .theme-switch.theme-compact legend {
     font-size: 0.9375rem;
   }
+}
+.theme-switch.theme-compact legend {
+  margin-top: 2px;
+  margin-right: 1.25rem;
 }
 .theme-switch.theme-compact .bg {
   display: inline-block;
 }
-.theme-switch.theme-compact label {
+.theme-switch.theme-compact label, .theme-switch.theme-compact .form-check-label {
   font-size: 0.8125rem;
   text-wrap: pretty;
   letter-spacing: 0.02rem;
 }
 @media (min-width: 768px) {
-  .theme-switch.theme-compact label {
+  .theme-switch.theme-compact label, .theme-switch.theme-compact .form-check-label {
     font-size: 0.9375rem;
   }
 }
