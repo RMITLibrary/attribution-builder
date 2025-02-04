@@ -14418,7 +14418,6 @@ $img-width-sm: 18.5rem;     //296px*/
   margin-right: 1rem;
   margin-bottom: 0;
   font-weight: bold;
-  border: 1px solid red;
 }
 @media (min-width: 768px) {
   .theme-switch.theme-compact h2, .theme-switch.theme-compact .h2, .theme-switch.theme-compact legend {
