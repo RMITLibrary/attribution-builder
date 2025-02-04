@@ -14425,8 +14425,13 @@ $img-width-sm: 18.5rem;     //296px*/
   }
 }
 .theme-switch.theme-compact legend {
-  margin-top: 2px;
-  margin-right: 1.25rem;
+  margin-top: 0.25rem;
+  margin-right: 2rem;
+}
+@media (min-width: 768px) {
+  .theme-switch.theme-compact legend {
+    margin-top: 3px;
+  }
 }
 .theme-switch.theme-compact .bg {
   display: inline-block;

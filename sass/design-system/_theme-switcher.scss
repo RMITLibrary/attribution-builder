@@ -49,8 +49,10 @@
 
 	//legend alings in a weird way, extra styles to get it looking right
 	legend {
-		margin-top: 2px;
-		margin-right: 1.25rem;
+		margin-top: 0.25rem;
+		margin-right: 2rem;
+
+		@include media-breakpoint-up(md) { margin-top: 3px; }
 	}
 
 
