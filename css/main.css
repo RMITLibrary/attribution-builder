@@ -286,7 +286,7 @@ hr {
   opacity: 0.25;
 }
 
-h6, .h6, h5, .theme-switch h2, .theme-switch .h2, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+h6, .h6, h5, .theme-switch legend, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-weight: 500;
@@ -310,7 +310,7 @@ h4, .h4 {
   font-size: 1.5rem;
 }
 
-h5, .theme-switch h2, .theme-switch .h2, .h5 {
+h5, .theme-switch legend, .h5 {
   font-size: 1.25rem;
 }
 
@@ -11779,7 +11779,7 @@ small, .small {
   }
 }
 h1,
-.h1, h2, .h2, h3, .h3, h4, .h4, h5, .theme-switch h2, .theme-switch .h2, .h5, h6, .h6 {
+.h1, h2, .h2, h3, .h3, h4, .h4, h5, .theme-switch legend, .h5, h6, .h6 {
   font-family: "Museo700", Museo700, serif;
   text-wrap: balance;
   margin-top: 2rem;
@@ -11787,13 +11787,13 @@ h1,
 }
 @media (min-width: 768px) {
   h1,
-  .h1, h2, .h2, h3, .h3, h4, .h4, h5, .theme-switch h2, .theme-switch .h2, .h5, h6, .h6 {
+  .h1, h2, .h2, h3, .h3, h4, .h4, h5, .theme-switch legend, .h5, h6, .h6 {
     margin-top: 2.5rem;
   }
 }
 @media (min-width: 768px) {
   h1,
-  .h1, h2, .h2, h3, .h3, h4, .h4, h5, .theme-switch h2, .theme-switch .h2, .h5, h6, .h6 {
+  .h1, h2, .h2, h3, .h3, h4, .h4, h5, .theme-switch legend, .h5, h6, .h6 {
     margin-bottom: 1rem;
   }
 }
@@ -11841,11 +11841,11 @@ h4, .h4 {
   }
 }
 
-h5, .theme-switch h2, .theme-switch .h2, .h5, h6, .h6 {
+h5, .theme-switch legend, .h5, h6, .h6 {
   font-size: 1.125rem;
 }
 @media (max-width: 767.98px) {
-  h5, .theme-switch h2, .theme-switch .h2, .h5, h6, .h6 {
+  h5, .theme-switch legend, .h5, h6, .h6 {
     font-size: 1rem;
   }
 }
@@ -12103,7 +12103,7 @@ p a:visited:hover {
     margin-top: 2.5rem;
   }
 }
-.keywords h5, .keywords .theme-switch h2, .theme-switch .keywords h2, .keywords .theme-switch .h2, .theme-switch .keywords .h2, .keywords .h5 {
+.keywords h5, .keywords .theme-switch legend, .theme-switch .keywords legend, .keywords .h5 {
   margin-top: 0;
 }
 .keywords ul {
@@ -12160,18 +12160,18 @@ p a:visited:hover {
 .list-link-expanded a:hover {
   text-decoration: underline;
 }
-.list-link-expanded h2, .list-link-expanded .h2, .list-link-expanded h3, .list-link-expanded .h3, .list-link-expanded h4, .list-link-expanded .h4, .list-link-expanded h5, .list-link-expanded .h5, .list-link-expanded h6, .list-link-expanded .h6 {
+.list-link-expanded h2, .list-link-expanded .h2, .list-link-expanded h3, .list-link-expanded .h3, .list-link-expanded h4, .list-link-expanded .h4, .list-link-expanded h5, .list-link-expanded .theme-switch legend, .theme-switch .list-link-expanded legend, .list-link-expanded .h5, .list-link-expanded h6, .list-link-expanded .h6 {
   font-size: 1.56rem;
   /*Should this be here? Or use class="h3" to control? */
   margin: 0;
   text-wrap-style: auto;
 }
 @media (max-width: 767.98px) {
-  .list-link-expanded h2, .list-link-expanded .h2, .list-link-expanded h3, .list-link-expanded .h3, .list-link-expanded h4, .list-link-expanded .h4, .list-link-expanded h5, .list-link-expanded .h5, .list-link-expanded h6, .list-link-expanded .h6 {
+  .list-link-expanded h2, .list-link-expanded .h2, .list-link-expanded h3, .list-link-expanded .h3, .list-link-expanded h4, .list-link-expanded .h4, .list-link-expanded h5, .list-link-expanded .theme-switch legend, .theme-switch .list-link-expanded legend, .list-link-expanded .h5, .list-link-expanded h6, .list-link-expanded .h6 {
     font-size: 1.25rem;
   }
 }
-.list-link-expanded h2:hover, .list-link-expanded .h2:hover, .list-link-expanded h3:hover, .list-link-expanded .h3:hover, .list-link-expanded h4:hover, .list-link-expanded .h4:hover, .list-link-expanded h5:hover, .list-link-expanded .h5:hover, .list-link-expanded h6:hover, .list-link-expanded .h6:hover {
+.list-link-expanded h2:hover, .list-link-expanded .h2:hover, .list-link-expanded h3:hover, .list-link-expanded .h3:hover, .list-link-expanded h4:hover, .list-link-expanded .h4:hover, .list-link-expanded h5:hover, .list-link-expanded .theme-switch legend:hover, .theme-switch .list-link-expanded legend:hover, .list-link-expanded .h5:hover, .list-link-expanded h6:hover, .list-link-expanded .h6:hover {
   color: #0051A8;
 }
 
@@ -12181,10 +12181,10 @@ p a:visited:hover {
 [data-bs-theme=dark] .link-list li:before {
   content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%23e6656c'%3e%3cpath fill-rule='evenodd' d='M9.33329 11C9.7065 11 10.0765 11.1557 10.3399 11.4585L16.0063 17.9844L21.661 11.4713C22.144 10.9158 22.9864 10.8561 23.5409 11.3391C24.0965 11.8221 24.1562 12.6635 23.6742 13.219L17.0129 20.8912C16.5075 21.4745 15.5062 21.4755 14.9997 20.8912L8.32668 13.2073C7.84364 12.6517 7.90335 11.8093 8.45891 11.3274C8.71162 11.1077 9.02299 11 9.33329 11Z'/%3e%3c/svg%3e");
 }
-[data-bs-theme=dark] .list-link-expanded h2, [data-bs-theme=dark] .list-link-expanded .h2, [data-bs-theme=dark] .list-link-expanded h3, [data-bs-theme=dark] .list-link-expanded .h3, [data-bs-theme=dark] .list-link-expanded h4, [data-bs-theme=dark] .list-link-expanded .h4, [data-bs-theme=dark] .list-link-expanded h5, [data-bs-theme=dark] .list-link-expanded .h5, [data-bs-theme=dark] .list-link-expanded h6, [data-bs-theme=dark] .list-link-expanded .h6 {
+[data-bs-theme=dark] .list-link-expanded h2, [data-bs-theme=dark] .list-link-expanded .h2, [data-bs-theme=dark] .list-link-expanded h3, [data-bs-theme=dark] .list-link-expanded .h3, [data-bs-theme=dark] .list-link-expanded h4, [data-bs-theme=dark] .list-link-expanded .h4, [data-bs-theme=dark] .list-link-expanded h5, [data-bs-theme=dark] .list-link-expanded .theme-switch legend, .theme-switch [data-bs-theme=dark] .list-link-expanded legend, [data-bs-theme=dark] .list-link-expanded .h5, [data-bs-theme=dark] .list-link-expanded h6, [data-bs-theme=dark] .list-link-expanded .h6 {
   color: #6FB7FF;
 }
-[data-bs-theme=dark] .list-link-expanded h2:hover, [data-bs-theme=dark] .list-link-expanded .h2:hover, [data-bs-theme=dark] .list-link-expanded h3:hover, [data-bs-theme=dark] .list-link-expanded .h3:hover, [data-bs-theme=dark] .list-link-expanded h4:hover, [data-bs-theme=dark] .list-link-expanded .h4:hover, [data-bs-theme=dark] .list-link-expanded h5:hover, [data-bs-theme=dark] .list-link-expanded .h5:hover, [data-bs-theme=dark] .list-link-expanded h6:hover, [data-bs-theme=dark] .list-link-expanded .h6:hover {
+[data-bs-theme=dark] .list-link-expanded h2:hover, [data-bs-theme=dark] .list-link-expanded .h2:hover, [data-bs-theme=dark] .list-link-expanded h3:hover, [data-bs-theme=dark] .list-link-expanded .h3:hover, [data-bs-theme=dark] .list-link-expanded h4:hover, [data-bs-theme=dark] .list-link-expanded .h4:hover, [data-bs-theme=dark] .list-link-expanded h5:hover, [data-bs-theme=dark] .list-link-expanded .theme-switch legend:hover, .theme-switch [data-bs-theme=dark] .list-link-expanded legend:hover, [data-bs-theme=dark] .list-link-expanded .h5:hover, [data-bs-theme=dark] .list-link-expanded h6:hover, [data-bs-theme=dark] .list-link-expanded .h6:hover {
   color: #8cc5ff;
 }
 
@@ -12515,7 +12515,7 @@ p a:visited:hover {
   Focus state is retained when accordion is expanded until user clicks elsewhere.
   */
 }
-.accordion-item h1, .accordion-item h2, .accordion-item h3, .accordion-item h4, .accordion-item h5, .accordion-item h6,
+.accordion-item h1, .accordion-item h2, .accordion-item h3, .accordion-item h4, .accordion-item h5, .accordion-item .theme-switch legend, .theme-switch .accordion-item legend, .accordion-item h6,
 .accordion-item .h1, .accordion-item .h2, .accordion-item .h3, .accordion-item .h4, .accordion-item .h5, .accordion-item .h6, .accordion-item button {
   color: #000054;
 }
@@ -12690,7 +12690,7 @@ and last child has no margin bottom
   margin-bottom: 0px;
 }
 
-[data-bs-theme=dark] .accordion-item h1, [data-bs-theme=dark] .accordion-item h2, [data-bs-theme=dark] .accordion-item h3, [data-bs-theme=dark] .accordion-item h4, [data-bs-theme=dark] .accordion-item h5, [data-bs-theme=dark] .accordion-item h6,
+[data-bs-theme=dark] .accordion-item h1, [data-bs-theme=dark] .accordion-item h2, [data-bs-theme=dark] .accordion-item h3, [data-bs-theme=dark] .accordion-item h4, [data-bs-theme=dark] .accordion-item h5, [data-bs-theme=dark] .accordion-item .theme-switch legend, .theme-switch [data-bs-theme=dark] .accordion-item legend, [data-bs-theme=dark] .accordion-item h6,
 [data-bs-theme=dark] .accordion-item .h1, [data-bs-theme=dark] .accordion-item .h2, [data-bs-theme=dark] .accordion-item .h3, [data-bs-theme=dark] .accordion-item .h4, [data-bs-theme=dark] .accordion-item .h5, [data-bs-theme=dark] .accordion-item .h6, [data-bs-theme=dark] .accordion-item button {
   color: #6FB7FF;
 }
@@ -14039,6 +14039,8 @@ $img-width-sm: 18.5rem;     //296px*/
 .icon-text .content-text h4:first-of-type,
 .icon-text .content-text .h4:first-of-type,
 .icon-text .content-text h5:first-of-type,
+.icon-text .content-text .theme-switch legend:first-of-type,
+.theme-switch .icon-text .content-text legend:first-of-type,
 .icon-text .content-text .h5:first-of-type,
 .icon-text .content-text h6:first-of-type,
 .icon-text .content-text .h6:first-of-type {
@@ -14052,6 +14054,8 @@ $img-width-sm: 18.5rem;     //296px*/
 .icon-text .content-text h4:first-of-type + p,
 .icon-text .content-text .h4:first-of-type + p,
 .icon-text .content-text h5:first-of-type + p,
+.icon-text .content-text .theme-switch legend:first-of-type + p,
+.theme-switch .icon-text .content-text legend:first-of-type + p,
 .icon-text .content-text .h5:first-of-type + p,
 .icon-text .content-text h6:first-of-type + p,
 .icon-text .content-text .h6:first-of-type + p {
@@ -14102,6 +14106,8 @@ $img-width-sm: 18.5rem;     //296px*/
   .img-text .content-text h4:first-of-type,
   .img-text .content-text .h4:first-of-type,
   .img-text .content-text h5:first-of-type,
+  .img-text .content-text .theme-switch legend:first-of-type,
+  .theme-switch .img-text .content-text legend:first-of-type,
   .img-text .content-text .h5:first-of-type,
   .img-text .content-text h6:first-of-type,
   .img-text .content-text .h6:first-of-type {
@@ -14115,6 +14121,8 @@ $img-width-sm: 18.5rem;     //296px*/
   .img-text .content-text h4:first-of-type + p,
   .img-text .content-text .h4:first-of-type + p,
   .img-text .content-text h5:first-of-type + p,
+  .img-text .content-text .theme-switch legend:first-of-type + p,
+  .theme-switch .img-text .content-text legend:first-of-type + p,
   .img-text .content-text .h5:first-of-type + p,
   .img-text .content-text h6:first-of-type + p,
   .img-text .content-text .h6:first-of-type + p {
@@ -14368,7 +14376,7 @@ $img-width-sm: 18.5rem;     //296px*/
 .theme-switch {
   margin-top: 2rem;
 }
-.theme-switch h2, .theme-switch .h2 {
+.theme-switch legend {
   margin-top: 0;
 }
 .theme-switch .form-check-inline:last-child {
@@ -14379,7 +14387,7 @@ $img-width-sm: 18.5rem;     //296px*/
   margin-top: 2rem;
   margin-bottom: 0.75rem;
 }
-.theme-switch.hamburger-menu h2, .theme-switch.hamburger-menu .h2 {
+.theme-switch.hamburger-menu legend {
   color: #fff;
 }
 .theme-switch.hamburger-menu .bg {
@@ -14407,46 +14415,66 @@ $img-width-sm: 18.5rem;     //296px*/
   padding-top: 0.75rem;
   border-top: 1px solid #BFBFBF;
 }
-.theme-switch.theme-compact h2, .theme-switch.theme-compact .h2, .theme-switch.theme-compact legend {
+.theme-switch.theme-compact fieldset {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.theme-switch.theme-compact legend {
   font-size: 0.8125rem;
   text-wrap: pretty;
   letter-spacing: 0.02rem;
   font-family: "Helvetica Neue", Arial, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: var(--bs-body-color);
-  display: inline-block;
   width: auto;
-  margin-right: 1rem;
-  margin-bottom: 0;
+  margin: 0;
   font-weight: bold;
 }
 @media (min-width: 768px) {
-  .theme-switch.theme-compact h2, .theme-switch.theme-compact .h2, .theme-switch.theme-compact legend {
+  .theme-switch.theme-compact legend {
     font-size: 0.9375rem;
   }
 }
-.theme-switch.theme-compact legend {
-  margin-top: 0.25rem;
-  margin-right: 2rem;
-}
-@media (min-width: 768px) {
-  .theme-switch.theme-compact legend {
-    margin-top: 3px;
-  }
-}
-.theme-switch.theme-compact .bg {
-  display: inline-block;
-}
-.theme-switch.theme-compact label, .theme-switch.theme-compact .form-check-label {
+.theme-switch.theme-compact .form-check-label {
   font-size: 0.8125rem;
   text-wrap: pretty;
   letter-spacing: 0.02rem;
+  margin-bottom: 0;
 }
 @media (min-width: 768px) {
-  .theme-switch.theme-compact label, .theme-switch.theme-compact .form-check-label {
+  .theme-switch.theme-compact .form-check-label {
     font-size: 0.9375rem;
   }
 }
 
+/* .theme-switch.theme-compact {
+	margin-top: 3rem;
+	padding-top: 0.75rem;
+	border-top: 1px solid $interface-grey;
+
+	h2, legend {
+		@include type-small;
+		font-family: $font-family-sans-serif;
+		color: var(--bs-body-color);
+		display: inline-block;
+		width: auto;
+		margin-right: 1rem;
+		margin-bottom: 0;
+		font-weight: bold;
+	}
+
+	//legend alings in a weird way, extra styles to get it looking right
+	legend {
+		margin-top: 0.25rem;
+		margin-right: 2rem;
+
+		@include media-breakpoint-up(md) { margin-top: 3px; }
+	}
+
+
+	.bg { display: inline-block; }
+	label, .form-check-label { @include type-small; }
+} */
 @media (min-width: 992px) {
   .theme-switch.theme-right-nav {
     margin-left: 1.5rem;
