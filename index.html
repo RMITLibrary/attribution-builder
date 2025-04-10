@@ -29,12 +29,6 @@
     reducing the flash of unstyled content (FOUC). It determines the user's preferred
     theme (either from local storage or system settings) and applies it immediately.
     -->
-   <!-- 
-    DARK MODE
-    This script is placed in the <head> to ensure the theme is set as early as possible,
-    reducing the flash of unstyled content (FOUC). It determines the user's preferred
-    theme (either from local storage or system settings) and applies it immediately.
-  -->
   <script>
     (function() {
       'use strict';
@@ -307,7 +301,7 @@
 
             <h2>Attribution</h2>
             <div class="attribution-container">
-              <div id="attribution-text" class="attribution-built">Your attribution will be built here.</div>
+              <div id="attribution-text" class="attribution-built" tabindex="0" aria-label="Attribution section. Your attribution will be built here.">Your attribution will be built here.</div>
 
               <div class="attribution-built-html">
                 <div id="attribution-html">The html of your attribution will be built here.</div>
