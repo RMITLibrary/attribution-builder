@@ -129,6 +129,7 @@ _::-webkit-full-page-media, _:future, :root .derivative-container {
 
 .attribution-built {
 	margin-bottom: 1.5rem;
+	@include default-focus;
 }
 
 .attribution-built-html {
