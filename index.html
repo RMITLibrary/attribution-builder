@@ -623,5 +623,47 @@
     </svg>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"></script>
     <script src="js/attribution-builder-script.js"></script>
+    <script>
+      (function () {
+        'use strict';
+
+        // Push custom events to the GTM data layer
+        const trackEvent = (eventCategory, eventAction, eventLabel) => {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'customEvent',
+            eventCategory: eventCategory,
+            eventAction: eventAction,
+            eventLabel: eventLabel,
+          });
+          console.log(`Tracked: ${eventCategory}, ${eventAction}, ${eventLabel}`);
+        };
+
+        // Track license type selection
+        const licenseSelect = document.getElementById('license-select');
+        if (licenseSelect) {
+          licenseSelect.addEventListener('change', (event) => {
+            const selectedLicense = event.target.value;
+            trackEvent('License Selection', 'License Selected', selectedLicense);
+          });
+        }
+
+        // Track "Copy Attribution" button click
+        const copyAttributionButton = document.getElementById('copy-attribution');
+        if (copyAttributionButton) {
+          copyAttributionButton.addEventListener('click', () => {
+            trackEvent('Button Click', 'Copy Attribution', 'Copy Attribution Button');
+          });
+        }
+
+        // Track "Copy HTML" button click
+        const copyHtmlButton = document.getElementById('copy-html');
+        if (copyHtmlButton) {
+          copyHtmlButton.addEventListener('click', () => {
+            trackEvent('Button Click', 'Copy HTML', 'Copy HTML Button');
+          });
+        }
+      })();
+    </script>
   </body>
 </html>
