@@ -1,42 +1,72 @@
 # Attribution Builder
 
-[Provide a brief summary of what this project is about.]
+The Attribution Builder helps users easily cite open material by automatically generating attributions for Creative Commons or public domain works.
+
+## Purpose
+
+- Provide a tool to generate attributions for openly distributed works.
+- Support Creative Commons licenses and public domain works.
+- Allow users to customize attributions to suit their needs.
 
 ## Features
 
-- [Feature 1]
-- [Feature 2]
-- [Feature 3]
+- Generate attributions for titles, authors, organizations, and projects.
+- Support for Creative Commons licenses and public domain (CC0).
+- Option to include derivative work details.
+- Light, dark, and system theme options.
+- Copy attribution text or HTML to the clipboard.
 
 ## System Requirements
 
-[Specify the general system requirements for the project.]
-
-- **Node.js**: [version]
-- **npm**: [version]
-- **PHP**: [version]
-- **Other dependencies**: [version]
+- **Web Server**: Any web server capable of serving static files (e.g., Apache, Nginx, or GitHub Pages).
+- **Browser Compatibility**: Modern browsers supporting HTML5, CSS3, and JavaScript.
+- **Other Dependencies**: Bootstrap 5.3.2 (via CDN), Creative Commons assets (via CDN).
 
 ## Installation
 
-[Outline the steps required to install and set up the project.]
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/RMITLibrary/attribution-builder.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd attribution-builder
+   ```
 
 ## Configuration
 
-[Describe any configuration steps necessary for setting up the project.]
+- **CMS/Static Site Setup**: Ensure the site is hosted on a server supporting HTTPS for clipboard functionality.
 
-## Contribution
+## Environments
 
-[Include guidelines for contributing to the project.]
+- **Development**: `http://localhost:3000`
+- **Production**: `https://www.lib.rmit.edu.au/attrib/attribution-builder`
 
-## Authors or Acknowledgments
+## Testing and Deployment
 
-- [Update]
+- **Deployment**: Deploy the site to a static hosting platform or web server.
+
+## Authors and Acknowledgments
+
+- Developed by RMIT Library Digital Learning.
+- Special thanks to the Open Attribution Builder by WA SBCTC for inspiration.
 
 ## License
 
-This project is licensed under [Update]
+Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 #### © RMIT University Library
 
 ###### Developed by RMIT Library Digital Learning
+
+## Contact
+
+- Repo Admin: Jack Dunstan ([jack.dunstan@rmit.edu.au](mailto:jack.dunstan@rmit.edu.au))
+- Additional Contact: [digital.learning.library@rmit.edu.au](mailto:digital.learning.library@rmit.edu.au)
+
+## Resources
+
+- [Active RMIT Library GitHub](https://github.com/RMITLibrary)
+- [Archived RMIT Library GitHub](https://github.com/RMITLibrary-Archived)
+- [Creative Commons License Chooser](https://creativecommons.org/choose)
+- [CC0 Waiver](https://creativecommons.org/choose/zero/waiver)
