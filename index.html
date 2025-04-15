@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Attribution builder</title>
+    <title>Attribution Builder - RMIT University</title>
+    <meta name="description" content="Attribution builder will help you easily cite open material you find; as you fill out the form the application will automatically generate the attribution for you." />
+    <meta name="keywords" content="attribution, builder, open, material, cite, citation" />
+    <meta name="author" content="RMIT University" />
+    <meta name="robots" content="index, follow" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="canonical" href="https://www.lib.rmit.edu.au/attrib/attribution-builder" />
+
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://mirrors.creativecommons.org" />
+
+    <meta property="og:title" content="Attribution Builder - RMIT University" />
+    <meta property="og:description" content="Easily cite open material with the Attribution Builder. Automatically generate attributions for Creative Commons or public domain works." />
+    <meta property="og:url" content="https://www.lib.rmit.edu.au/attrib/attribution-builder" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Attribution Builder - RMIT University" />
+    <meta name="twitter:description" content="Easily cite open material with the Attribution Builder. Automatically generate attributions for Creative Commons or public domain works." />
+
     <link rel="stylesheet" href="css/main.css?v=1.2" />
 
-    <link href="https://www.rmit.edu.au/etc.clientlibs/rmit/clientlibs/clientlib-site/resources/favicon.png" rel="icon" type="image/x-icon">
-    <link href="https://www.rmit.edu.au/etc.clientlibs/rmit/clientlibs/clientlib-site/resources/favicon.png" rel="shortcut icon" type="image/x-icon">
+    <link href="https://www.rmit.edu.au/etc.clientlibs/rmit/clientlibs/clientlib-site/resources/favicon.png" rel="icon" type="image/x-icon" />
+    <link href="https://www.rmit.edu.au/etc.clientlibs/rmit/clientlibs/clientlib-site/resources/favicon.png" rel="shortcut icon" type="image/x-icon" />
 
     <!-- Google Tag Manager -->
     <script>
@@ -23,41 +44,123 @@
     </script>
     <!-- End Google Tag Manager -->
 
-    <!-- 
+    <!--
     DARK MODE
     This script is placed in the <head> to ensure the theme is set as early as possible,
     reducing the flash of unstyled content (FOUC). It determines the user's preferred
     theme (either from local storage or system settings) and applies it immediately.
     -->
-   <!-- 
-    DARK MODE
-    This script is placed in the <head> to ensure the theme is set as early as possible,
-    reducing the flash of unstyled content (FOUC). It determines the user's preferred
-    theme (either from local storage or system settings) and applies it immediately.
-  -->
-  <script>
-    (function() {
-      'use strict';
+    <script>
+      (function () {
+        'use strict';
 
-      const getStoredTheme = () => localStorage.getItem('theme');
+        const getStoredTheme = () => localStorage.getItem('theme');
 
-      const getPreferredTheme = () => {
-        const storedTheme = getStoredTheme();
-        return storedTheme ? storedTheme : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      };
+        const getPreferredTheme = () => {
+          const storedTheme = getStoredTheme();
+          return storedTheme ? storedTheme : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        };
 
-      const setTheme = theme => {
-        const themeToSet = theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme;
-        document.documentElement.setAttribute('data-bs-theme', themeToSet);
-      };
+        const setTheme = (theme) => {
+          const themeToSet = theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme;
+          document.documentElement.setAttribute('data-bs-theme', themeToSet);
+        };
 
-      setTheme(getPreferredTheme());
-    })();
-  </script>
+        setTheme(getPreferredTheme());
+      })();
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "SoftwareApplication",
+            "name": "Attribution Builder",
+            "description": "Attribution Builder helps users easily cite open material by automatically generating attributions for Creative Commons or public domain works.",
+            "url": "https://www.lib.rmit.edu.au/attrib/attribution-builder",
+            "applicationCategory": "Utility",
+            "operatingSystem": "All",
+            "author": {
+              "@type": "Organization",
+              "name": "RMIT University",
+              "url": "https://www.rmit.edu.au"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "RMIT University",
+              "url": "https://www.rmit.edu.au"
+            },
+            "license": "https://creativecommons.org/licenses/by/4.0/",
+            "image": "https://www.rmit.edu.au/etc.clientlibs/rmit/clientlibs/clientlib-site/resources/favicon.png"
+          },
+          {
+            "@type": "WebPage",
+            "name": "Attribution Builder",
+            "description": "Attribution Builder helps users easily cite open material by automatically generating attributions for Creative Commons or public domain works.",
+            "url": "https://www.lib.rmit.edu.au/attrib/attribution-builder",
+            "publisher": {
+              "@type": "Organization",
+              "name": "RMIT University",
+              "url": "https://www.rmit.edu.au"
+            }
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Generated Attribution",
+            "description": "Automatically generated attribution for Creative Commons or public domain works.",
+            "license": "https://creativecommons.org/licenses/by/4.0/",
+            "creator": {
+              "@type": "Organization",
+              "name": "RMIT University"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the Attribution Builder?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The Attribution Builder helps users easily cite open material by automatically generating attributions for Creative Commons or public domain works."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Who can use the Attribution Builder?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Anyone who needs to cite openly distributed work, such as work licensed by Creative Commons or released in the public domain."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What licenses does the Attribution Builder support?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The Attribution Builder supports Creative Commons licenses and public domain works, including CC0."
+                }
+              }
+            ]
+          },
+          {
+            "@type": "Organization",
+            "name": "RMIT University",
+            "url": "https://www.rmit.edu.au",
+            "logo": "https://rmitlibrary.github.io/cdn/image/svg/rmit-logo.svg",
+            "sameAs": ["https://www.facebook.com/RMITuniversity/", "https://twitter.com/rmit", "https://www.instagram.com/rmituniversity/", "https://www.linkedin.com/school/rmit-university/", "https://www.youtube.com/user/rmitmedia"]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6GPW9XR" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
+    <noscript>
+      <p>This application requires JavaScript to function properly. Please enable JavaScript in your browser settings.</p>
+    </noscript>
     <!-- End Google Tag Manager (noscript) -->
     <header id="nav">
       <a href="#page-content" class="visually-hidden-focusable">Skip to main content</a>
@@ -108,10 +211,7 @@
                   </ul>
                   <strong>This application is NOT:</strong>
                   <ul>
-                    <li>
-                      to mark your own work with a Creative Commons license or to place your work in the public domain. To do so, please use the <a href="http://creativecommons.org/choose">license chooser</a> (for the CC licensed work) or
-                      <a href="https://creativecommons.org/choose/zero/waiver">CC0 Waiver</a> (for the public domain work) provided by Creative Commons.
-                    </li>
+                    <li>to mark your own work with a Creative Commons license or to place your work in the public domain. To do so, please use the <a href="http://creativecommons.org/choose">license chooser</a> (for the CC licensed work) or <a href="https://creativecommons.org/choose/zero/waiver">CC0 Waiver</a> (for the public domain work) provided by Creative Commons.</li>
                     <li>applicable for all types of materials; this application is only for openly released work.</li>
                   </ul>
                   <p>This application lets you enter information for title, author, license, organization, and project. You are not required to enter all information to have a citation generated. Click the ? icons to learn more about each area.</p>
@@ -265,10 +365,7 @@
                               <span class="visually-hidden">Help</span>
                             </button>
                             <div id="organisation-help" class="collapse">
-                              <p class="small margin-bot-zero">
-                                If available, add the name of the organization that sponsored or managed the work you are adopting; it’s always nice to acknowledge those entities for their contribution. For example, the Open Course Library project was funded and managed by the Washington State Board
-                                for Community and Technical Colleges.
-                              </p>
+                              <p class="small margin-bot-zero">If available, add the name of the organization that sponsored or managed the work you are adopting; it’s always nice to acknowledge those entities for their contribution. For example, the Open Course Library project was funded and managed by the Washington State Board for Community and Technical Colleges.</p>
                             </div>
                           </div>
                           <div class="input-group">
@@ -307,7 +404,7 @@
 
             <h2>Attribution</h2>
             <div class="attribution-container">
-              <div id="attribution-text" class="attribution-built">Your attribution will be built here.</div>
+              <div id="attribution-text" class="attribution-built" tabindex="0" aria-label="Attribution section. Your attribution will be built here.">Your attribution will be built here.</div>
 
               <div class="attribution-built-html">
                 <div id="attribution-html">The html of your attribution will be built here.</div>
@@ -329,31 +426,30 @@
           <!-- Start theme switcher -->
           <form class="theme-switch theme-compact">
             <fieldset>
-                <legend>Theme</legend>
-                <div class="bg">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="themeOptions" data-bs-theme-value="auto" aria-label="System">
-                        <span class="form-check-label">System</span>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="themeOptions" data-bs-theme-value="light" aria-label="Light">
-                        <span class="form-check-label">Light</span>
-                    </div> 
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="themeOptions" data-bs-theme-value="dark" aria-label="Dark">
-                        <span class="form-check-label">Dark</span>
-                    </div>
+              <legend>Theme</legend>
+              <div class="bg">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="themeOptions" data-bs-theme-value="auto" aria-label="System" />
+                  <span class="form-check-label">System</span>
                 </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="themeOptions" data-bs-theme-value="light" aria-label="Light" />
+                  <span class="form-check-label">Light</span>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="themeOptions" data-bs-theme-value="dark" aria-label="Dark" />
+                  <span class="form-check-label">Dark</span>
+                </div>
+              </div>
             </fieldset>
           </form>
           <!-- End theme switcher -->
 
           <div class="cc-statement">
-            <img alt="Creative Commons License" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png" />
+            <img loading="lazy" alt="Creative Commons License" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png" />
             <p class="small">
               <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Open Attribution Builder</span>
-              Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Based on the <a href="http://www.openwa.org/open-attrib-builder/" class="no-wrap">Open Attribution Builder</a> at
-              <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.sbctc.edu" property="cc:attributionName" rel="cc:attributionURL">WA SBCTC</a>.
+              Content licensed under <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Based on the <a href="http://www.openwa.org/open-attrib-builder/" class="no-wrap">Open Attribution Builder</a> at <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.sbctc.edu" property="cc:attributionName" rel="cc:attributionURL">WA SBCTC</a>.
             </p>
           </div>
         </div>
@@ -362,130 +458,162 @@
       <!-- END row -->
     </div>
     <!-- END container main-content -->
-      <!-- START footer -->
-      <div class="footer-container">
-        <div class="container">
-              <div class="row">
-                  <div class="col">
-              <!-- START ask the library -->
-              <div class="ask-container">
-                
-                <section class="ask-the-library">
-                  <a href="https://www.rmit.edu.au/library/about-and-contacts/ask-the-library">
-                    <img src="https://rmitlibrary.github.io/cdn/footer/ask-library-icon-round.svg" class="ask-logo" alt="" />
-                    <div class="ask-text">
-                      <h2 class="h3 margin-top-zero">Ask the library</h2>
-                      <p>Study support, one-on-one consultations and peer mentoring at your fingertips!</p>
-                    </div>
-                  </a>
-                </section>
-            
-              </div>
-              <!-- END ask the library -->
-            </div>
-           </div>
-        </div>
-         <!-- START acknowledgement -->
-         <div class="acknowledgement">
-          <div class="container">
-              <div class="row">
-                  <div class="col">
-                      <section class="acknowledgement-container">
-                          <div class="content">
-                              <img alt="aboriginal flag" src="https://www.rmit.edu.au/content/dam/rmit/au/en/news/homepage/flag-red.png" />
-                              <img alt="torres strait flag" src="https://www.rmit.edu.au/content/dam/rmit/au/en/news/homepage/flag-green.png">
-                              
-                              <h2 class="h4 margin-top-zero">Acknowledgement of Country</h2>
-                              <p>RMIT University acknowledges the people of the Woi wurrung and Boon wurrung language groups of the eastern Kulin Nation on whose unceded lands we conduct the business of the University. RMIT University respectfully acknowledges their Ancestors and Elders, past and present. RMIT also acknowledges the Traditional Custodians and their Ancestors of the lands and waters across Australia where we conduct our business<span class="img-credit"> - Artwork 'Sentient' by Hollie Johnson, Gunaikurnai and Monero Ngarigo</span>.</p>
-                              <a href="https://www.rmit.edu.au/about/our-values/respect-for-australian-indigenous-cultures" class="link-large">More information</a>
-                          </div>
-                          <div class="acknowledgement-image">
-                              <img src="https://www.rmit.edu.au/content/dam/rmit/images/sentient-hollie-johnson.jpg" alt="Abstract artwork titled 'Sentient' by Hollie Johnson, features a complex pattern of intersecting blue, green, and yellow lines over a white background showing the journeys of life starting, finishing and intersecting. The colouring of the line work illustrates the evolution of nature through many First Nations stories: the sun, the giver of life (yellow), the creation of land (green), and the sea (blue). Red and black concentric diamond and semi-circle shapes symbolise men and women respectively, connecting them to Ancestors who gave birth to them. The artwork is also a representation of RMIT and the experience within our community, culture and pathways." />
-                          </div>
-                      </section>
+    <!-- START footer -->
+    <div class="footer-container">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <!-- START ask the library -->
+            <div class="ask-container">
+              <section class="ask-the-library">
+                <a href="https://www.rmit.edu.au/library/about-and-contacts/ask-the-library">
+                  <img src="https://rmitlibrary.github.io/cdn/footer/ask-library-icon-round.svg" class="ask-logo" alt="" />
+                  <div class="ask-text">
+                    <h2 class="h3 margin-top-zero">Ask the library</h2>
+                    <p>Get help with finding information, referencing, and using the Library.</p>
                   </div>
-              </div>
+                </a>
+              </section>
+            </div>
+            <!-- END ask the library -->
           </div>
-      </div>    
+        </div>
+      </div>
+      <!-- START acknowledgement -->
+      <div class="acknowledgement">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <section class="acknowledgement-container">
+                <div class="content">
+                  <img loading="lazy" alt="aboriginal flag" src="https://www.rmit.edu.au/content/dam/rmit/au/en/news/homepage/flag-red.png" />
+                  <img loading="lazy" alt="torres strait flag" src="https://www.rmit.edu.au/content/dam/rmit/au/en/news/homepage/flag-green.png" />
+
+                  <h2 class="h4 margin-top-zero">Acknowledgement of Country</h2>
+                  <p>RMIT University acknowledges the people of the Woi wurrung and Boon wurrung language groups of the eastern Kulin Nation on whose unceded lands we conduct the business of the University. RMIT University respectfully acknowledges their Ancestors and Elders, past and present. RMIT also acknowledges the Traditional Custodians and their Ancestors of the lands and waters across Australia where we conduct our business<span class="img-credit"> - Artwork 'Sentient' by Hollie Johnson, Gunaikurnai and Monero Ngarigo</span>.</p>
+                  <a href="https://www.rmit.edu.au/about/our-values/respect-for-australian-indigenous-cultures" class="link-large">More information</a>
+                </div>
+                <div class="acknowledgement-image">
+                  <img loading="lazy" src="https://www.rmit.edu.au/content/dam/rmit/images/sentient-hollie-johnson.jpg" alt="Abstract artwork titled 'Sentient' by Hollie Johnson, features a complex pattern of intersecting blue, green, and yellow lines over a white background showing the journeys of life starting, finishing and intersecting. The colouring of the line work illustrates the evolution of nature through many First Nations stories: the sun, the giver of life (yellow), the creation of land (green), and the sea (blue). Red and black concentric diamond and semi-circle shapes symbolise men and women respectively, connecting them to Ancestors who gave birth to them. The artwork is also a representation of RMIT and the experience within our community, culture and pathways." />
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- END acknowledgement -->
-          <!-- START footer -->
-          <footer>
-          <div class="container">
-              <div class="row">
-                  <div class="col">
-                      <!-- START logo -->    
-                      <a aria-label="Royal Melbourne Institute of Technology University Logo" href="https://www.rmit.edu.au/">
-                <div aria-hidden="true" class="logo"><span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/rmit-logo.svg" style="width: 100px" alt="" /></span>
+      <!-- START footer -->
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <!-- START logo -->
+              <a aria-label="Royal Melbourne Institute of Technology University Logo" href="https://www.rmit.edu.au/">
+                <div aria-hidden="true" class="logo">
+                  <span class="no-focus" tabindex="-1"><img loading="lazy" src="https://rmitlibrary.github.io/cdn/image/svg/rmit-logo.svg" style="width: 100px" alt="" /></span>
                 </div>
               </a>
-                      <!-- END logo -->
-                      <!-- START optional links -->
-                      <!-- <ul class="footer-links">
+              <!-- END logo -->
+              <!-- START optional links -->
+              <!-- <ul class="footer-links">
                         <li><a href="">Link 1</a></li>
                         <li><a href="">Link 2</a></li>
                         <li><a href="">Link 3</a></li>
                         <li><a href="">Link 4</a></li>
                       </ul> -->
-                      <!-- END optional links -->
-                      <!-- START legal-social -->
-                      <div class="footerlegalShareItems">
-                          <!-- START legal -->
-                          <div class="footer-legal">
-                          <ul>
-                              <li>Copyright © 2024 RMIT University</li>
-                              <li><a href="https://www.rmit.edu.au/utilities/terms"><span class="no-focus" tabindex="-1">Terms</span></a></li>
-                              <li><a href="https://www.rmit.edu.au/utilities/privacy"><span class="no-focus" tabindex="-1">Privacy</span></a></li>
-                              <li><a href="https://www.rmit.edu.au/utilities/accessibility"><span class="no-focus" tabindex="-1">Accessibility</span></a></li>
-                              <li><a data-analytics-type="footerlink" data-analytics-value="Website feedback" href="https://www.rmit.edu.au/utilities/website-feedback"><span class="no-focus" tabindex="-1">Website feedback</span></a></li>
-                              <li><a data-analytics-type="footerlink" data-analytics-value="Complaints" href="https://www.rmit.edu.au/utilities/complaints"><span class="no-focus" tabindex="-1">Complaints</span></a></li>
-                              <li>ABN 49 781 030 034</li>
-                              <li>CRICOS provider number: 00122A</li>
-                              <li>TEQSA provider number: PRV12145</li>
-                              <li>RTO Code: 3046</li>
-                              <li><a href="https://www.open.edu.au/online-courses/rmit-university"><span class="no-focus" tabindex="-1">Open Universities Australia</span></a> </li>
-                            </ul>
-                          </div>
-                          <!-- END legal -->
-                          <!-- START social -->
-                          <div class="social-nav">
-                          <ul> 
-                              <!-- START facebook -->
-                              <li><a aria-label="For Facebook"  href="https://www.facebook.com/RMITuniversity/"> <span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/facebook.svg" alt="" /></span></a></li>
-                              <!-- END facebook -->
-                              <!-- START twitter/x -->
-                              <li><a aria-label="For Twitter" href="https://twitter.com/rmit"> <span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/twitter.svg" alt="" /></span></a></li>
-                              <!-- END twitter/x -->
-                              <!-- START insta -->
-                              <li><a aria-label="For Instagram" href="https://www.instagram.com/rmituniversity/"> <span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/instagram.svg" alt="" /></span> </a></li>
-                              <!-- END insta -->              
-                              <!-- START LinkedIn -->
-                              <li><a aria-label="For LinkedIn" data-analytics-type="socialshare" data-analytics-value="LinkedIn" href="https://www.linkedin.com/school/rmit-university/"><span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/linkedin.svg" alt="" /></span></a></li>
-                              <!-- END LinkedIn -->
-                              <!-- START YouTube -->
-                              <li><a aria-label="For Youtube" href="https://www.youtube.com/user/rmitmedia"> <span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/youtube.svg" alt="" /></span></a></li>
-                              <!-- END YouTube -->     
-                              <!-- START Weibo -->          
-                              <li><a aria-label="For Weibo" href="https://www.weibo.com/rmituni"> <span class="no-focus" tabindex="-1"><img src="https://rmitlibrary.github.io/cdn/image/svg/social/weibo.svg" alt="" /></span></a></li>
-                              <!-- END Weibo -->                
-                </ul>
+              <!-- END optional links -->
+              <!-- START legal-social -->
+              <div class="footerlegalShareItems">
+                <!-- START legal -->
+                <div class="footer-legal">
+                  <ul>
+                    <li>Copyright © 2024 RMIT University</li>
+                    <li>
+                      <a href="https://www.rmit.edu.au/utilities/terms"><span class="no-focus" tabindex="-1">Terms</span></a>
+                    </li>
+                    <li>
+                      <a href="https://www.rmit.edu.au/utilities/privacy"><span class="no-focus" tabindex="-1">Privacy</span></a>
+                    </li>
+                    <li>
+                      <a href="https://www.rmit.edu.au/utilities/accessibility"><span class="no-focus" tabindex="-1">Accessibility</span></a>
+                    </li>
+                    <li>
+                      <a data-analytics-type="footerlink" data-analytics-value="Website feedback" href="https://www.rmit.edu.au/utilities/website-feedback"><span class="no-focus" tabindex="-1">Website feedback</span></a>
+                    </li>
+                    <li>
+                      <a data-analytics-type="footerlink" data-analytics-value="Complaints" href="https://www.rmit.edu.au/utilities/complaints"><span class="no-focus" tabindex="-1">Complaints</span></a>
+                    </li>
+                    <li>ABN 49 781 030 034</li>
+                    <li>CRICOS provider number: 00122A</li>
+                    <li>TEQSA provider number: PRV12145</li>
+                    <li>RTO Code: 3046</li>
+                    <li>
+                      <a href="https://www.open.edu.au/online-courses/rmit-university"><span class="no-focus" tabindex="-1">Open Universities Australia</span></a>
+                    </li>
+                  </ul>
                 </div>
-                          <!-- END social -->
-                      </div>
-                      <!-- END legal-social -->
-                  </div>
+                <!-- END legal -->
+                <!-- START social -->
+                <div class="social-nav">
+                  <ul>
+                    <!-- START facebook -->
+                    <li>
+                      <a aria-label="For Facebook" href="https://www.facebook.com/RMITuniversity/">
+                        <span class="no-focus" tabindex="-1"><img loading="lazy" src="https://rmitlibrary.github.io/cdn/image/svg/social/facebook.svg" alt="" /></span
+                      ></a>
+                    </li>
+                    <!-- END facebook -->
+                    <!-- START twitter/x -->
+                    <li>
+                      <a aria-label="For Twitter" href="https://twitter.com/rmit">
+                        <span class="no-focus" tabindex="-1"><img loading="lazy" src="https://rmitlibrary.github.io/cdn/image/svg/social/twitter.svg" alt="" /></span
+                      ></a>
+                    </li>
+                    <!-- END twitter/x -->
+                    <!-- START insta -->
+                    <li>
+                      <a aria-label="For Instagram" href="https://www.instagram.com/rmituniversity/">
+                        <span class="no-focus" tabindex="-1"><img loading="lazy" src="https://rmitlibrary.github.io/cdn/image/svg/social/instagram.svg" alt="" /></span>
+                      </a>
+                    </li>
+                    <!-- END insta -->
+                    <!-- START LinkedIn -->
+                    <li>
+                      <a aria-label="For LinkedIn" data-analytics-type="socialshare" data-analytics-value="LinkedIn" href="https://www.linkedin.com/school/rmit-university/"
+                        ><span class="no-focus" tabindex="-1"><img loading="lazy" src="https://rmitlibrary.github.io/cdn/image/svg/social/linkedin.svg" alt="" /></span
+                      ></a>
+                    </li>
+                    <!-- END LinkedIn -->
+                    <!-- START YouTube -->
+                    <li>
+                      <a aria-label="For Youtube" href="https://www.youtube.com/user/rmitmedia">
+                        <span class="no-focus" tabindex="-1"><img loading="lazy" src="https://rmitlibrary.github.io/cdn/image/svg/social/youtube.svg" alt="" /></span
+                      ></a>
+                    </li>
+                    <!-- END YouTube -->
+                    <!-- START Weibo -->
+                    <li>
+                      <a aria-label="For Weibo" href="https://www.weibo.com/rmituni">
+                        <span class="no-focus" tabindex="-1"><img loading="lazy" src="https://rmitlibrary.github.io/cdn/image/svg/social/weibo.svg" alt="" /></span
+                      ></a>
+                    </li>
+                    <!-- END Weibo -->
+                  </ul>
+                </div>
+                <!-- END social -->
               </div>
+              <!-- END legal-social -->
+            </div>
           </div>
-        </footer>
-          <!-- END footer -->
-      </div>
+        </div>
+      </footer>
+      <!-- END footer -->
+    </div>
     <!-- END footer-container -->
     <!-- svg code to display tool tip icon and allow rollover colour -->
     <svg display="none">
       <symbol width="18" height="18" viewBox="0 0 18 18" id="help-icon">
-        <path
-          d="M9 17c4.4 0 8-3.6 8-8s-3.6-8-8-8-8 3.6-8 8 3.6 8 8 8zm0 1c5 0 9-4 9-9s-4-9-9-9-9 4-9 9 4 9 9 9zm-1-6.9v-.7c0-2 2.3-2.4 2.3-3.8 0-.6-.5-1.1-1.3-1.1s-1.5.6-1.5.6l-1-1.2s1-1 2.6-1 3.1 1 3.1 2.6c0 2.3-2.4 2.6-2.4 4.1v.5H8zM8 14v-1.7h1.7V14H8z"
-          style="fill-rule: evenodd; clip-rule: evenodd"
-        ></path>
+        <path d="M9 17c4.4 0 8-3.6 8-8s-3.6-8-8-8-8 3.6-8 8 3.6 8 8 8zm0 1c5 0 9-4 9-9s-4-9-9-9-9 4-9 9 4 9 9 9zm-1-6.9v-.7c0-2 2.3-2.4 2.3-3.8 0-.6-.5-1.1-1.3-1.1s-1.5.6-1.5.6l-1-1.2s1-1 2.6-1 3.1 1 3.1 2.6c0 2.3-2.4 2.6-2.4 4.1v.5H8zM8 14v-1.7h1.7V14H8z" style="fill-rule: evenodd; clip-rule: evenodd"></path>
       </symbol>
     </svg>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"></script>
