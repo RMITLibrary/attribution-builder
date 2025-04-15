@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Basic Meta Tags -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,22 +13,30 @@
     <meta name="color-scheme" content="light dark" />
     <link rel="canonical" href="https://www.lib.rmit.edu.au/attrib/attribution-builder" />
 
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-    <link rel="preconnect" href="https://mirrors.creativecommons.org" />
-
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Attribution Builder - RMIT University" />
     <meta property="og:description" content="Easily cite open material with the Attribution Builder. Automatically generate attributions for Creative Commons or public domain works." />
     <meta property="og:url" content="https://www.lib.rmit.edu.au/attrib/attribution-builder" />
     <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://www.lib.rmit.edu.au/attrib/attribution-builder/share-image.png" />
+
+    <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Attribution Builder - RMIT University" />
     <meta name="twitter:description" content="Easily cite open material with the Attribution Builder. Automatically generate attributions for Creative Commons or public domain works." />
+    <meta name="twitter:image" content="https://www.lib.rmit.edu.au/attrib/attribution-builder/share-image.png" />
 
-    <link rel="stylesheet" href="css/main.css?v=1.2" />
+    <!-- Preconnect Links -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://mirrors.creativecommons.org" />
 
+    <!-- Favicon -->
     <link href="https://www.rmit.edu.au/etc.clientlibs/rmit/clientlibs/clientlib-site/resources/favicon.png" rel="icon" type="image/x-icon" />
     <link href="https://www.rmit.edu.au/etc.clientlibs/rmit/clientlibs/clientlib-site/resources/favicon.png" rel="shortcut icon" type="image/x-icon" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css" />
 
     <!-- Google Tag Manager -->
     <script>
@@ -44,12 +53,7 @@
     </script>
     <!-- End Google Tag Manager -->
 
-    <!--
-    DARK MODE
-    This script is placed in the <head> to ensure the theme is set as early as possible,
-    reducing the flash of unstyled content (FOUC). It determines the user's preferred
-    theme (either from local storage or system settings) and applies it immediately.
-    -->
+    <!-- Dark Mode Script -->
     <script>
       (function () {
         'use strict';
@@ -70,6 +74,7 @@
       })();
     </script>
 
+    <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -618,5 +623,47 @@
     </svg>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"></script>
     <script src="js/attribution-builder-script.js"></script>
+    <script>
+      (function () {
+        'use strict';
+
+        // Push custom events to the GTM data layer
+        const trackEvent = (eventCategory, eventAction, eventLabel) => {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'customEvent',
+            eventCategory: eventCategory,
+            eventAction: eventAction,
+            eventLabel: eventLabel,
+          });
+          console.log(`Tracked: ${eventCategory}, ${eventAction}, ${eventLabel}`);
+        };
+
+        // Track license type selection
+        const licenseSelect = document.getElementById('license-select');
+        if (licenseSelect) {
+          licenseSelect.addEventListener('change', (event) => {
+            const selectedLicense = event.target.value;
+            trackEvent('License Selection', 'License Selected', selectedLicense);
+          });
+        }
+
+        // Track "Copy Attribution" button click
+        const copyAttributionButton = document.getElementById('copy-attribution');
+        if (copyAttributionButton) {
+          copyAttributionButton.addEventListener('click', () => {
+            trackEvent('Button Click', 'Copy Attribution', 'Copy Attribution Button');
+          });
+        }
+
+        // Track "Copy HTML" button click
+        const copyHtmlButton = document.getElementById('copy-html');
+        if (copyHtmlButton) {
+          copyHtmlButton.addEventListener('click', () => {
+            trackEvent('Button Click', 'Copy HTML', 'Copy HTML Button');
+          });
+        }
+      })();
+    </script>
   </body>
 </html>
