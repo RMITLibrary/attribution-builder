@@ -38,39 +38,39 @@ var licenseArray = [
     {   value: 'CC BY', link: 'https://creativecommons.org/licenses/by/',
         prefix: 'is licensed under',
         text: 'Attribution (CC BY)' },
-    
-    {   value: 'CC BY-SA', 
+
+    {   value: 'CC BY-SA',
         link: 'https://creativecommons.org/licenses/by-sa/',
         prefix: 'is licensed under',
         text: 'Attribution-ShareAlike (CC BY-SA)' },
-    
-    {   value: 'CC BY-ND', 
+
+    {   value: 'CC BY-ND',
 	 	link: 'https://creativecommons.org/licenses/by-nd/',
         prefix: 'is licensed under',
         text: 'Attribution-NoDerivs (CC BY-ND)' },
-    
-    {   value: 'CC BY-NC', 
+
+    {   value: 'CC BY-NC',
         link: 'https://creativecommons.org/licenses/by-nc/',
         prefix: 'is licensed under',
         text: 'Attribution-NonCommercial (CC BY-NC)' },
-    
-    {   value: 'CC BY-NC-SA', 
+
+    {   value: 'CC BY-NC-SA',
         link: 'https://creativecommons.org/licenses/by-nc-sa/',
         prefix: 'is licensed under',
         text: 'Attribution-NonCommercial-ShareAlike (CC BY-NC-SA)' },
-    
-    {   value: 'CC BY-NC-ND', 
+
+    {   value: 'CC BY-NC-ND',
         link: 'https://creativecommons.org/licenses/by-nc-nd/4.0',
         prefix: 'is licensed under',
         text: 'Attribution-NonCommercial-NoDerivs (CC BY-NC-ND)' },
-    
-    {   value: 'Public Domain', 
+
+    {   value: 'Public Domain',
         link: 'https://wiki.creativecommons.org/Public_domain',
         prefix: 'is in the',
         text: 'Public Domain (General)',
         noVersion: true },
-    
-    {   value: 'Public Domain (CC0)', 
+
+    {   value: 'Public Domain (CC0)',
         link: 'https://creativecommons.org/publicdomain/zero/1.0/',
         prefix: 'is in the',
         text: 'Public Domain (CC0)',
@@ -88,7 +88,7 @@ function buildLicenseSelect()
     }
 }
 
-/* 
+/*
 Functions triggered by changing fields in the form
 All call buildAttribution once string has been built.
 */
@@ -119,14 +119,14 @@ function changeDerivative() {
     buildAttribution();
 }
 
-/* 
-When a user selects a licence from the select box or changes a version, 
+/*
+When a user selects a licence from the select box or changes a version,
 update license string and build the attribution.
 */
 function changeLicense() {
     //grab the selected index (-1 due to the default "Choose..." at the top)
     var index = (licenseSelect.selectedIndex)-1;
-    
+
     if(index != -1)
     {
         var link = licenseArray[index].link;
@@ -153,21 +153,21 @@ function changeLicense() {
 
 //help class to build urls
 function createLink(label, url) {
-    
+
     if(label == "") {
-        return "";          //Edge case?? 
+        return "";          //Edge case??
     }
     else if(url == "") {
-       return '<a>' +label + '</a>';    
+       return '<a>' +label + '</a>';
     }
     else {
-        return '<a href="' +url +'">' +label + '</a>'; 
+        return '<a href="' +url +'">' +label + '</a>';
     }
 }
 
 /* Build the attribution itself */
 function buildAttribution() {
-    
+
     var outputStr = titleStr +authorStr +projectStr +orgStr +licenseStr +derivativeStr;
     output.innerHTML = outputStr;
 	//Escape string to display html code itself
@@ -183,7 +183,7 @@ function checkURL(e) {
     /*else if(!isValidUrl(e.target.value)) {
         //Invalid URL. Currently not handling this error
     }*/
-    else { 
+    else {
 		//Add https:// if it, http or ftp not already present.
         var pattern = /^((http|https|ftp):\/\/)/;
         if(!pattern.test(e.target.value)) {
@@ -244,26 +244,26 @@ function resetForm(e) {
 
     //uncheck box, hide url
     var checkbox = document.getElementById("derivative-check");
-    
+
     if(checkbox.checked == true) {
         checkbox.checked = false;
-        var derivUrl = document.getElementById("derivative-url-container"); 
+        var derivUrl = document.getElementById("derivative-url-container");
         var myCollapse = new bootstrap.Collapse(derivUrl);
     }
-   
+
     licenseSelect.selectedIndex = 0;
     licenseVersion.selectedIndex = 0;
     licenseStr = '';
     licenseVersionStr = '';
-    
+
     output.innerHTML = 'Your attribution will be built here.';
     outputHTML.innerHTML = 'The html of your attribution will be built here.';
-	
+
 	feedback.classList.remove("show");
 }
 
-/* 
-Called when "Copy attribution" is clicked. Copy it to clipboard 
+/*
+Called when "Copy attribution" is clicked. Copy it to clipboard
 (won't work on http:// only https:// )
 */
 function copyOutput(e) {
@@ -272,8 +272,8 @@ function copyOutput(e) {
 	showFeedback(e.target);
 }
 
-/* 
-Called when "Copy html" is clicked. Copy the code to clipboard 
+/*
+Called when "Copy html" is clicked. Copy the code to clipboard
 (won't work on http:// only https:// )
 */
 function copyHtml(e) {
@@ -296,7 +296,7 @@ function showFeedback(btn)
 }
 
 /*
-Hide header and footer and remove bootstrap layout classes to 
+Hide header and footer and remove bootstrap layout classes to
 allow page to fit any size container.
 */
 function embedThisPage()
@@ -306,16 +306,16 @@ function embedThisPage()
 	var footer = document.getElementById("footer");
 	var containerDiv = document.getElementById("page-content");
 	var columnDiv = document.getElementById("page-columns");
-	
+
 	//hide nav and footer
 	nav.style.display = "none";
 	footer.style.display = "none";
-	
+
 	//remove bootstrap classes that provide adaptive styling
 	containerDiv.classList.remove("main-content");
 	containerDiv.classList.remove("container");
 	columnDiv.classList.remove("col-xl-10");
-    
+
     containerDiv.style.marginRight = "2rem";
 }
 
@@ -356,14 +356,13 @@ SCRIPT to remove header and footer and bootstrap columns
 This may be used if Attribution builder is embedded in another page via iframe
 */
 
-//Check query string for embed=true. If it is there, call embedThisPage
+// Check query string for embed=true or iframe=true. If either is present, call embedThisPage
 const urlParams = new URLSearchParams(window.location.search);
-const embedBool = urlParams.get('embed');
-	
-if(embedBool == 'true') {
-	embedThisPage();
-}
+const embedBool = urlParams.get('embed') === 'true' || urlParams.get('iframe') === 'true';
 
+if (embedBool) {
+  embedThisPage();
+}
 
 
 /*
