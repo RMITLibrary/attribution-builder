@@ -4,13 +4,17 @@
   // Function to send the iframe height to the parent window
   const sendResizeMessage = () => {
     const height = document.documentElement.scrollHeight;
-    window.parent.postMessage(
-      {
-        subject: 'lti.frameResize',
-        height: height,
-      },
-      '*'
-    );
+    const resizeSubjects = ['lti.frameResize', 'rmit.iframeResize'];
+
+    resizeSubjects.forEach((subject) => {
+      window.parent.postMessage(
+        {
+          subject: subject,
+          height: height,
+        },
+        '*'
+      );
+    });
   };
 
   // Send the initial height on page load
