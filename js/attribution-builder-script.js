@@ -316,6 +316,8 @@ function embedThisPage()
 	containerDiv.classList.remove("container");
 	columnDiv.classList.remove("col-xl-10");
 
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
     containerDiv.style.marginRight = "2rem";
 }
 
@@ -358,7 +360,9 @@ This may be used if Attribution builder is embedded in another page via iframe
 
 // Check query string for embed=true or iframe=true. If either is present, call embedThisPage
 const urlParams = new URLSearchParams(window.location.search);
-const embedBool = urlParams.get('embed') === 'true' || urlParams.get('iframe') === 'true';
+const embedValue = urlParams.get('embed');
+const iframeValue = urlParams.get('iframe');
+const embedBool = embedValue === 'true' || embedValue === '1' || iframeValue === 'true' || iframeValue === '1';
 
 if (embedBool) {
   embedThisPage();
