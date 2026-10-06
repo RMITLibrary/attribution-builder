@@ -70,3 +70,8 @@ cypress/
 *.so
 *.app
 *.war
+# Impeccable design hook
+.impeccable/
+
+# Server deploy helper — internal details, copied to the server by hand
+/deploy/
