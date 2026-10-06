@@ -44,7 +44,15 @@ The Attribution Builder helps users easily cite open material by automatically g
 
 ## Testing and Deployment
 
-- **Deployment**: Deploy the site to a static hosting platform or web server.
+- **Deployment**: Gitflow release, then deploy the version tag on the server.
+
+1. Release from a clean `develop` (`patch` by default, or `minor` / `major`):
+   ```bash
+   scripts/release.sh
+   ```
+   This bumps the latest `X.Y.Z` tag, merges `release/<version>` into `main`, tags it, merges the tag back into `develop` and pushes all three.
+2. On the server, run `attribution-builder-deploy <version>`. It downloads the tag from GitHub, backs up the live files, deploys and checks the site responds. Server details and the helper are kept outside this public repo.
+3. To roll back, run the rollback command printed by the deploy.
 
 ## Authors and Acknowledgments
 
